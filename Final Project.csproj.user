@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Ali\source\repos\Final Project\Final Project\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Forms\adddoctor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\addnewappointmentpage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\addpatients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\appointmentdetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\appointments.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Dashboard\DashboardPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Dashboard\InnerPages\Pharmacy_Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\DoctorsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\HMSPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\AddDoctorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\AddPatientPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\AppointmentListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\DoctorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\AddBedGroupPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\AddBirthReport.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\AddDeathReportPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\AddDepartmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\BedAllotmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\BedListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\BirthReportsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\DeathListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\HMS\InnerPages\PatientListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\laborarory.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\EditPricePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\LabDepartmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\LabInvoicePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\LabReportPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Labreports\CollectSamplePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Labreports\CompletedTestPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Labreports\PendingTestPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Labreports\TestValidationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\LabTemplatesPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\NewLabTestTemplatePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\LaboratoryPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\loginpage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\OPD.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\patientdoctorform.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\AddMedicinePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\MedDetailPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\MedicineListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\MedReturnPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\NewOrderPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\SupplierListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\PharmacyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Forms\adddoctor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\addnewappointmentpage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\addpatients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\appointmentdetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\appointments.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Dashboard\DashboardPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Dashboard\InnerPages\Pharmacy_Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\DoctorsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\HMSPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\AddDoctorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\AddPatientPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\AppointmentListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\DoctorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\AddBedGroupPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\AddBirthReport.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\AddDeathReportPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\AddDepartmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\BedAllotmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\BedListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\BirthReportsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\DeathListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\HMS\InnerPages\PatientListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\laborarory.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\EditPricePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\LabDepartmentPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\LabInvoicePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\LabReportPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Labreports\CollectSamplePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Labreports\CompletedTestPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Labreports\PendingTestPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Labreports\TestValidationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\LabTemplatesPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\NewLabTestTemplatePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\LaboratoryPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\loginpage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\OPD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\patientdoctorform.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\AddMedicinePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\MedDetailPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\MedicineListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\MedReturnPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\NewOrderPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\SupplierListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\PharmacyPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

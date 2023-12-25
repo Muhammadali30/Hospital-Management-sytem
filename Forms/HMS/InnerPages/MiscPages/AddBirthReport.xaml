@@ -1,0 +1,108 @@
+﻿<Page x:Class="Final_Project.Forms.HMS.InnerPages.MiscPages.AddBirthReport"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Final_Project.Forms.HMS.InnerPages.MiscPages"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddBirthReport">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Add Birth Report" FontSize="22" FontWeight="Bold" Grid.Row="0" Margin="10 10 0 0"/>
+        <TextBlock Text="You can add Birth report by fill these field." Foreground="Gray" FontSize="14" FontWeight="Bold" Grid.Row="1" Margin="10 0 0 0"/>
+        <Border Grid.Row="2" Background="White" Margin="10" BorderBrush="Gray" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="360" ShadowDepth="5" Opacity="0.6"/>
+            </Border.Effect>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <Grid Grid.Row="2" Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Style="{StaticResource editbutton}" Content="Back" FontSize="14" Background="#a3a3a3" Margin="25 20 5 5" HorizontalAlignment="Left" Click="BackToBirthReportPage" />
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                        <StackPanel Margin="10" Orientation="Vertical" >
+                            <TextBlock Text="Child Name" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Child Name" Width="200"/>
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                            <TextBlock Text="Gender" Margin="5" FontWeight="Bold" />
+                            <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
+                                <ComboBoxItem Content="Male"/>
+                                <ComboBoxItem Content="Female"/>
+                                <ComboBoxItem Content="Other"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                            <TextBlock Text="Birth Date" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Birth Date" Width="200"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
+                        <StackPanel Margin="10" Orientation="Vertical" >
+                            <TextBlock Text="Upload Photo" Margin="5" FontWeight="Bold" />
+                            <Button Style="{DynamicResource editbutton}" Content="Choose File" Background="#a3a3a3" Width="200"/>
+
+
+
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                            <TextBlock Text="Blood Group" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Blood Group" Width="200"/>
+
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
+                            <TextBlock Text="Mother Name" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Mother Name" Width="200"/>
+
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3">
+                        <StackPanel Margin="10" Orientation="Vertical" >
+                            <TextBlock Text="Patient ID" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Phone" Width="200"/>
+
+
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                            <TextBlock Text="Father Name" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Father Name" Width="200"/>
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                            <TextBlock Text="Mobile Number" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Number" Width="200"/>
+
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+                            <TextBlock Text="Description" Margin="5" FontWeight="Bold" />
+                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Description....." Width="640" Height="150"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Grid.Row="5" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="30" Width="100" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Submit" FontSize="14"/>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

@@ -1,0 +1,55 @@
+﻿<Page x:Class="Final_Project.Forms.Laboratory.InnerPages.LabTemplatesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Final_Project.Forms.Laboratory.InnerPages"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LabTemplatesPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Add Lab Procedure List " Grid.Column="3" Background="#a3a3a3" Margin="0 20 15 5" HorizontalAlignment="Right"/>
+        <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Add New Template " Grid.Column="2" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right" Click="AddNewTemplatePage"/>
+        <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Edit Price " Height="auto" Grid.Column="1" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right" Click="EditTemplatesPrice"/>
+        <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Print " Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right"/>
+        <TextBlock Text="Lab Templates" FontSize="22" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Margin="10 10 0 0"/>
+        <!--<TextBlock Text="Total | Visited |" Foreground="Gray" FontSize="14" FontWeight="Bold" Grid.Row="1" Margin="10 0 0 0"/>-->
+        <TextBox Grid.Row="3" Margin="10" Grid.Column="3" HorizontalAlignment="Right" Tag="Search" Style="{DynamicResource textboxstyle}" Width="150"/>
+        <ComboBox Grid.Row="3" Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0"  Width="100" Height="30" SelectedIndex="0" >
+            <ComboBoxItem Content="By Code"/>
+            <ComboBoxItem Content="By Template"/>
+            <ComboBoxItem Content="By Department"/>
+        </ComboBox>
+        <DataGrid  Grid.Row="4" IsReadOnly="True" Grid.ColumnSpan="4"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="3" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+       
+
+            <!-- You can dynamically generate these buttons based on the total number of pages -->
+            <Button Content="1" Background="Gray"  Style="{DynamicResource editbutton}"/>
+            <Button Content="2" Style="{DynamicResource editbutton}"/>
+            <Button Content="3" Style="{DynamicResource editbutton}"/>
+            <Button Content="4" Style="{DynamicResource editbutton}"/>
+            <Button Content="5" Style="{DynamicResource editbutton}"/>
+            <Button Content=">" Style="{DynamicResource editbutton}" />
+        </StackPanel>
+    </Grid>
+</Page>

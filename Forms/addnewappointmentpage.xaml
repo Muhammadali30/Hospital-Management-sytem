@@ -1,0 +1,171 @@
+﻿<Page x:Class="Final_Project.Forms.addnewappointmentpage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Final_Project.Forms" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="400" d:DesignWidth="330"
+      Title="addnewappointmentpage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Button  Grid.Column="1"  Grid.Row="0" Style="{StaticResource button}" >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text=" Show All" FontSize="14"/>
+                </StackPanel>
+            </Button>
+            <DatePicker  HorizontalAlignment="Center" Margin="10"/>
+        </StackPanel>
+        <Border BorderBrush="Black" Grid.Row="1" BorderThickness="0,1,0,0" Margin="0,10"/>
+        <ScrollViewer Grid.Row="2"  ScrollViewer.VerticalScrollBarVisibility="Hidden" Padding="0">
+            <StackPanel Orientation="Vertical">
+                    <TextBlock Text="" FontSize="24" HorizontalAlignment="Center" Margin="10" FontWeight="Bold"/>
+                    <!--Apponitments list-->
+                    <StackPanel Tag="HelloJangli"  MaxWidth="300"  >
+                        <Border Grid.Row="0" Grid.ColumnSpan="8" Background="#6DACE5" CornerRadius="10" Height="60" Margin="5 5" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Doctor Name" FontSize="16" Margin="10 0" Foreground="black" VerticalAlignment="Top"/>
+                                    <TextBlock Text="Muhammad Ali" Margin="15 0" Foreground="White"/>
+                                    <TextBlock Text="Appointment with Rafy Ali" Margin="15 0" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White" Padding="10" CornerRadius="10" Height="40" Margin="20 10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                                        </Border.Effect>
+                                        <TextBlock Text="02:00 PM" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <!--Apponitments list-->
+                    <StackPanel  MaxWidth="300" >
+                        <Border Grid.Row="0" Grid.ColumnSpan="8" Background="#6DACE5" CornerRadius="10" Height="60" Margin="5 5" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Doctor Name" FontSize="16" Margin="10 0" Foreground="black" VerticalAlignment="Top"/>
+                                    <TextBlock Text="Muhammad Ali" Margin="15 0" Foreground="White"/>
+                                    <TextBlock Text="Appointment with Rafy Ali" Margin="15 0" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White" Padding="10" CornerRadius="10" Height="40" Margin="20 10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                                        </Border.Effect>
+                                        <TextBlock Text="03:45 PM" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <!--Apponitments list-->
+                    <StackPanel  MaxWidth="300" >
+                        <Border Grid.Row="0" Grid.ColumnSpan="8" Background="#6DACE5" CornerRadius="10" Height="60" Margin="5 5" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Doctor Name" FontSize="16" Margin="10 0" Foreground="black" VerticalAlignment="Top"/>
+                                    <TextBlock Text="Muhammad Ali" Margin="15 0" Foreground="White"/>
+                                    <TextBlock Text="Appointment with Rafy Ali" Margin="15 0" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White" Padding="10" CornerRadius="10" Height="40" Margin="20 10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                                        </Border.Effect>
+                                        <TextBlock Text="01:00 PM" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <!--Apponitments list-->
+                    <StackPanel  MaxWidth="300" >
+                        <Border Grid.Row="0" Grid.ColumnSpan="8" Background="#6DACE5" CornerRadius="10" Height="60" Margin="5 5" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Doctor Name" FontSize="16" Margin="10 0" Foreground="black" VerticalAlignment="Top"/>
+                                    <TextBlock Text="Muhammad Ali" Margin="15 0" Foreground="White"/>
+                                    <TextBlock Text="Appointment with Rafy Ali" Margin="15 0" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White" Padding="10" CornerRadius="10" Height="40" Margin="20 10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                                        </Border.Effect>
+                                        <TextBlock Text="12:30 PM" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <!--Apponitments list-->
+                    <StackPanel  MaxWidth="300" >
+                        <Border Grid.Row="0" Grid.ColumnSpan="8" Background="#6DACE5" CornerRadius="10" Height="60" Margin="5 5" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Doctor Name" FontSize="16" Margin="10 0" Foreground="black" VerticalAlignment="Top"/>
+                                    <TextBlock Text="Muhammad Ali" Margin="15 0" Foreground="White"/>
+                                    <TextBlock Text="Appointment with Rafy Ali" Margin="15 0" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White" Padding="10" CornerRadius="10" Height="40" Margin="40 10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                                        </Border.Effect>
+                                        <TextBlock Text="12 PM" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                    <!--Apponitments list-->
+                    <StackPanel  MaxWidth="300" >
+                        <Border Grid.Row="0" Grid.ColumnSpan="8" Background="#6DACE5" CornerRadius="10" Height="60" Margin="5 5" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                            </Border.Effect>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel Orientation="Vertical">
+                                    <TextBlock Text="Doctor Name" FontSize="16" Margin="10 0" Foreground="black" VerticalAlignment="Top"/>
+                                    <TextBlock Text="Muhammad Ali" Margin="15 0" Foreground="White"/>
+                                    <TextBlock Text="Appointment with Rafy Ali" Margin="15 0" Foreground="White"/>
+                                </StackPanel>
+                                <StackPanel>
+                                    <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White" Padding="10" CornerRadius="10" Height="40" Margin="40 10">
+                                        <Border.Effect>
+                                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                                        </Border.Effect>
+                                        <TextBlock Text="12 PM" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

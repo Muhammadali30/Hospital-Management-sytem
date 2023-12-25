@@ -1,0 +1,7 @@
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\Final Project.exe
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\Final Project.deps.json
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\Final Project.runtimeconfig.json
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\Final Project.pdb
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\MahApps.Metro.IconPacks.Core.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\publish\MahApps.Metro.IconPacks.Material.dll

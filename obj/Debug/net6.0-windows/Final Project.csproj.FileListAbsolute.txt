@@ -1,0 +1,121 @@
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\Final Project.exe
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\Final Project.deps.json
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\Final Project.runtimeconfig.json
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\Final Project.pdb
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project_MarkupCompile.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project_MarkupCompile.lref
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.g.resources
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.AssemblyInfoInputs.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.AssemblyInfo.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.csproj.CoreCompileInputs.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\refint\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.pdb
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.genruntimeconfig.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\ref\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\App.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Core.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\MahApps.Metro.IconPacks.Material.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.csproj.AssemblyReference.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Final Project.csproj.CopyComplete
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\loginpage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\MainWindow.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\OPD.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\loginpage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\MainWindow.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\OPD.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\addpatients.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\addpatients.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\adddoctor.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\adddoctor.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\laborarory.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\laborarory.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\appointments.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\appointments.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\appointmentdetails.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\appointmentdetails.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\addnewappointmentpage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\addnewappointmentpage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\DoctorsPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\DoctorsPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\patientdoctorform.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\patientdoctorform.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacyPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacyPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\AddMedicinePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\AddMedicinePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedicineListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedicineListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedDetailPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedDetailPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedReturnPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedReturnPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\NewOrderPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\NewOrderPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\SupplierListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\SupplierListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\NewSupplierPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\NewSupplierPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\HMSPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\HMSPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\AppointmentListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\AppointmentListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\PatientListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\PatientListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\AddPatientPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\AddPatientPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\DoctorPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\DoctorPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\AddDoctorPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\AddDoctorPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddBedGroupPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BedListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddBedGroupPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BedListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BedAllotmentPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BedAllotmentPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddDepartmentPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddBirthReport.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddDeathReportPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BirthReportsPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\DeathListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddDepartmentPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddBirthReport.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddDeathReportPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BirthReportsPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\DeathListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LaboratoryPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LaboratoryPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\DashboardPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\Pharmacy_Dashboard.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\DashboardPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\Pharmacy_Dashboard.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabTemplatesPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabTemplatesPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\NewLabTestTemplatePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\NewLabTestTemplatePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\EditPricePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\EditPricePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabInvoicePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabInvoicePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabDepartmentPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabDepartmentPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabReportPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\LabReportPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\CollectSamplePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\CollectSamplePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\CompletedTestPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\PendingTestPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\TestValidationPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\CompletedTestPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\PendingTestPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\TestValidationPage.baml

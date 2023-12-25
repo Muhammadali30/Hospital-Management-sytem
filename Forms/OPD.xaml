@@ -1,0 +1,150 @@
+﻿<Page x:Class="Final_Project.OPD"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Final_Project"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="Transparent"
+      Title="OPD">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Background="White" Grid.RowSpan="6" Grid.ColumnSpan="4" Loaded="Border_Loaded"></Border>
+        <!--<Button Style="{StaticResource button}"  Click="Button_Click" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Right" Margin="0 10 20 10">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="HumanMale"/>
+                <TextBlock Text="Add Patient" FontSize="14"/>
+            </StackPanel>
+        </Button>-->
+        <TextBlock Text="OutPatient Department" HorizontalAlignment="Left" FontSize="24" FontWeight="Bold" />
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="10">
+            <Border Grid.Row="0" Grid.ColumnSpan="8" CornerRadius="10" Height="60" Margin="0 20" MouseLeftButtonDown="AddPatientOnMouseDown">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="gray" Offset="0.0"/>
+                            <GradientStop Color="#e3e2e1" Offset="1.0"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="10" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                </Border.Effect>
+                <TextBlock Text="Add Patient" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10">
+            <Border Grid.Row="0" Grid.ColumnSpan="8" CornerRadius="10" Height="60" Margin="0 20" MouseLeftButtonDown="AddDocOnMouseDown">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStop Color="gray" Offset="0.0"/>
+                            <GradientStop Color="#e3e2e1" Offset="1.0"/>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                </Border.Effect>
+                <TextBlock Text="Add Doctor" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </StackPanel>
+        <!--<StackPanel Grid.Row="1" Grid.Column="0" Margin="10">
+            <Border Grid.Row="0" Grid.ColumnSpan="8" Background="Gray" CornerRadius="10" Height="60" Margin="0 20" MouseLeftButtonDown="AddDocOnMouseDown">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                </Border.Effect>
+                <TextBlock Text="Add Doctor" FontSize="30" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
+        </StackPanel>-->
+        <!--Search Box-->
+        <!--<ComboBox x:Name="roleComboBox" Style="{StaticResource CustomComboBoxStyle}" Grid.Row="2" Grid.Column="0" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="80" Height="20" SelectedIndex="0" >
+            <ComboBoxItem Content="Patient"/>
+            <ComboBoxItem Content="Doctor"/>
+        </ComboBox>-->
+        <Button x:Name="showdoctorsbutton"  Grid.Column="1"  Grid.Row="2" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="0 0 10 0" HorizontalAlignment="Right" Click="Button_Click_3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Show Doctors" FontSize="14"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="showpatientbutton" Visibility="Hidden" Grid.Column="1"  Grid.Row="2" Style="{StaticResource editbutton}" Margin="0 0 10 0" HorizontalAlignment="Right" Click="onshowpatientsbutton">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Show Patients" FontSize="14"/>
+            </StackPanel>
+        </Button>
+        <TextBox Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" FontWeight="Bold" Style="{DynamicResource textboxstyle}" Margin="0 0 10 0" Tag="Search" Width="150"/>
+        <!--<DataGrid x:Name="OpdRecord"   Grid.Row="1">-->
+        <DataGrid x:Name="OpdRecord" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="2" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" AutoGeneratingColumn="OpdRecord_AutoGeneratingColumn">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="50"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150"/>
+                <DataGridTextColumn Header="Age" Binding="{Binding Age}" Width="50"/>
+                <DataGridTextColumn Header="Specialty" Binding="{Binding Specialty}" Width="150"/>
+                 <!--Add more columns as needed 
+                 Delete Button--> 
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource editbutton}" Background="Red" Foreground="White"  HorizontalAlignment="Center" Click="Button_Click_1">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="Delete"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                 <!--Edit Button--> 
+                <DataGridTemplateColumn Header="Edit">
+                    <DataGridTemplateColumn.CellTemplate>   
+                        <DataTemplate>
+                            <Button Style="{StaticResource editbutton}" Background="#1874ed" Foreground="White"  HorizontalAlignment="Center" Click="Button_Click_1">
+                                <StackPanel Orientation="Horizontal">
+                                    <Icon:PackIconMaterial Kind="AccountEdit"/>
+                                </StackPanel>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+       
+        <Frame x:Name="doctorframe" Visibility="Hidden" Grid.Row="4" Grid.RowSpan="3" Grid.ColumnSpan="3" Margin="0 30 0 0" NavigationUIVisibility="Hidden"/>
+
+
+        <!--Main Frame-->
+        <!--<Button Style="{StaticResource editbutton}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10 0" Grid.Row="1" Height="30" Background="green" Foreground="White" Click="Button_Click_2"  >
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text=" Back" FontSize="16" Height="72" RenderTransformOrigin="0.5,0.5"/>
+            </StackPanel>
+        </Button>
+        <StackPanel Grid.Row="5" Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center">
+            
+        <Button Style="{StaticResource editbutton}" Margin="10 0" Height="30" Background="red" Foreground="White"  Click="Button_Click_1">
+            <StackPanel Orientation="Horizontal">
+                <Icon:PackIconMaterial Kind="Delete"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource button}" Margin="0 10 20 10" Click="Button_Click">
+      <StackPanel Orientation="Horizontal">
+          <Icon:PackIconMaterial Kind="Plus"/>
+          <TextBlock Text=" Save" FontSize="14"/>
+      </StackPanel>-->
+  <!--</Button>
+        </StackPanel>-->
+    </Grid>
+</Page>

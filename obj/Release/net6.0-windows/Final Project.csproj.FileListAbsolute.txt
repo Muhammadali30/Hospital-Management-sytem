@@ -1,0 +1,55 @@
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\Final Project.exe
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\Final Project.deps.json
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\Final Project.runtimeconfig.json
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\Final Project.pdb
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\MahApps.Metro.IconPacks.Core.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\bin\Release\net6.0-windows\MahApps.Metro.IconPacks.Material.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.csproj.AssemblyReference.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\adddoctor.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\addnewappointmentpage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\addpatients.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\appointmentdetails.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\appointments.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\DoctorsPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\laborarory.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\loginpage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\MainWindow.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\OPD.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\patientdoctorform.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\AddMedicinePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\MedDetailPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\MedicineListPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\MedReturnPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\PharmacyPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\App.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project_MarkupCompile.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project_MarkupCompile.lref
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\App.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\adddoctor.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\addnewappointmentpage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\addpatients.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\appointmentdetails.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\appointments.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\DoctorsPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\laborarory.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\loginpage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\MainWindow.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\OPD.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\patientdoctorform.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\AddMedicinePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\MedDetailPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\MedicineListPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\InnerPages\MedReturnPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Forms\Pharmacy\PharmacyPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.g.resources
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.AssemblyInfoInputs.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.AssemblyInfo.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.csproj.CoreCompileInputs.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.csproj.CopyComplete
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\refint\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.pdb
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\Final Project.genruntimeconfig.cache
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Release\net6.0-windows\ref\Final Project.dll

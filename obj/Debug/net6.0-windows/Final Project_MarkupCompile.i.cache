@@ -1,0 +1,20 @@
+﻿Final Project
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\
+Final_Project
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\Ali\source\repos\Final Project\Final Project\App.xaml
+48943508460
+
+52-1243526042
+198979182556
+Forms\adddoctor.xaml;Forms\addnewappointmentpage.xaml;Forms\addpatients.xaml;Forms\appointmentdetails.xaml;Forms\appointments.xaml;Forms\Dashboard\DashboardPage.xaml;Forms\Dashboard\InnerPages\Pharmacy_Dashboard.xaml;Forms\DoctorsPage.xaml;Forms\HMS\HMSPage.xaml;Forms\HMS\InnerPages\AddDoctorPage.xaml;Forms\HMS\InnerPages\AddPatientPage.xaml;Forms\HMS\InnerPages\AppointmentListPage.xaml;Forms\HMS\InnerPages\DoctorPage.xaml;Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.xaml;Forms\HMS\InnerPages\MiscPages\AddBedGroupPage.xaml;Forms\HMS\InnerPages\MiscPages\AddBirthReport.xaml;Forms\HMS\InnerPages\MiscPages\AddDeathReportPage.xaml;Forms\HMS\InnerPages\MiscPages\AddDepartmentPage.xaml;Forms\HMS\InnerPages\MiscPages\BedAllotmentPage.xaml;Forms\HMS\InnerPages\MiscPages\BedListPage.xaml;Forms\HMS\InnerPages\MiscPages\BirthReportsPage.xaml;Forms\HMS\InnerPages\MiscPages\DeathListPage.xaml;Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.xaml;Forms\HMS\InnerPages\PatientListPage.xaml;Forms\laborarory.xaml;Forms\Laboratory\InnerPages\EditPricePage.xaml;Forms\Laboratory\InnerPages\LabDepartmentPage.xaml;Forms\Laboratory\InnerPages\LabInvoicePage.xaml;Forms\Laboratory\InnerPages\LabReportPage.xaml;Forms\Laboratory\InnerPages\Labreports\CollectSamplePage.xaml;Forms\Laboratory\InnerPages\Labreports\CompletedTestPage.xaml;Forms\Laboratory\InnerPages\Labreports\PendingTestPage.xaml;Forms\Laboratory\InnerPages\Labreports\TestValidationPage.xaml;Forms\Laboratory\InnerPages\LabTemplatesPage.xaml;Forms\Laboratory\InnerPages\NewLabTestTemplatePage.xaml;Forms\Laboratory\LaboratoryPage.xaml;Forms\loginpage.xaml;Forms\MainWindow.xaml;Forms\OPD.xaml;Forms\patientdoctorform.xaml;Forms\Pharmacy\InnerPages\AddMedicinePage.xaml;Forms\Pharmacy\InnerPages\MedDetailPage.xaml;Forms\Pharmacy\InnerPages\MedicineListPage.xaml;Forms\Pharmacy\InnerPages\MedReturnPage.xaml;Forms\Pharmacy\InnerPages\NewOrderPage.xaml;Forms\Pharmacy\InnerPages\NewSupplierPage.xaml;Forms\Pharmacy\InnerPages\SupplierListPage.xaml;Forms\Pharmacy\PharmacyPage.xaml;
+
+False
+
