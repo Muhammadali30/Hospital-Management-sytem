@@ -71,5 +71,10 @@ namespace Final_Project.Forms.HMS
         {
             OpenNewPage(new BirthReportsPage());
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            OpenNewPage(new AppointmentListPage());
+        }
     }
 }

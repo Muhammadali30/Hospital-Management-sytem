@@ -23,6 +23,14 @@ namespace Final_Project.Forms.HMS.InnerPages
         public AppointmentListPage()
         {
             InitializeComponent();
+            datechange.Text = DateTime.Now.ToString("ddd, dd MMM yyyy");
+
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DateTime selectedDate = ((DatePicker)sender).SelectedDate ?? DateTime.MinValue;
+            datechange.Text = selectedDate.ToString("ddd, dd MMM yyyy");
         }
     }
 }

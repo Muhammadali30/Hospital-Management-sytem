@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HMSPage">
+      Title="HMSPage" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Column="0" Background="gray">
             <DockPanel>
-                <TextBlock Text="HMS" Foreground="White" FontSize="22" FontWeight="Bold"
+                <TextBlock Text="OPD" Foreground="White" FontSize="22" FontWeight="Bold"
                       DockPanel.Dock="Top" TextAlignment="Center" Margin="0 50 0 0"/>
                 <Separator Margin="15" DockPanel.Dock="Top" Height="0.8" Background="black"/>
                 <StackPanel DockPanel.Dock="Top">

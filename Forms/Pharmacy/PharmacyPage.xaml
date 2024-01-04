@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PharmacyPage">
+      Title="PharmacyPage" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -21,11 +21,7 @@
                         DockPanel.Dock="Top" TextAlignment="Center" Margin="0 50 0 0"/>
                 <Separator Margin="15" DockPanel.Dock="Top" Height="0.8" Background="black"/>
                 <StackPanel DockPanel.Dock="Top">
-                    <Button   Style="{StaticResource editbutton}" Background="#e3e2e1"  Margin="10" Click="OpenMedListPage">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Medicine" FontSize="14"/>
-                        </StackPanel>
-                    </Button>
+                    <Button   Style="{StaticResource editbutton}" Content="Items" Background="#e3e2e1"  Margin="10" Click="OpenMedListPage"/>
                     <Button   Style="{StaticResource editbutton}" Background="#e3e2e1"  Margin="10" Click="OpenMedDetailPage" >
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Medicine Details" FontSize="14"/>

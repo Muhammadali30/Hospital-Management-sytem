@@ -119,3 +119,11 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\CompletedTestPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\PendingTestPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\TestValidationPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\RequestMultipleItemsPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\RequestMultipleItemsPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\AddStockPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\AddStockPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\AddUserPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\UsersPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\AddUserPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\UsersPage.baml

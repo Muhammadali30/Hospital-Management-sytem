@@ -27,7 +27,8 @@ namespace Final_Project.Forms.Dashboard
             InitializeComponent();
         }
 
-        private void OpenPharmacyPage(object sender, RoutedEventArgs e)
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             if (MainFrame.NavigationService != null)
             {
@@ -39,6 +40,20 @@ namespace Final_Project.Forms.Dashboard
                 // Load the new page
             }
             MainFrame.Content = new Pharmacy_Dashboard();
+        }
+
+        private void OpenUserPage(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+                // Load the new page
+            }
+            MainFrame.Content = new UsersPage();
         }
     }
 }

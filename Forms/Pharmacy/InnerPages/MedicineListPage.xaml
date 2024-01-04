@@ -17,20 +17,21 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <TextBlock Text="Pharmacy Items" FontSize="22" FontWeight="Bold" Grid.Row="0" Margin="10 10 0 0"/>
+        <WrapPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
+            <Button Content="Add New Item" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenNewMedPage"/>
+            <Button Content="Add Multiple Items" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenMulItemsPage"/>
+            <Button Content="Add Stock" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right" Click="OpenAddStockPage"/>
 
-        <Button x:Name="showdoctorsbutton" Grid.Row="2" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenNewMedPage">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Add New Medicine" FontSize="14"/>
-            </StackPanel>
-        </Button>
-        <TextBlock Text="Medicine List" FontSize="22" FontWeight="Bold" Grid.Row="0" Margin="10 10 0 0"/>
-        <TextBlock Text="Here is the Medicine List" Foreground="Gray" FontSize="14" FontWeight="Bold" Grid.Row="1" Margin="10 0 0 0"/>
+        </WrapPanel>
+        <WrapPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
         <TextBox Grid.Row="3" Margin="10" HorizontalAlignment="Right" Tag="Search" Style="{DynamicResource textboxstyle}" Width="150"/>
-        <ComboBox Grid.Row="3" Style="{StaticResource CustomComboBoxStyle}"  HorizontalAlignment="Right" Margin="0 0 180 0"  Width="100" Height="30" SelectedIndex="0" >
+        <ComboBox Grid.Row="3" Style="{StaticResource CustomComboBoxStyle}" Margin="0 10 10 10"  Width="100" Height="30" SelectedIndex="0" >
              <ComboBoxItem Content="Medicine"/>
              <ComboBoxItem Content="Category"/>
              <ComboBoxItem Content="Best Selling"/>
         </ComboBox>
+        </WrapPanel>
         <DataGrid  Grid.Row="4" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
         </DataGrid>
     </Grid>

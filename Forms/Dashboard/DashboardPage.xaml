@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Background="White"
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DashboardPage">
+      Title="DashboardPage" Loaded="Page_Loaded">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -20,7 +20,7 @@
                       DockPanel.Dock="Top" TextAlignment="Center" Margin="0 50 0 0"/>
                 <Separator Margin="15" DockPanel.Dock="Top" Height="0.8" Background="black"/>
                 <StackPanel DockPanel.Dock="Top">
-                    <Button   Style="{StaticResource editbutton}" Content="Pharmacy" FontSize="14" Background="#e3e2e1"  Margin="10" Click="OpenPharmacyPage"/>
+                    <Button   Style="{StaticResource editbutton}" Content="Users" FontSize="14" Background="#e3e2e1"  Margin="10" Click="OpenUserPage" />
 
 
                     <!--<Button   Style="{StaticResource editbutton}" Background="#e3e2e1"/>

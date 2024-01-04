@@ -121,5 +121,21 @@ namespace Final_Project.Forms.Pharmacy
             }
             MainFrame.Content = new SupplierListPage(MainFrame);
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new AddMedicinePage();
+        }
     }
 }
