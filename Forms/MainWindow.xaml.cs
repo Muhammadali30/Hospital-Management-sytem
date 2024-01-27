@@ -2,6 +2,7 @@
 using Final_Project.Forms.Dashboard;
 using Final_Project.Forms.HMS;
 using Final_Project.Forms.Laboratory;
+using Final_Project.Forms.OPD;
 using Final_Project.Forms.Pharmacy;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,80 @@ namespace Final_Project
         public MainWindow()
         {
             InitializeComponent();
+
+            //OPD();
+            LAB();
+
         }
+        private void OPD()
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new OpdDashboard();
+
+            if (SideFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (SideFrame.NavigationService.CanGoBack)
+                {
+                    SideFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            SideFrame.Content = new SidebarPage(MainFrame);
+        }
+
+        private void LAB()
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new OpdDashboard();
+
+            if (SideFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (SideFrame.NavigationService.CanGoBack)
+                {
+                    SideFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            SideFrame.Content = new LabSidebarPage(MainFrame);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -116,6 +190,52 @@ namespace Final_Project
             }
             MainFrame.Content = new DashboardPage();
             //MessageBox.Show("We Are Working on it!");
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //if (MainFrame.NavigationService != null)
+            //{
+            //    // Remove the previous page from the navigation history
+            //    if (MainFrame.NavigationService.CanGoBack)
+            //    {
+            //        MainFrame.NavigationService.RemoveBackEntry();
+            //    }
+
+            //    // Load the new page
+
+            //}
+            //MainFrame.Content = new DashboardPage();
+            ////MessageBox.Show("We Are Working on it!");
+        }
+
+        private void CloseButton(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MaximizeButton(object sender, RoutedEventArgs e)
+        {
+            WindowState = (WindowState == WindowState.Maximized) ? WindowState.Normal : WindowState.Maximized;
+        }
+
+        private void MinimizeButton(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void ToggleSidebar(object sender, RoutedEventArgs e)
+        {
+            if (sidebarcolumn.Width.Value==220)
+            {
+                sidebarcolumn.Width =new GridLength(0);
+                Sidebar.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.ArrowRight;
+            }
+            else
+            {
+                sidebarcolumn.Width = new GridLength(220);
+                Sidebar.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.ArrowLeft;
+            }
         }
     }
     }

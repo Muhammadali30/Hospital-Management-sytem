@@ -18,6 +18,9 @@
     <Compile Update="Forms\addpatients.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\AlertForm.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\appointmentdetails.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,7 +30,13 @@
     <Compile Update="Forms\Dashboard\DashboardPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Dashboard\InnerPages\AddUserPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Dashboard\InnerPages\Pharmacy_Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Dashboard\InnerPages\UsersPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\DoctorsPage.xaml.cs">
@@ -36,16 +45,19 @@
     <Compile Update="Forms\HMS\HMSPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Forms\HMS\InnerPages\AddDoctorPage.xaml.cs">
+    <Compile Update="Forms\Laboratory\LabSidebarPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Forms\HMS\InnerPages\AddPatientPage.xaml.cs">
+    <Compile Update="Forms\OPD\InnerPages\AddDoctorPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\OPD\InnerPages\AddPatientPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\HMS\InnerPages\AppointmentListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Forms\HMS\InnerPages\DoctorPage.xaml.cs">
+    <Compile Update="Forms\OPD\InnerPages\DoctorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.xaml.cs">
@@ -76,9 +88,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Forms\HMS\InnerPages\PatientListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\laborarory.xaml.cs">
@@ -123,10 +132,22 @@
     <Compile Update="Forms\OPD.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\OPD\InnerPages\PatientListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\OPD\OpdDashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\OPD\SidebarPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\patientdoctorform.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\AddMedicinePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\AddStockPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\MedDetailPage.xaml.cs">
@@ -144,10 +165,22 @@
     <Compile Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\RequestMultipleItemsPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\SupplierListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\Pharmacy\PharmacyPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\SPLASH\InnerPages\LoadingPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\SPLASH\InnerPages\LoginPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\SPLASH\SplashForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -161,6 +194,9 @@
     <Page Update="Forms\addpatients.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Forms\AlertForm.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Forms\appointmentdetails.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -170,7 +206,13 @@
     <Page Update="Forms\Dashboard\DashboardPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Forms\Dashboard\InnerPages\AddUserPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Forms\Dashboard\InnerPages\Pharmacy_Dashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Dashboard\InnerPages\UsersPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\DoctorsPage.xaml">
@@ -179,16 +221,19 @@
     <Page Update="Forms\HMS\HMSPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Forms\HMS\InnerPages\AddDoctorPage.xaml">
+    <Page Update="Forms\Laboratory\LabSidebarPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Forms\HMS\InnerPages\AddPatientPage.xaml">
+    <Page Update="Forms\OPD\InnerPages\AddDoctorPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\OPD\InnerPages\AddPatientPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\HMS\InnerPages\AppointmentListPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Forms\HMS\InnerPages\DoctorPage.xaml">
+    <Page Update="Forms\OPD\InnerPages\DoctorPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\HMS\InnerPages\MiscPages\AddBedAllotmentPage.xaml">
@@ -219,9 +264,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\HMS\InnerPages\MiscPages\DepartmentsListPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Forms\HMS\InnerPages\PatientListPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\laborarory.xaml">
@@ -269,10 +311,22 @@
     <Page Update="Forms\OPD.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Forms\OPD\InnerPages\PatientListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\OPD\OpdDashboard.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\OPD\SidebarPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Forms\patientdoctorform.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\AddMedicinePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\AddStockPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\MedDetailPage.xaml">
@@ -290,10 +344,22 @@
     <Page Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\RequestMultipleItemsPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Forms\Pharmacy\InnerPages\SupplierListPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\PharmacyPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\SPLASH\InnerPages\LoadingPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\SPLASH\InnerPages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\SPLASH\SplashForm.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

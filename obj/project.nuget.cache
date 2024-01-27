@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "bUzgpAJC9UbN5bxTwjdUUu7HyLpzvbApa2WZyiyF7ZJqiB6nhJ6Z/EHbvqGAGEK2AslIdJTl26RsMFS6WFQURA==",
+  "dgSpecHash": "zXquhkYK3nmvAC5r3n8t1w0nf7ZmkypCytEfNHHz5yLUL2wUFw6VPo36Re8ZZyvvlFjGHjqi7w1nWR/UP0XBRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final Project\\Final Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ali\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
     "C:\\Users\\Ali\\.nuget\\packages\\livecharts.wpf\\0.9.7\\livecharts.wpf.0.9.7.nupkg.sha512",
-    "C:\\Users\\Ali\\.nuget\\packages\\mahapps.metro.iconpacks.material\\4.11.0\\mahapps.metro.iconpacks.material.4.11.0.nupkg.sha512"
+    "C:\\Users\\Ali\\.nuget\\packages\\mahapps.metro.iconpacks.material\\4.11.0\\mahapps.metro.iconpacks.material.4.11.0.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\materialdesigncolors\\2.1.4\\materialdesigncolors.2.1.4.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\materialdesignthemes\\4.9.0\\materialdesignthemes.4.9.0.nupkg.sha512",
+    "C:\\Users\\Ali\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": [
     {

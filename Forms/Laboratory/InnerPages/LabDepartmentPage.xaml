@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Final_Project.Forms.Laboratory.InnerPages"
       mc:Ignorable="d" 
-      Background="White"
+      Background="Transparent"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LabDepartmentPage">
 
@@ -15,10 +15,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Button x:Name="addbtn" Grid.Row="1" Style="{StaticResource editbutton}" Content="Add Department " Background="#a3a3a3" Margin="0 20 15 5" HorizontalAlignment="Right" Click="ShowDepartmentFormButton"/>
+        <Button x:Name="addbtn" Grid.Row="1" Style="{StaticResource editbutton}" Content="Add Department " Margin="0 20 15 5" HorizontalAlignment="Right" Click="ShowDepartmentFormButton"/>
         <StackPanel x:Name="adddepartmentform" Visibility="Hidden" HorizontalAlignment="Right" Grid.Row="1" Orientation="Horizontal" Margin="5">
             <TextBox Tag="New Department"  Style="{DynamicResource textboxstyle}"/>
-            <Button Content="ADD" Style="{DynamicResource editbutton}" Margin="5" Background="gray"/>
+            <Button Content="ADD" Style="{DynamicResource editbutton}" Margin="5"/>
             <Button Content="Cancel" Style="{DynamicResource editbutton}" Margin="5" Background="red" Click="CancelDepartmentFormButton"/>
         </StackPanel>
         <TextBlock Text="Lab Departments" FontSize="22" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Margin="10 10 0 0"/>

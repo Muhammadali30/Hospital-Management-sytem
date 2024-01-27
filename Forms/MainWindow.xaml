@@ -6,88 +6,154 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Final_Project"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen" ResizeMode="CanResize"
-        Title="HealConnect" Height="650" Width="1000" Icon="D:\Q.jpg">
-    <Grid >
-        <Grid.RowDefinitions>
-            <RowDefinition Height=".1*"/>
+        AllowsTransparency="True"
+        Background="{x:Null}"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Title="HealConnect" Height="650" Width="1000" Loaded="Window_Loaded">
+    <Border Grid.Row="0" Background="White" CornerRadius="20" BorderThickness="5" BorderBrush="#1E929B">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="280" ShadowDepth="5" Opacity="0.6"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".06*"/>
+                <RowDefinition Height=".08*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid>
-            <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition MinWidth="150"  MaxWidth="200"/>
-                <ColumnDefinition MinWidth="150" MaxWidth="200"/>
-                <ColumnDefinition MinWidth="150" MaxWidth="200"/>
-                <ColumnDefinition MinWidth="150" MaxWidth="200"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220" x:Name="sidebarcolumn"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="50"/>
-                <ColumnDefinition Width="90"/>
+
             </Grid.ColumnDefinitions>
-            <Border Grid.Row="0" Grid.ColumnSpan="8" Background="White">
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="0 0 5 0" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Style="{DynamicResource notifybutton}"  Margin="5 0 0 0"  Click="MinimizeButton">
+                    <Icon:PackIconMaterial Kind="WindowMinimize"/>
+                </Button>
+                <Button Style="{DynamicResource notifybutton}" Margin="5 0 0 0" Click="MaximizeButton">
+                    <Icon:PackIconMaterial Kind="WindowMaximize"/>
+                </Button>
+                <Button Style="{DynamicResource notifybutton}" Margin="5 0 0 0"  Click="CloseButton" >
+                    <Icon:PackIconMaterial Kind="close" />
+                </Button>
+            </StackPanel>
+
+            <!--<Border Grid.Row="0" Grid.ColumnSpan="8" Background="White">
                 <Border.Effect>
-                    <DropShadowEffect Color="Gray" BlurRadius="20" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                    <DropShadowEffect Color="Gray" BlurRadius="0" Direction="0" ShadowDepth="0" Opacity="0.6"/>
                 </Border.Effect>
-            </Border>
-            <TextBlock Text="HealConnect" Foreground="#a3a3a3" VerticalAlignment="Center" Margin="10" FontSize="16" FontWeight="Black" HorizontalAlignment="Center" />
-            <Button  Grid.Column="1"  Grid.Row="0" Style="{StaticResource editbutton}"  Margin="5" Background="#a3a3a3" Click="OpenDashBoardPage" >
-                <StackPanel Orientation="Horizontal" >
-                    <Icon:PackIconMaterial Kind="MonitorDashboard"/>
-                    <TextBlock Text=" DashBoard" FontSize="14"/>
-                </StackPanel>
-            </Button>
-            <Button  Grid.Column="2"  Grid.Row="0" Style="{StaticResource editbutton}"  Margin="5" Background="#a3a3a3" Click="Button_Click">
-                <StackPanel Orientation="Horizontal" >
-                    <Icon:PackIconMaterial Kind="HospitalMarker"/>
-                    <TextBlock Text=" Laboratory" FontSize="14"/>
-                </StackPanel>
-            </Button>
-            <Button  Grid.Column="3"   Grid.Row="0" Style="{StaticResource editbutton}"  Margin="5" Background="#a3a3a3" Click="Button_Click_3">
-                <StackPanel Orientation="Horizontal" >
-                    <Icon:PackIconMaterial Kind="MedicalBag"/>
-                    <TextBlock Text=" Pharmacy" FontSize="14"/>
-                </StackPanel>
-            </Button>
-            <Button  Grid.Column="4"  Grid.Row="0" Style="{StaticResource editbutton}" Margin="5" Background="#a3a3a3" Click="OpenHMSPage">
-                <StackPanel Orientation="Horizontal" >
-                    <Icon:PackIconMaterial Kind="Hospital"/>
-                    <TextBlock Text=" HMS" FontSize="14"/>
-                </StackPanel>
-            </Button>
-            <Button  Grid.Column="6"  Grid.Row="0" Style="{StaticResource editbutton}">
-                <Icon:PackIconMaterial x:Name="notificationicon" Kind="Bell"/>
-            </Button>
-            <Border Grid.Column="7" MouseEnter="Border_MouseEnter" >
+            </Border>-->
+                <!--<TextBlock Text="HealConnect" Foreground="#a3a3a3" VerticalAlignment="Center" Margin="10" FontSize="16" FontWeight="Black" HorizontalAlignment="Center" />
+                <Button  Grid.Column="1"  Grid.Row="0" Style="{StaticResource editbutton}"  Margin="5" Background="#a3a3a3" Click="OpenDashBoardPage" >
+                    <StackPanel Orientation="Horizontal" >
+                        <Icon:PackIconMaterial Kind="MonitorDashboard"/>
+                        <TextBlock Text=" DashBoard" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+                <Button  Grid.Column="2"  Grid.Row="1" Style="{StaticResource editbutton}"  Margin="5" Background="#a3a3a3" Click="Button_Click">
+                    <StackPanel Orientation="Horizontal" >
+                        <Icon:PackIconMaterial Kind="HospitalMarker"/>
+                        <TextBlock Text=" Laboratory" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+                <Button  Grid.Column="3"   Grid.Row="1" Style="{StaticResource editbutton}"  Margin="5" Background="#a3a3a3" Click="Button_Click_3">
+                    <StackPanel Orientation="Horizontal" >
+                        <Icon:PackIconMaterial Kind="MedicalBag"/>
+                        <TextBlock Text=" Pharmacy" FontSize="14"/>
+                    </StackPanel>
+                </Button>
+                <Button  Grid.Column="4"  Grid.Row="0" Style="{StaticResource editbutton}" Margin="5" Background="#a3a3a3" Click="OpenHMSPage">
+                    <StackPanel Orientation="Horizontal" >
+                        <Icon:PackIconMaterial Kind="Hospital"/>
+                        <TextBlock Text=" HMS" FontSize="14"/>
+                    </StackPanel>
+                </Button>-->
+
+            <Border Grid.Column="0" Grid.RowSpan="3" CornerRadius="20" Margin="10 10 0 10" Background="#1E929B">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="20" Direction="280" ShadowDepth="10" Opacity="0.6"/>
+                </Border.Effect>
                 <DockPanel>
-                    <Border Width="30" Height="30"  Background="red" CornerRadius="100"
-                            DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="30 -30" >
-                        <Ellipse>
-                            <Ellipse.Fill>
-                                <ImageBrush x:Name="userimg" ImageSource="D:\Q.jpg"/>
-                            </Ellipse.Fill>
-                        </Ellipse>
-                    </Border>
-                </DockPanel>
+                    <Border  DockPanel.Dock="Top" Grid.Column="0" Grid.RowSpan="3" CornerRadius="20" Margin="0 10 0 0" Background="#1E929B">
+                        <!--<Border.Effect>
+                            <DropShadowEffect Color="Gray" BlurRadius="20" Direction="180" ShadowDepth="5" Opacity="0.6"/>
+                        </Border.Effect>-->
+                        <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Border>
+                                <DockPanel>
+                                    <Border Width="40" Height="40" CornerRadius="100" DockPanel.Dock="Top">
+                                        <Ellipse>
+                                            <Ellipse.Fill>
+                                                <ImageBrush x:Name="userimg" ImageSource="D:\logo.jpeg"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+                                    </Border>
+                                </DockPanel>
+                            </Border>
+                            <TextBlock Text="HealConnect" Foreground="White" FontSize="22" Margin="5" FontWeight="Bold"/>
+                        </StackPanel>
+                        </Border>
+                        <Separator Margin="15" DockPanel.Dock="Top" Height="0.8" Background="White"/>
+                    <Frame x:Name="SideFrame" DockPanel.Dock="Top" Margin="0 10 0 0" NavigationUIVisibility="Hidden"/>
+
+                    </DockPanel>
             </Border>
 
-        </Grid>
-        <StackPanel x:Name="accountinfo" Grid.Row="1"  Margin="0 5" 
+
+
+
+
+
+
+
+
+
+
+
+                    <Button Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Left" Style="{DynamicResource notifybutton}" Margin="10 0 0 0" Click="ToggleSidebar">
+                <Icon:PackIconMaterial x:Name="Sidebar" Kind="ArrowLeft"/>
+            </Button>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Style="{DynamicResource notifybutton}" Margin="10 0 0 0">
+                        <Icon:PackIconMaterial Kind="Bell"/>
+                    </Button>
+                    <!--<Button Style="{DynamicResource notifybutton}" Background="red" Margin="-15 15 0 30" Height="7" MinWidth="7" Width="auto" Content="7" FontSize="5"/>-->
+                </StackPanel>
+                <TextBlock Text="Muhammad Ali" Margin="10 10 5 10" FontWeight="SemiBold"/>
+                <Icon:PackIconMaterial Kind="Account" Margin="0 10 10 10" Height="20" Width="20"/>
+                <!--<Border Grid.Column="7" MouseEnter="Border_MouseEnter" >
+    <DockPanel>
+        <Border Width="30" Height="30"  Background="red" CornerRadius="100"
+                DockPanel.Dock="Top" HorizontalAlignment="Right" Margin="10 -30" >
+            <Ellipse>
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="userimg" ImageSource="D:\Q.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+        </Border>
+    </DockPanel>
+</Border>-->
+            </StackPanel>
+              
+        <StackPanel x:Name="accountinfo" Grid.Row="2"  Margin="0 5" 
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Top"
                     Visibility="Hidden"
                     Background="Transparent"
                     Panel.ZIndex="2">
-           
-                    <Border Background="White" Width="200" Height="auto" CornerRadius="10">
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="30" Direction="0" ShadowDepth="5" Opacity="0.6"/>
-                        </Border.Effect>
-                        <StackPanel>
-                
-               
+
+            <Border Background="White" Width="200" Height="auto" CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="30" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                </Border.Effect>
+                <StackPanel>
+
+
                     <TextBlock Text="JohnDoe" Margin="5 5 0 0" FontSize="16" HorizontalAlignment="Stretch"/>
 
-   
+
                     <TextBlock Text="johndoe@example.com" Margin="5" Foreground="Gray" HorizontalAlignment="Stretch"/>
                     <Border BorderBrush="Black" BorderThickness="1" Width="200" HorizontalAlignment="Left"/>
 
@@ -99,10 +165,11 @@
                     </StackPanel>
 
                 </StackPanel>
-                    </Border>
-                </StackPanel>
+            </Border>
+        </StackPanel>
 
-        
-        <Frame x:Name="MainFrame" Grid.Row="1" Margin="0" NavigationUIVisibility="Hidden"/>
+
+        <Frame x:Name="MainFrame" Grid.Row="2" Grid.Column="1"  Margin="0" NavigationUIVisibility="Hidden"/>
     </Grid>
+        </Border>
 </Window>

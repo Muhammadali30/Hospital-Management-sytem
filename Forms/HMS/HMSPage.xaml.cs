@@ -45,7 +45,7 @@ namespace Final_Project.Forms.HMS
         }
         private void OpenPatientListPage(object sender, RoutedEventArgs e)
         {
-            OpenNewPage(new PatientListPage());
+            //OpenNewPage(new PatientListPage());
         }
         private void OpenDoctorPage(object sender, RoutedEventArgs e)
         {
