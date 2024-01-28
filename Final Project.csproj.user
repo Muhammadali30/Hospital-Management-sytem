@@ -123,9 +123,6 @@
     <Compile Update="Forms\Laboratory\InnerPages\NewLabTestTemplatePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Forms\Laboratory\LaboratoryPage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Forms\loginpage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -171,7 +168,7 @@
     <Compile Update="Forms\Pharmacy\InnerPages\SupplierListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Forms\Pharmacy\PharmacyPage.xaml.cs">
+    <Compile Update="Forms\Pharmacy\PharmacySidebar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\SPLASH\InnerPages\LoadingPage.xaml.cs">
@@ -299,9 +296,6 @@
     <Page Update="Forms\Laboratory\InnerPages\NewLabTestTemplatePage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Forms\Laboratory\LaboratoryPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Forms\loginpage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -350,7 +344,7 @@
     <Page Update="Forms\Pharmacy\InnerPages\SupplierListPage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Forms\Pharmacy\PharmacyPage.xaml">
+    <Page Update="Forms\Pharmacy\PharmacySidebar.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\SPLASH\InnerPages\LoadingPage.xaml">

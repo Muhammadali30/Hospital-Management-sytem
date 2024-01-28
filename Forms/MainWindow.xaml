@@ -121,8 +121,10 @@
                     </Button>
                     <!--<Button Style="{DynamicResource notifybutton}" Background="red" Margin="-15 15 0 30" Height="7" MinWidth="7" Width="auto" Content="7" FontSize="5"/>-->
                 </StackPanel>
-                <TextBlock Text="Muhammad Ali" Margin="10 10 5 10" FontWeight="SemiBold"/>
+                <StackPanel Orientation="Horizontal" MouseLeftButtonDown="ToggleAccountCart" >
+                    <TextBlock Text="Muhammad Ali" Margin="10 13 5 10" FontWeight="SemiBold"/>
                 <Icon:PackIconMaterial Kind="Account" Margin="0 10 10 10" Height="20" Width="20"/>
+                </StackPanel>
                 <!--<Border Grid.Column="7" MouseEnter="Border_MouseEnter" >
     <DockPanel>
         <Border Width="30" Height="30"  Background="red" CornerRadius="100"
@@ -137,35 +139,65 @@
 </Border>-->
             </StackPanel>
               
-        <StackPanel x:Name="accountinfo" Grid.Row="2"  Margin="0 5" 
+        <StackPanel x:Name="accountinfo" Grid.Row="2" Grid.Column="2"  Margin="10 5" 
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Top"
                     Visibility="Hidden"
                     Background="Transparent"
                     Panel.ZIndex="2">
 
-            <Border Background="White" Width="200" Height="auto" CornerRadius="10">
+            <Border Background="White" Width="250" Height="auto" CornerRadius="10">
                 <Border.Effect>
-                    <DropShadowEffect Color="Black" BlurRadius="30" Direction="0" ShadowDepth="5" Opacity="0.6"/>
+                    <DropShadowEffect Color="Black" BlurRadius="20" Direction="240" ShadowDepth="5" Opacity="0.6"/>
                 </Border.Effect>
-                <StackPanel>
+                    <DockPanel>
+                        <StackPanel>
+                            
+                                <StackPanel Orientation="Horizontal">
+                            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                                <Border>
+                                    <DockPanel>
+                                        <Border Width="40" Height="40" CornerRadius="100" DockPanel.Dock="Top">
+                                            <Ellipse>
+                                                <Ellipse.Fill>
+                                                    <ImageBrush x:Name="uerimg" ImageSource="D:\q.jpg"/>
+                                                </Ellipse.Fill>
+                                            </Ellipse>
+                                        </Border>
+                                    </DockPanel>
+                                </Border>
+                                    
+                            </StackPanel >
+                            <StackPanel Orientation="Vertical" MinWidth="150" MaxWidth="150">
+                                <TextBlock Text="Muhammad Ali" FontSize="14" Margin="0 15 0 0" FontWeight="Bold"/>
+                                <TextBlock Text="muhammad_ali" FontSize="12" Foreground="Gray" Margin="0 3 0 0" FontWeight="Bold"/>
+                            </StackPanel>
+                            <Border Width="1" Background="black" VerticalAlignment="Stretch" Margin="5 10"/>
+                            <Button Style="{DynamicResource notifybutton}" Margin="0 0 0 0">
+                                <Icon:PackIconMaterial Kind="ClipboardEditOutline"/>
+                            </Button>
+                        </StackPanel>
+             
+                            <StackPanel>
+                                <Button   Style="{StaticResource editbutton}" Foreground="Black" Background="White" FontSize="16">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <Icon:PackIconMaterial Kind="BackupRestore" Margin="-90 0 0 0"/>
+                                        <TextBlock Text="Backup" FontSize="14" Margin="-70 -3 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                                <Separator Margin="5" DockPanel.Dock="Top" Height="0.8" Background="gray" Opacity="0.5"/>
+                                <Button   Style="{StaticResource editbutton}" Foreground="Black" Background="White" FontSize="16">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="5">
+                                        <Icon:PackIconMaterial Kind="Logout" Margin="-90 0 0 0"/>
+                                        <TextBlock Text="Logout" FontSize="14" Margin="-70 -3 0 0"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
 
-
-                    <TextBlock Text="JohnDoe" Margin="5 5 0 0" FontSize="16" HorizontalAlignment="Stretch"/>
-
-
-                    <TextBlock Text="johndoe@example.com" Margin="5" Foreground="Gray" HorizontalAlignment="Stretch"/>
-                    <Border BorderBrush="Black" BorderThickness="1" Width="200" HorizontalAlignment="Left"/>
-
-
-                    <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <!--<Button Content="Settings" Margin="5" Style="{DynamicResource editbutton}"/>-->
-                        <Button Content="Backup" Margin="5" Style="{DynamicResource editbutton}"/>
-                        <Button Content="Logout" Margin="5" Style="{DynamicResource editbutton}" Click="Button_Click_2" />
-                    </StackPanel>
-
-                </StackPanel>
-            </Border>
+                        </StackPanel>
+                        
+                    </DockPanel>
+                </Border>
         </StackPanel>
 
 

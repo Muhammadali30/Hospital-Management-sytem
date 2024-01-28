@@ -20,11 +20,9 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
     /// </summary>
     public partial class SupplierListPage : Page
     {
-        Frame frame;
-        public SupplierListPage(Frame MF)
+        public SupplierListPage()
         {
             InitializeComponent();
-            frame = MF;
         }
 
         private void OpenNewSupplierPage(object sender, RoutedEventArgs e)

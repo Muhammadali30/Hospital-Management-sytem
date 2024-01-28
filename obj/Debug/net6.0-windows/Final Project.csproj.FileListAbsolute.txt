@@ -43,8 +43,6 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\DoctorsPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\patientdoctorform.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\patientdoctorform.baml
-C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacyPage.g.cs
-C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacyPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\AddMedicinePage.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\AddMedicinePage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\MedicineListPage.g.cs
@@ -83,8 +81,6 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\AddDeathReportPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\BirthReportsPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\HMS\InnerPages\MiscPages\DeathListPage.baml
-C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LaboratoryPage.g.cs
-C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LaboratoryPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\DashboardPage.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Dashboard\InnerPages\Pharmacy_Dashboard.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\LiveCharts.dll
@@ -144,3 +140,5 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\OPD\InnerPages\AddDoctorPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LabSidebarPage.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LabSidebarPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacySidebar.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacySidebar.baml

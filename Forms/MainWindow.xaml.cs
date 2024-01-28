@@ -32,6 +32,8 @@ namespace Final_Project
 
             //OPD();
             LAB();
+            PHARMACY();
+
 
         }
         private void OPD()
@@ -92,19 +94,7 @@ namespace Final_Project
             SideFrame.Content = new LabSidebarPage(MainFrame);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void PHARMACY()
         {
             if (MainFrame.NavigationService != null)
             {
@@ -117,24 +107,32 @@ namespace Final_Project
                 // Load the new page
 
             }
-            MainFrame.Content = new LaboratoryPage();
-        }
+            MainFrame.Content = new OpdDashboard();
 
-      
-
-
-        private void Border_MouseEnter(object sender, MouseEventArgs e)
-        {
-            if (accountinfo.Visibility == Visibility.Hidden)
+            if (SideFrame.NavigationService != null)
             {
-                accountinfo.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                accountinfo.Visibility = Visibility.Hidden;
+                // Remove the previous page from the navigation history
+                if (SideFrame.NavigationService.CanGoBack)
+                {
+                    SideFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
 
             }
+            SideFrame.Content = new PharmacySidebar(MainFrame);
         }
+
+
+
+
+
+
+
+
+
+
+
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -143,21 +141,6 @@ namespace Final_Project
             this.Close();
         }
 
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            if (MainFrame.NavigationService != null)
-            {
-                // Remove the previous page from the navigation history
-                if (MainFrame.NavigationService.CanGoBack)
-                {
-                    MainFrame.NavigationService.RemoveBackEntry();
-                }
-
-                // Load the new page
-
-            }
-            MainFrame.Content = new PharmacyPage();
-        }
 
         private void OpenHMSPage(object sender, RoutedEventArgs e)
         {
@@ -236,6 +219,11 @@ namespace Final_Project
                 sidebarcolumn.Width = new GridLength(220);
                 Sidebar.Kind = MahApps.Metro.IconPacks.PackIconMaterialKind.ArrowLeft;
             }
+        }
+
+        private void ToggleAccountCart(object sender, MouseButtonEventArgs e)
+        {
+            accountinfo.Visibility = (accountinfo.Visibility == Visibility.Visible) ? Visibility.Hidden : Visibility.Visible;
         }
     }
     }

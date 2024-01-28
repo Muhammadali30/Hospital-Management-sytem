@@ -283,7 +283,7 @@
                                 <Setter TargetName="btnBorder" Property="Background" Value="white"/>
                                 <Setter Property="BorderBrush" Value="black"/>
                                 <Setter Property="Foreground" Value="black"/>
-
+                                <Setter Property="FontWeight" Value="Bold"/>
                             </Trigger>
                             <!-- Add other triggers as needed -->
                         </ControlTemplate.Triggers>

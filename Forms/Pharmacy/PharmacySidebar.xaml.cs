@@ -17,15 +17,16 @@ using System.Windows.Shapes;
 namespace Final_Project.Forms.Pharmacy
 {
     /// <summary>
-    /// Interaction logic for PharmacyPage.xaml
+    /// Interaction logic for PharmacySidebar.xaml
     /// </summary>
-    public partial class PharmacyPage : Page
+    public partial class PharmacySidebar : Page
     {
-        public PharmacyPage()
+        Frame MainFrame;
+        public PharmacySidebar(Frame mainFrame)
         {
             InitializeComponent();
+            MainFrame = mainFrame;
         }
-
         private void OpenAddMedForm(object sender, RoutedEventArgs e)
         {
             if (MainFrame.NavigationService != null)
@@ -119,7 +120,7 @@ namespace Final_Project.Forms.Pharmacy
                 // Load the new page
 
             }
-            MainFrame.Content = new SupplierListPage(MainFrame);
+            MainFrame.Content = new SupplierListPage();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
