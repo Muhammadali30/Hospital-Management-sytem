@@ -17,12 +17,12 @@
         </Grid.RowDefinitions>
         <Button x:Name="addbtn" Grid.Row="1" Style="{StaticResource editbutton}" Content="Add Department " Margin="0 20 15 5" HorizontalAlignment="Right" Click="ShowDepartmentFormButton"/>
         <StackPanel x:Name="adddepartmentform" Visibility="Hidden" HorizontalAlignment="Right" Grid.Row="1" Orientation="Horizontal" Margin="5">
-            <TextBox Tag="New Department"  Style="{DynamicResource textboxstyle}"/>
-            <Button Content="ADD" Style="{DynamicResource editbutton}" Margin="5"/>
+            <TextBox x:Name="departname" Tag="New Department"  Style="{DynamicResource textboxstyle}"/>
+            <Button Content="ADD" Style="{DynamicResource editbutton}" Margin="5" Click="AddDepartment"/>
             <Button Content="Cancel" Style="{DynamicResource editbutton}" Margin="5" Background="red" Click="CancelDepartmentFormButton"/>
         </StackPanel>
         <TextBlock Text="Lab Departments" FontSize="22" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Margin="10 10 0 0"/>
-        <DataGrid  Grid.Row="2" IsReadOnly="True" Grid.ColumnSpan="2"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+        <DataGrid x:Name="DepartmentGridview"  Grid.Row="2" IsReadOnly="True" Grid.ColumnSpan="2"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
         </DataGrid>
     </Grid>
 </Page>

@@ -27,7 +27,7 @@
 
 
         <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Add Lab Procedure List " Grid.Column="3"  Margin="0 20 15 5" HorizontalAlignment="Right"/>
-        <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Add New Template " Grid.Column="2"  Margin="5 20 5 5" HorizontalAlignment="Right" Click="AddNewTemplatePage"/>
+        <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Add New Template " Grid.Column="2"  Margin="5,20,5,5" Click="AddNewTemplatePage"/>
         <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Edit Price " Height="auto" Grid.Column="1"  Margin="5 20 5 5" HorizontalAlignment="Right" Click="EditTemplatesPrice"/>
         <Button Grid.Row="2" Style="{StaticResource editbutton}" Content="Print "  Margin="5 20 5 5" HorizontalAlignment="Right"/>
         <TextBlock Text="Lab Templates" FontSize="22" FontWeight="Bold" Grid.Row="0" Grid.Column="0" Margin="10 10 0 0"/>
@@ -38,8 +38,7 @@
             <ComboBoxItem Content="By Template"/>
             <ComboBoxItem Content="By Department"/>
         </ComboBox>
-        <DataGrid  Grid.Row="4" IsReadOnly="True" Grid.ColumnSpan="4"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
-        </DataGrid>
+        <DataGrid x:Name="templategrid" Grid.Row="4"  IsReadOnly="True" Grid.ColumnSpan="4" Style="{DynamicResource datagrid}" Margin="10" />
         <StackPanel Orientation="Horizontal" Grid.Row="5" Grid.Column="3" Margin="10" HorizontalAlignment="Center" VerticalAlignment="Bottom">
        
 

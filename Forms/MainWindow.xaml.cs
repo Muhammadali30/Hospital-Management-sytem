@@ -32,7 +32,7 @@ namespace Final_Project
 
             //OPD();
             LAB();
-            PHARMACY();
+            //PHARMACY();
 
 
         }

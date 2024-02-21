@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +38,24 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         {
             addbtn.Visibility = Visibility.Hidden;
             adddepartmentform.Visibility = Visibility.Visible;
+        }
+
+        private void AddDepartment(object sender, RoutedEventArgs e)
+        {
+            // Create an instance of the Database class
+            Database database = new Database();
+
+            //// Get the department name from the departname TextBox
+            //string departmentName = departname.Text;
+
+            //// Use a parameterized query to insert the department name
+            //string query = "INSERT INTO Lab_Departments (department_name) VALUES (@DepartmentName)";
+
+            //// Call the AddData method with the query and parameter
+           DataTable dt= database.READ("select * from Lab_Departments", null);
+            DepartmentGridview.ItemsSource = dt.DefaultView;
+            DepartmentGridview.Columns[0].Header = "Department ID";
+            DepartmentGridview.Columns[1].Header = "Department Name";
         }
     }
 }

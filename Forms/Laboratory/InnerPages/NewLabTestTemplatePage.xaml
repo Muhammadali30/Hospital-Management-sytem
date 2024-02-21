@@ -40,19 +40,29 @@
 
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" FontWeight="SemiBold" Style="{StaticResource editbutton}" Content="Back" Margin="25 20 5 5" HorizontalAlignment="Left"/>
+                <Button Grid.Row="0" FontWeight="SemiBold" Style="{StaticResource editbutton}" Content="Back" Margin="25 20 5 5" HorizontalAlignment="Left" Click="Button_Click"/>
                 <WrapPanel Orientation="Horizontal" Grid.Row="1">
                     <StackPanel Margin="10" Orientation="Vertical" >
                         <TextBlock Text="Test Name" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Test name" Width="200"/>
+                        <TextBox x:Name="testname" Style="{DynamicResource textboxstyle}" Tag="Test name" Width="200"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Price" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Price" Width="200"/>
+                        <TextBox x:Name="price" Style="{DynamicResource textboxstyle}" Tag="Price" Width="200"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
                         <TextBlock Text="Department" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Department" Width="200"/>
+                        <Border CornerRadius="10" Margin="0" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                            <ComboBox x:Name="combodepartment" Background="White"  BorderBrush="White"
+                                      BorderThickness="0"
+                                      Width="200" IsEditable="True"
+                                      IsTextSearchEnabled="True"
+                                      StaysOpenOnEdit="True"
+                                      SelectedIndex="0"
+                                      Margin="2" SelectionChanged="combodepartment_SelectionChanged"
+                                      
+                                     />
+                        </Border>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                         <TextBlock Text="Template Type" Margin="5" FontWeight="Bold" />
@@ -72,11 +82,11 @@
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Sample Quantity" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Sample" Width="200"/>
+                        <TextBox x:Name="samplequantity" Style="{DynamicResource textboxstyle}" Tag="Sample" Width="200"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
                         <TextBlock Text="Code" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Code" Width="200"/>
+                        <TextBox x:Name="code" Style="{DynamicResource textboxstyle}" Tag="Code" Width="200"/>
                     </StackPanel>
 
 
@@ -112,10 +122,10 @@
                 <Button Style="{StaticResource editbutton}" Grid.Row="5" Content="Add Field" FontWeight="SemiBold" Width="100" Click="AddNewFieldButton" Margin="10 30" HorizontalAlignment="Left"/>
                 <StackPanel Margin="10" Grid.Row="6" Orientation="Vertical" Grid.Column="0">
                     <TextBlock Text="Interpretation / Comments" Margin="5" FontWeight="Bold" />
-                    <TextBox Style="{DynamicResource textboxstyle}" Tag="Type Something" MinWidth="200" Width="auto" Height="auto"/>
+                    <TextBox x:Name="comments" Style="{DynamicResource textboxstyle}" Tag="Type Something" MinWidth="200" Width="auto" Height="auto"/>
                 </StackPanel>
 
-                <Button Grid.Row="7" Style="{StaticResource editbutton}" Content="Submit" Margin="30" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right"/>
+                <Button Grid.Row="7" Style="{StaticResource editbutton}" Content="Submit" Margin="30" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click_1"/>
            
 
             </Grid>
