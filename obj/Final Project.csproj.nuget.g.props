@@ -13,6 +13,7 @@
     <SourceRoot Include="C:\Users\Ali\.nuget\packages\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgPdfiumViewer Condition=" '$(PkgPdfiumViewer)' == '' ">C:\Users\Ali\.nuget\packages\pdfiumviewer\2.13.0</PkgPdfiumViewer>
     <PkgMicrosoft_Xaml_Behaviors_Wpf Condition=" '$(PkgMicrosoft_Xaml_Behaviors_Wpf)' == '' ">C:\Users\Ali\.nuget\packages\microsoft.xaml.behaviors.wpf\1.1.39</PkgMicrosoft_Xaml_Behaviors_Wpf>
     <PkgMaterialDesignThemes Condition=" '$(PkgMaterialDesignThemes)' == '' ">C:\Users\Ali\.nuget\packages\materialdesignthemes\4.9.0</PkgMaterialDesignThemes>
     <PkgLiveCharts_Wpf Condition=" '$(PkgLiveCharts_Wpf)' == '' ">C:\Users\Ali\.nuget\packages\livecharts.wpf\0.9.7</PkgLiveCharts_Wpf>

@@ -40,7 +40,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
                 e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
             };
 
-
+    
         }
         private void AddNewTemplatePage(object sender, RoutedEventArgs e)
         {

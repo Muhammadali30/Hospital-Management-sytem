@@ -13,10 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.PDF" Version="24.2.0" />
     <PackageReference Include="Humanizer" Version="2.14.1" />
     <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
     <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+    <PackageReference Include="PdfiumViewer" Version="2.13.0" />
+    <PackageReference Include="PDFsharp" Version="6.0.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
