@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -61,7 +62,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             comboBoxtemplate.SelectionChanged += comboBoxtemplate_SelectionChanged;
             comboBoxtemplate.ItemsSource = template_name.DefaultView;
             comboBoxtemplate.DisplayMemberPath = "name";
-            comboBoxtemplate.SelectedValue = "id";
+            comboBoxtemplate.SelectedValue = "price";
 
             comboBoxtemplate.SelectedIndex = 0;
 
@@ -88,14 +89,14 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             discription.Children.Add(textBoxUnit);
 
             // For fieldnormalrangemale
-            TextBox ratefield = new TextBox
+            TextBox pricefield = new TextBox
             {
                 Width = 90,
                 Margin = new Thickness(5),
                 Tag = "Rate",
                 Style = textBoxStyle
             };
-            rate.Children.Add(ratefield);
+            price.Children.Add(pricefield);
 
             // For fieldnormalrangefemale
             TextBox quantityfield = new TextBox
@@ -138,13 +139,25 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         private void comboBoxtemplate_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
+            //StackPanel stackPanel = comboBox.Parent as StackPanel;
+            int index = 0;
+            if (comboBox.Parent is Border border && border.Parent is StackPanel stackPanel)
+            {
+                index = stackPanel.Children.IndexOf(border);
+            }
+            long p = 0;
             if (comboBox != null)
             {
                 DataRowView selectedRow = comboBox.SelectedItem as DataRowView;
-                //int deparment_id = selectedRow != null ? Convert.ToInt32(selectedRow["id"]) : 0;
-                int id = Convert.ToInt32(selectedRow["id"]);
-                MessageBox.Show(id.ToString());
+                int deparment_id = selectedRow != null ? Convert.ToInt32(selectedRow["id"]) : 0;
+                p = selectedRow != null && selectedRow["price"] != DBNull.Value ? Convert.ToInt64(selectedRow["price"]) : 0;
+                //MessageBox.Show(deparment_id.ToString()+$" index is {index}.. {p} ");
             }
+                if (price.Children[index] is TextBox tx)
+                {
+                    tx.Text = p.ToString();
+                    tx.IsEnabled = false;
+                }
         }
 
         public void OnButtonClick(object sender,EventArgs e)
@@ -153,7 +166,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             int del = delete.Children.IndexOf(button);
             delete.Children.RemoveAt(del);
             template.Children.RemoveAt(del);
-            rate.Children.RemoveAt(del);
+            price.Children.RemoveAt(del);
             date.Children.RemoveAt(del);
             quantity.Children.RemoveAt(del);
             discription.Children.RemoveAt(del);
@@ -161,7 +174,28 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 
         private void printbutton(object sender, RoutedEventArgs e)
         {
-            EmailClass.Send_Email();
+           int total_price = 0;
+            for (int i=0;i<template.Children.Count;i++)
+            {
+                var t = template.Children[i] is Border border ? border.Child as TextBox : null;
+                var p = price.Children.Count > i ? price.Children[i] as TextBox : null;
+                var da = date.Children.Count > i ? date.Children[i] as TextBox : null;
+                var q = quantity.Children.Count > i ? quantity.Children[i] as TextBox : null;
+                var di = discription.Children.Count > i ? discription.Children[i] as TextBox : null;
+
+                if (p != null && !string.IsNullOrEmpty(p.Text))
+                {
+                    total_price += Convert.ToInt32(p.Text);
+                }
+            }
+            totaltextblock.Text = total_price.ToString();
+
+
+
+
+
+
+            //EmailClass.Send_Email();
             //PdfClass pc = new PdfClass(); 
 
             //PdfDocument pdfDocument = pc.Main();
@@ -191,6 +225,50 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             }
 
             return flowDocument;
+        }
+
+        private void TogglePatientButton(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            if (registerpatients.Visibility==Visibility.Collapsed)
+            {
+                btn.Content = "Un-Registered";
+                registerpatients.Visibility = Visibility.Visible;
+                unregisterpatients.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                btn.Content = "Registered";
+                registerpatients.Visibility = Visibility.Collapsed;
+                unregisterpatients.Visibility = Visibility.Visible;
+            }
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+
+        }
+
+        private void discounttextbox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (combodiscount?.Text == "Value")
+            {
+               
+                    int discount = 0;
+                    if (int.TryParse(discounttextbox.Text, out discount))
+                    {
+                        grandtotaltextblock.Text = (Convert.ToInt16(totaltextblock.Text) - discount).ToString();
+                    }
+                    else
+                    {
+                        // Handle invalid discounttextbox.Text
+                        grandtotaltextblock.Text = "Invalid discount";
+                    }
+                }
+       
+
+            
         }
     }
 }

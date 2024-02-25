@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Final_Project.Forms.Laboratory.InnerPages"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="800"
       Title="LabInvoicePage">
 
     <Grid>
@@ -40,18 +40,26 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Margin="10" Grid.Row="0" Orientation="Horizontal" >
-                    <TextBlock Text="Patient" Margin="5" FontWeight="Bold" />
-                    <ComboBox x:Name="searchComboBox" Width="200" Margin="0" IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True">
-                        <ComboBoxItem Content="Muhammad Ali"/>
-                        <ComboBoxItem Content="Abdur Rafay"/>
-                        <ComboBoxItem Content="Adnan Ahmed"/>
-
-                        <!--<ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding}" />
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>-->
-                    </ComboBox>
+                    <Button Style="{StaticResource editbutton}" Grid.Row="5" Content="Registered" Width="100" Click="TogglePatientButton" Margin="10" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Patient" Margin="0 15" FontWeight="Bold"/>
+                    <StackPanel x:Name="registerpatients" Visibility="Collapsed">
+                        <Border CornerRadius="10" Margin="11" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                            <ComboBox Background="White"  BorderBrush="White"
+                               BorderThickness="0"
+                               Width="200" IsEditable="True"
+                               IsTextSearchEnabled="True"
+                               StaysOpenOnEdit="True"
+                               SelectedIndex="0"
+                               Margin="2"
+                             />
+                        </Border>
+                    </StackPanel>
+                    <StackPanel x:Name="unregisterpatients" Orientation="Horizontal">
+                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Name" Margin="5" MinWidth="120" Width="auto" Height="auto"/>
+                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Age" Margin="5" MinWidth="70" Width="auto" Height="auto"/>
+                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Phone" Margin="5" MinWidth="120" Width="auto" Height="auto"/>
+                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Email" Margin="5" MinWidth="150" Width="auto" Height="auto"/>
+                    </StackPanel>
                 </StackPanel>
                 <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
                     <StackPanel Orientation="Horizontal">
@@ -67,8 +75,8 @@
                             <TextBlock Text="Description" Margin="5" FontWeight="Bold" />
 
                         </StackPanel>
-                        <StackPanel x:Name="rate"  Width="100">
-                            <TextBlock Text="Rate" Margin="5" FontWeight="Bold" />
+                        <StackPanel x:Name="price"  Width="100">
+                            <TextBlock Text="Price" Margin="5" FontWeight="Bold" />
 
                         </StackPanel>
                         <StackPanel x:Name="quantity"  Width="100">
@@ -90,15 +98,15 @@
 
                 <StackPanel Margin="10" Grid.Row="6" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Right">
                     <TextBlock Text="Total Discount Rs. " Margin="25" FontWeight="Bold" />
-                    <TextBox Style="{DynamicResource textboxstyle}" Tag="0" Width="100" Margin="10 0 10 0"/>
-                    <ComboBox Grid.Row="3" Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0"  Width="100" Height="30" SelectedIndex="0" >
+                    <TextBox x:Name="discounttextbox" Style="{DynamicResource textboxstyle}" Tag="0" Width="100" Margin="10 0 10 0" KeyUp="discounttextbox_KeyUp"/>
+                    <ComboBox x:Name="combodiscount" Grid.Row="3" Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0"  Width="100" Height="30" SelectedIndex="0" >
                         <ComboBoxItem Content="Value"/>
                         <ComboBoxItem Content="%"/>
                     </ComboBox>
                     <StackPanel Orientation="Vertical" Margin="10">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Sub-Total Rs. " FontWeight="Bold"/>
-                            <TextBlock Text="85"/>
+                            <TextBlock x:Name="totaltextblock" Text="0"/>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Discount Rs. " FontWeight="Bold"/>
@@ -106,26 +114,19 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Grand Total Rs. " FontWeight="Bold"/>
-                            <TextBlock Text="85"/>
+                            <TextBlock x:Name="grandtotaltextblock" Text="0"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Row="7" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Right">
-                    <TextBox Style="{DynamicResource textboxstyle}" Tag="27/01/2024" Width="200" Margin="10 0 10 0"/>
                     <ComboBox  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0"  Width="100" Height="30" SelectedIndex="0" >
                         <ComboBoxItem Content="Cash"/>
-                        <ComboBoxItem Content="Cheque"/>
-                        <ComboBoxItem Content="Debit/Credit Card"/>
                         <ComboBoxItem Content="Online Payment"/>
                     </ComboBox>
                     <TextBlock Text="Payment Rs. " Margin="25" FontWeight="Bold" />
                     <TextBox Style="{DynamicResource textboxstyle}" Tag="0" Width="100" Margin="10 0 10 0"/>
                 </StackPanel>
                 <StackPanel Grid.Row="8">
-                    <StackPanel Margin="0" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Right">
-                        <TextBlock Text="Due Rs. " Margin="0" FontWeight="Bold" />
-                        <TextBlock Text="85" Margin="5 0 50 0" />
-                    </StackPanel>
                     <StackPanel Margin="0" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Right">
                         <TextBlock Text="Return Rs. " Margin="0" FontWeight="Bold" />
                         <TextBlock Text="0" Margin="5 0 50 0" />
@@ -136,17 +137,6 @@
                     <ComboBox  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right"   Width="150" Height="30" SelectedIndex="0" >
                         <ComboBoxItem Content="Routine"/>
                         <ComboBoxItem Content="Urgent"/>
-                        <ComboBoxItem Content="Stat"/>
-                        <ComboBoxItem Content="Online Payment"/>
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Margin="10" Grid.Row="10" Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
-                    <TextBlock Text="Lab Referral: " Margin="5" FontWeight="Bold" />
-                    <ComboBox  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right"   Width="150" Height="30" SelectedIndex="0" >
-                        <ComboBoxItem IsEnabled="False" Content="Select Lab referral"/>
-                        <ComboBoxItem Content="Ali"/>
-                        <ComboBoxItem Content="Rafy"/>
-                        <ComboBoxItem Content="Adnan"/>
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Row="11" Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
@@ -161,7 +151,7 @@
                 </StackPanel>
 
 
-                <FlowDocumentScrollViewer Grid.Row="13" Height="200" x:Name="flowDocumentViewer"/>
+                <!--<FlowDocumentScrollViewer Grid.Row="13" Height="200" x:Name="flowDocumentViewer"/>-->
             </Grid>
             
         </ScrollViewer>
