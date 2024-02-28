@@ -55,10 +55,10 @@
                         </Border>
                     </StackPanel>
                     <StackPanel x:Name="unregisterpatients" Orientation="Horizontal">
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Name" Margin="5" MinWidth="120" Width="auto" Height="auto"/>
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Age" Margin="5" MinWidth="70" Width="auto" Height="auto"/>
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Phone" Margin="5" MinWidth="120" Width="auto" Height="auto"/>
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Email" Margin="5" MinWidth="150" Width="auto" Height="auto"/>
+                        <TextBox x:Name="unregistername" Style="{DynamicResource textboxstyle}" Tag="Name" Margin="5" MinWidth="120" Width="auto" Height="auto"/>
+                        <TextBox x:Name="unregisterage" Style="{DynamicResource textboxstyle}" Tag="Age" Margin="5" MinWidth="70" Width="auto" Height="auto"/>
+                        <TextBox x:Name="unregisterphone" Style="{DynamicResource textboxstyle}" Tag="Phone" Margin="5" MinWidth="120" Width="auto" Height="auto"/>
+                        <TextBox x:Name="unregisteremail" Style="{DynamicResource textboxstyle}" Tag="Email" Margin="5" MinWidth="150" Width="auto" Height="auto"/>
                     </StackPanel>
                 </StackPanel>
                 <ScrollViewer Grid.Row="4" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
@@ -71,10 +71,7 @@
                         <!--<StackPanel x:Name="fieldresult" Width="100">
                             <TextBlock Text="Result" Margin="5" FontWeight="Bold" />
                         </StackPanel>-->
-                        <StackPanel x:Name="discription"  Width="100">
-                            <TextBlock Text="Description" Margin="5" FontWeight="Bold" />
-
-                        </StackPanel>
+                      
                         <StackPanel x:Name="price"  Width="100">
                             <TextBlock Text="Price" Margin="5" FontWeight="Bold" />
 
@@ -85,6 +82,10 @@
                         </StackPanel>
                         <StackPanel x:Name="date"  Width="150">
                             <TextBlock Text="Completion Time" Margin="5" FontWeight="Bold" />
+                        </StackPanel>
+                        <StackPanel x:Name="Total"  Width="100">
+                            <TextBlock Text="Total" Margin="5" FontWeight="Bold" />
+
                         </StackPanel>
                         <StackPanel x:Name="delete"  Width="100">
                             <TextBlock Text="Delete" Margin="5" FontWeight="Bold" />
@@ -119,7 +120,7 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Row="7" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Right">
-                    <ComboBox  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0"  Width="100" Height="30" SelectedIndex="0" >
+                    <ComboBox x:Name="combopayment"  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 0 0"  Width="100" Height="30" SelectedIndex="0" >
                         <ComboBoxItem Content="Cash"/>
                         <ComboBoxItem Content="Online Payment"/>
                     </ComboBox>
@@ -134,19 +135,19 @@
                 </StackPanel>
                 <StackPanel Margin="9" Grid.Row="9" Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
                     <TextBlock Text="Priority: " Margin="5" FontWeight="Bold" />
-                    <ComboBox  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right"   Width="150" Height="30" SelectedIndex="0" >
+                    <ComboBox x:Name="combopriority"  Style="{StaticResource CustomComboBoxStyle}"  Grid.Column="2" HorizontalAlignment="Right"   Width="150" Height="30" SelectedIndex="0" >
                         <ComboBoxItem Content="Routine"/>
                         <ComboBoxItem Content="Urgent"/>
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Margin="10" Grid.Row="11" Orientation="Vertical" Grid.Column="0" HorizontalAlignment="Left">
                     <TextBlock Text="Invoice Note: " Margin="5" FontWeight="Bold" />
-                    <TextBox Style="{DynamicResource textboxstyle}" Tag="Type Something" MinWidth="200" Width="auto" Height="auto"/>
+                    <TextBox x:Name="notetextbox" Style="{DynamicResource textboxstyle}" Tag="Type Something" MinWidth="200" Width="auto" Height="auto"/>
                 </StackPanel>
 
 
                 <StackPanel Grid.Row="12" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button  Style="{StaticResource editbutton}" Margin="10 30 0 30" Width="100" Content="SAVE" FontSize="16" HorizontalAlignment="Right"/>
+                    <Button  Style="{StaticResource editbutton}" Margin="10 30 0 30" Width="100" Content="SAVE" FontSize="16" HorizontalAlignment="Right" Click="Button_Click"/>
                     <Button  Style="{StaticResource editbutton}" Margin="10 30 0 30" Content="SAVE &amp; PRINT INVOICE" FontSize="16" HorizontalAlignment="Right"/>
                 </StackPanel>
 

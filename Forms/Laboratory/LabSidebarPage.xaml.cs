@@ -47,7 +47,7 @@ namespace Final_Project.Forms.Laboratory
                     MainFrame.NavigationService.RemoveBackEntry();
                 }
             }
-            MainFrame.Content = new LabInvoicePage();
+            MainFrame.Content = new Lab_Invoices_Page();
         }
 
         private void OpenLabDepartmentPage(object sender, RoutedEventArgs e)

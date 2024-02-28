@@ -229,3 +229,7 @@ C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\n
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Lab_Invoices_Page.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Lab_Invoices_Page.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Lab_invoice_show_page.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Lab_invoice_show_page.baml

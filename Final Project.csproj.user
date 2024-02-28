@@ -45,6 +45,12 @@
     <Compile Update="Forms\HMS\HMSPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Lab_Invoices_Page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Lab_invoice_show_page.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Laboratory\LabSidebarPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -216,6 +222,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\HMS\HMSPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Lab_Invoices_Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Lab_invoice_show_page.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Laboratory\LabSidebarPage.xaml">

@@ -79,21 +79,22 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             template.Children.Add(border);
 
             // For fieldunit
-            TextBox textBoxUnit = new TextBox
+            TextBox textBoxtotal = new TextBox
             {
                 Width = 90,
                 Margin = new Thickness(5),
-                Tag = "Description",
-                Style = textBoxStyle
+                Tag = "0",
+                Style = textBoxStyle,
+                IsEnabled=true
             };
-            discription.Children.Add(textBoxUnit);
+            Total.Children.Add(textBoxtotal);
 
             // For fieldnormalrangemale
             TextBox pricefield = new TextBox
             {
                 Width = 90,
                 Margin = new Thickness(5),
-                Tag = "Rate",
+                Tag = "0",
                 Style = textBoxStyle
             };
             price.Children.Add(pricefield);
@@ -103,7 +104,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             {
                 Width = 90,
                 Margin = new Thickness(5),
-                Tag = "Quantity",
+                Tag = "0",
                 Style = textBoxStyle
             };
             quantity.Children.Add(quantityfield);
@@ -169,27 +170,13 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             price.Children.RemoveAt(del);
             date.Children.RemoveAt(del);
             quantity.Children.RemoveAt(del);
-            discription.Children.RemoveAt(del);
+            Total.Children.RemoveAt(del);
         }
 
         private void printbutton(object sender, RoutedEventArgs e)
         {
-           int total_price = 0;
-            for (int i=0;i<template.Children.Count;i++)
-            {
-                var t = template.Children[i] is Border border ? border.Child as TextBox : null;
-                var p = price.Children.Count > i ? price.Children[i] as TextBox : null;
-                var da = date.Children.Count > i ? date.Children[i] as TextBox : null;
-                var q = quantity.Children.Count > i ? quantity.Children[i] as TextBox : null;
-                var di = discription.Children.Count > i ? discription.Children[i] as TextBox : null;
 
-                if (p != null && !string.IsNullOrEmpty(p.Text))
-                {
-                    total_price += Convert.ToInt32(p.Text);
-                }
-            }
-            totaltextblock.Text = total_price.ToString();
-
+            invoice_nested_attributes(false,0);
 
 
 
@@ -207,25 +194,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             //flowDocumentViewer.Document = flowDocument;
 
         }
-        private FlowDocument ConvertToFlowDocument(PdfDocument pdfDocument)
-        {
-            FlowDocument flowDocument = new FlowDocument();
-
-            using (MemoryStream stream = new MemoryStream())
-            {
-                // Save the PDF document to the memory stream
-                pdfDocument.Save(stream, false);
-
-                // Reset the stream position to the beginning
-                stream.Position = 0;
-
-                // Load the content of the memory stream into the FlowDocument
-                TextRange textRange = new TextRange(flowDocument.ContentStart, flowDocument.ContentEnd);
-                textRange.Load(stream, DataFormats.Xaml);
-            }
-
-            return flowDocument;
-        }
+      
 
         private void TogglePatientButton(object sender, RoutedEventArgs e)
         {
@@ -265,10 +234,70 @@ namespace Final_Project.Forms.Laboratory.InnerPages
                         // Handle invalid discounttextbox.Text
                         grandtotaltextblock.Text = "Invalid discount";
                     }
-                }
-       
+            }
 
-            
+
+
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Database db = new Database();
+            BigInteger patient_id = db.GetInsertedId($@"INSERT INTO Unregister_Patients (name,age,email,phone) OUTPUT INSERTED.id 
+VALUES ('{unregistername.Text}',{Convert.ToInt32(unregisterage.Text)},'{unregisteremail.Text}','{unregisterphone.Text}')");
+            MessageBox.Show(patient_id.ToString());
+
+            BigInteger invoice_id = db.GetInsertedId($@"INSERT INTO Lab_Invoice (datetime,discount,total,discount_type,priority,note,payment_method,unregistered_patient_id) OUTPUT INSERTED.id 
+VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discounttextbox.Text)},0,'{combodiscount.Text}','{combopriority.Text}','{notetextbox.Text}','{combopayment.Text}',{patient_id})");
+            MessageBox.Show(invoice_id.ToString());
+
+
+
+
+           db.Add(invoice_nested_attributes(true, invoice_id));
+
+        }
+
+        private string invoice_nested_attributes(Boolean flag,BigInteger invoice_id)
+        {
+
+                int total_price = 0;
+
+                string data = "INSERT INTO Invoice_Items (invoice_id,template_id,quantity_sold,price_per_unit,total_price) VALUES ";
+                DataRowView selectedRow = null;
+
+                for (int i = 0; i < template.Children.Count; i++)
+                {
+                    var t = template.Children[i] is Border border ? border.Child as ComboBox : null;
+                    var p = price.Children.Count > i ? price.Children[i] as TextBox : null;
+                    var da = date.Children.Count > i ? date.Children[i] as TextBox : null;
+                    var q = quantity.Children.Count > i ? quantity.Children[i] as TextBox : null;
+                    var to = Total.Children.Count > i ? Total.Children[i] as TextBox : null;
+                    if (t != null && t.SelectedItem is DataRowView)
+                    {
+                    selectedRow = t.SelectedItem as DataRowView;
+                    }
+
+                if (p != null && !string.IsNullOrEmpty(p.Text) && flag==false)
+                {
+                    total_price += Convert.ToInt32(p.Text);
+                    totaltextblock.Text = total_price.ToString();
+                }
+                else
+                {
+                    if (template != null && selectedRow != null && q != null && p != null && to != null)
+                    {
+                        data += template.Children.Count == i + 1
+                            ? $"({invoice_id},{Convert.ToInt32(selectedRow["id"])},{Convert.ToInt32(q.Text)},{Convert.ToInt32(p.Text)},{Convert.ToInt32(to.Text)})"
+                            : $"({invoice_id},{Convert.ToInt32(selectedRow["id"])},{Convert.ToInt32(q.Text)},{Convert.ToInt32(p.Text)},{Convert.ToInt32(to.Text)}),";
+                    }
+                    else
+                    {
+                      MessageBox.Show("enter correct data");
+                    }
+                }
+            }
+                return data;
+            }
     }
 }
