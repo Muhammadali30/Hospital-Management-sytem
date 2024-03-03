@@ -222,5 +222,15 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 salestax.Children.RemoveAt(del);
                 netvalue.Children.RemoveAt(del);
             }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+    }
 }

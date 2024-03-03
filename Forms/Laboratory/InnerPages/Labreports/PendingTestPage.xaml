@@ -57,7 +57,7 @@
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Search Lab" Width="200"/>
                     </StackPanel>
                 </WrapPanel>
-                <DataGrid  Grid.Row="2" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+                <DataGrid x:Name="pendingtestgrid"  Grid.Row="2" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
                 </DataGrid>
             </StackPanel>
         </ScrollViewer>

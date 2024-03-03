@@ -63,5 +63,19 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService != null)
+            {
+                // Remove the current page from the navigation history
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page within the same frame
+                NavigationService.Navigate(new LabInvoicePage());
+            }
+        }
     }
 }

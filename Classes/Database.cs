@@ -54,27 +54,18 @@ namespace Final_Project.Classes
         }
         public DataTable READ(string query, params SqlParameter[] parameters)
         {
-            // Open the connection
-            //con.Open();
-
-            //// Set the command text and parameters
-            //cmd.CommandText = query;
-            //cmd.Parameters.Clear(); // Clear previous parameters
-            //cmd.Parameters.AddRange(parameters);
-
-            //// Execute the query
-            //cmd.ExecuteNonQuery();
-
-            //// Close the connection
-            //con.Close();
-            //if (params == null)
-            //{
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 adapter.SelectCommand = cmd;
                 DataTable table = new DataTable();
                 adapter.Fill(table);
                 return table;
-            //}
+        }
+        public void Update(string query)
+        {
+            cmd = new SqlCommand(query, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
 
 

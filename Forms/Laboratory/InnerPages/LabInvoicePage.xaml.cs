@@ -247,14 +247,25 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 VALUES ('{unregistername.Text}',{Convert.ToInt32(unregisterage.Text)},'{unregisteremail.Text}','{unregisterphone.Text}')");
             MessageBox.Show(patient_id.ToString());
 
-            BigInteger invoice_id = db.GetInsertedId($@"INSERT INTO Lab_Invoice (datetime,discount,total,discount_type,priority,note,payment_method,unregistered_patient_id) OUTPUT INSERTED.id 
-VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discounttextbox.Text)},0,'{combodiscount.Text}','{combopriority.Text}','{notetextbox.Text}','{combopayment.Text}',{patient_id})");
+            BigInteger invoice_id = db.GetInsertedId($@"INSERT INTO Lab_Invoice (datetime,discount,total,discount_type,priority,note,payment_method,unregistered_patient_id,status) OUTPUT INSERTED.id 
+VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discounttextbox.Text)},0,'{combodiscount.Text}','{combopriority.Text}','{notetextbox.Text}','{combopayment.Text}',{patient_id},'pending')");
             MessageBox.Show(invoice_id.ToString());
 
 
 
 
-           db.Add(invoice_nested_attributes(true, invoice_id));
+            db.Add(invoice_nested_attributes(true, invoice_id));
+            if (NavigationService != null)
+            {
+                // Remove the current page from the navigation history
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page within the same frame
+                NavigationService.Navigate(new Lab_invoice_show_page(long.Parse(invoice_id.ToString())));
+            }
 
         }
 
@@ -299,5 +310,19 @@ VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discou
             }
                 return data;
             }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService != null && NavigationService.CanGoBack)
+            {
+                // Remove the forward navigation entry
+                if (NavigationService.CanGoForward)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+                // Go back to the previous page
+                NavigationService.GoBack();
+            }
+        }
     }
 }

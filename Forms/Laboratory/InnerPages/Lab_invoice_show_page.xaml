@@ -3,13 +3,44 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Final_Project.Forms.Laboratory.InnerPages"
+      xmlns:local="clr-namespace:Final_Project.Forms.Laboratory.InnerPages" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       Background="white"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Lab_invoice_show_page">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" FontWeight="SemiBold" Style="{StaticResource editbutton}" Margin="25 20 5 5" HorizontalAlignment="Left" Click="Button_Click">
+            <Icon:PackIconMaterial Kind="PrinterOutline" Height="30" Width="30" />
+        </Button>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" x:Name="LabInvoicePdf">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Compnay Name" Grid.Column="0" Margin="20" Grid.Row="0" FontSize="24" FontWeight="SemiBold"/>
+            <StackPanel Grid.Row="0" Grid.Column="1" Margin="40"  HorizontalAlignment="Right">
+                <TextBlock Text="Invoice No" FontSize="16"/>
+                <TextBlock Text="Issue Date" FontSize="16"/>
+                <TextBlock Text="Invoice No" FontSize="16"/>
+                <TextBlock Text="Invoice No" FontSize="16"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+    <!--<Grid>
+        
         <TextBlock x:Name="h" Text="Helllllo"></TextBlock>
+    </Grid>-->
     </Grid>
+
 </Page>

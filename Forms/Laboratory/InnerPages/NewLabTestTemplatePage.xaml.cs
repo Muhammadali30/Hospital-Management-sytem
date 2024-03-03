@@ -124,7 +124,16 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (NavigationService != null && NavigationService.CanGoBack)
+            {
+                // Remove the forward navigation entry
+                if (NavigationService.CanGoForward)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+                // Go back to the previous page
+                NavigationService.GoBack();
+            }
         }
 
         private void combodepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
