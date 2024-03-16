@@ -390,8 +390,27 @@
             <!-- Other style setters as needed -->
         </Style>
 
+        <Style x:Key="RadioButtonStyle" TargetType="RadioButton">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Grid>
+                            <!-- Customize the dot (radio button) size here -->
+                            <Ellipse x:Name="Dot" Width="10" Height="10" Stroke="Black" StrokeThickness="1"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Dot" Property="Fill" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
 
-      
+
 
 
 

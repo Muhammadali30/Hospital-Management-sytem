@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Final_Project.Classes
 {
@@ -24,17 +25,26 @@ namespace Final_Project.Classes
             wrapPanel.Orientation = (Orientation)Enum.Parse(typeof(Orientation), orientation ?? "Vertical", true);
             return wrapPanel;
         }
-        public static TextBlock create_textblock(string text)
+        public static TextBlock create_textblock(string text,double ? size =null)
         {
             TextBlock textblock = new TextBlock();
             textblock.Text = text;
+            textblock.Margin = new Thickness(10);
+            textblock.FontWeight = FontWeights.SemiBold;
+            textblock.FontSize = size.HasValue ? size.Value : 16;
             return textblock;
         }
-        public static TextBox create_textbox(string text)
+        public static TextBox create_textbox(string text,double ? width = null, bool? visibility = null)
         {
             Style textBoxStyle = (Style)Application.Current.FindResource("textboxstyle");
             TextBox textbox = new TextBox();
             textbox.Text = text;
+            textbox.Style = textBoxStyle;
+            textbox.Width = width.HasValue ? width.Value : double.NaN;
+            textbox.IsEnabled = visibility.HasValue ? visibility.Value : true;
+            if (visibility == false) { textbox.BorderBrush = new SolidColorBrush(Colors.Gray); }
+            textbox.Margin = new Thickness(10);
+
             return textbox;
         }
     }
