@@ -31,13 +31,19 @@
 
                 <!--<Button Grid.Row="0" FontWeight="SemiBold" Style="{StaticResource editbutton}" Content="Back" Margin="25 20 5 5" HorizontalAlignment="Left" Click="Button_Click"/>-->
                 <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal">
-                    <TextBlock Text="Patient:"  Grid.Row="1" Grid.Column="2" Margin="5" FontWeight="Bold" />
-                    <TextBlock x:Name="patientname"  Grid.Row="1" Grid.Column="2" Margin="5" FontWeight="Bold" />
+                    <TextBlock Text="Patient:" FontSize="16"  Grid.Row="1" Grid.Column="2" Margin="5" FontWeight="Bold" />
+                    <TextBlock x:Name="patientname"  Grid.Row="1" FontSize="16" Grid.Column="2" Margin="5" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel x:Name="TestvalidationFieldsPanel" Grid.Row="2" Orientation="Vertical"></StackPanel>
-                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right">
-                    <RadioButton Content="Accept" FontSize="16" GroupName="AcceptRejectGroup" Margin="5 10" IsChecked="True"/>
-                    <RadioButton Content="Reject" FontSize="16" GroupName="AcceptRejectGroup" Margin="5 10 15 5"/>
+                <StackPanel Grid.Row="3" Orientation="Vertical" Margin="10">
+                    <TextBlock Text="Add Remarks" FontWeight="SemiBold" FontSize="16"/>
+                    
+                    <TextBox x:Name="remarksbox" Tag="Remarks.." Style="{StaticResource textboxstyle}" Height="100" Width="500" Margin="0 10"/>
+                    
+                </StackPanel>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <RadioButton x:Name="acceptRadioButton" Content="Accept" FontSize="16" GroupName="AcceptRejectGroup" Margin="5 10" IsChecked="True"/>
+                    <RadioButton x:Name="rejectRadioButton" Content="Reject" FontSize="16" GroupName="AcceptRejectGroup" Margin="5 10 15 5"/>
                     <Button Grid.Row="7" Style="{StaticResource editbutton}" FontSize="16" Content="Submit" Margin="5 5 20 5" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click_2"/>
                 </StackPanel>
             </Grid>

@@ -75,7 +75,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages.Labreports
                         spid.Children.Add(CreateTags.create_textbox(f_row["id"].ToString(), 100, false));
                         spname.Children.Add(CreateTags.create_textbox(f_row["name"].ToString(), 100, false));
                         spunit.Children.Add(CreateTags.create_textbox(f_row["unit"].ToString(), 100, false));
-                        spresult.Children.Add(CreateTags.create_textbox(f_row["result"].ToString(), 100,false));
+                        spresult.Children.Add(CreateTags.create_textbox(f_row["result"].ToString(), 100, false));
                         spmale.Children.Add(CreateTags.create_textbox(f_row["mrange"].ToString(), 100, false));
                         spfemale.Children.Add(CreateTags.create_textbox(f_row["frange"].ToString(), 100, false));
                         spheading.Children.Add(CreateTags.create_textbox(f_row["subheading"].ToString(), 100, false));
@@ -87,7 +87,22 @@ namespace Final_Project.Forms.Laboratory.InnerPages.Labreports
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            string status="";
+            if (acceptRadioButton.IsChecked == true)
+            {
+                status = "Accept";
+            }
+            else if (rejectRadioButton.IsChecked == true)
+            {
+                status = "Reject";
+            }
+            else
+            {
+                MessageBox.Show("Please select an option");
+            }
 
+            db.Add($"INSERT INTO Lab_Test_Remarks(invoice_id,remarks,status)VALUES('{invoice_id}','{remarksbox.Text}','{status}')");
+            db.Update($"UPDATE Lab_Invoice SET status = 'Complete' WHERE id = {invoice_id}");
         }
     }
 }

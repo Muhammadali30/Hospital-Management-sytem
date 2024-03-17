@@ -237,3 +237,5 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\LabReportResultPage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\LabTestValidationPage.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\LabTestValidationPage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\ReportResultPdfPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\InnerPages\Labreports\ReportResultPdfPage.baml

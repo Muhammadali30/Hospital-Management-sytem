@@ -51,6 +51,9 @@
     <Compile Update="Forms\Laboratory\InnerPages\Labreports\LabTestValidationPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Laboratory\InnerPages\Labreports\ReportResultPdfPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Laboratory\InnerPages\Lab_Invoices_Page.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -234,6 +237,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Laboratory\InnerPages\Labreports\LabTestValidationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Laboratory\InnerPages\Labreports\ReportResultPdfPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Laboratory\InnerPages\Lab_Invoices_Page.xaml">

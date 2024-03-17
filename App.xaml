@@ -303,52 +303,58 @@
         </Style>
 
         <Style x:Key="textboxstyle" TargetType="TextBox">
-            <Setter Property="Background" Value="white"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="#1E929B"/>
             <Setter Property="Padding" Value="6 3"/>
             <Setter Property="AllowDrop" Value="True"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border x:Name="txtborder"
-                                CornerRadius="3"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                SnapsToDevicePixels="True">
-                            <Grid 
-                                Margin="{TemplateBinding Padding}">
+                        CornerRadius="3"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        SnapsToDevicePixels="True">
+                            <Grid Margin="{TemplateBinding Padding}">
                                 <ScrollViewer x:Name="PART_ContentHost"
-                                              Focusable="False"
-                                              HorizontalScrollBarVisibility="Hidden"
-                                              VerticalScrollBarVisibility="Hidden"/>
+                                      Focusable="False"
+                                      HorizontalScrollBarVisibility="Hidden"
+                                      VerticalScrollBarVisibility="Hidden"/>
                                 <Label x:Name="WaterMarkerLabel"
-                                       Content="{TemplateBinding Tag}"
-                                       FontWeight="{TemplateBinding FontWeight}"
-                                       VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                                      HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                       Visibility="Collapsed"
-                                       Foreground="{TemplateBinding Foreground}"
-                                       Padding="{TemplateBinding Padding}"/>
+                               Content="{TemplateBinding Tag}"
+                               FontWeight="{TemplateBinding FontWeight}"
+                               VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                               HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                               Visibility="Collapsed"
+                               Foreground="Gray"
+                               Padding="{TemplateBinding Padding}"/>
                             </Grid>
-
                         </Border>
                         <ControlTemplate.Triggers>
                             <MultiTrigger>
                                 <MultiTrigger.Conditions>
                                     <Condition Property="Text" Value=""/>
                                 </MultiTrigger.Conditions>
-                                        <Setter Property="Visibility"
-                                            TargetName="WaterMarkerLabel"
-                                            Value="Visible"/>
+                                <Setter Property="Visibility"
+                                TargetName="WaterMarkerLabel"
+                                Value="Visible"/>
                             </MultiTrigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
+            <!-- Setter for the TextBox foreground color -->
+
+
         </Style>
+
 
         <Style x:Key="datepickerstyle" TargetType="DatePicker">
             <Setter Property="Background" Value="white"/>

@@ -30,8 +30,8 @@ namespace Final_Project
         {
             InitializeComponent();
 
-            //OPD();
-            LAB();
+            OPD();
+            //LAB();
             //PHARMACY();
 
 
@@ -225,6 +225,7 @@ namespace Final_Project
         {
             accountinfo.Visibility = (accountinfo.Visibility == Visibility.Visible) ? Visibility.Hidden : Visibility.Visible;
         }
+
     }
     }
 
