@@ -1692,6 +1692,12 @@
             "rid": "win"
           }
         }
+      },
+      "WPFMediaKit/2.3.0": {
+        "type": "package",
+        "build": {
+          "build/WPFMediaKit.targets": {}
+        }
       }
     }
   },
@@ -4702,6 +4708,22 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "WPFMediaKit/2.3.0": {
+      "sha512": "uMbuDiJ8JaeorPsst7nC3KtDpE8ZU37WrMw4QEb8EAOa0eYtBn6KniTs9Gxp+WLXLoX7+J52NR+aCSE9Xhu7Cg==",
+      "type": "package",
+      "path": "wpfmediakit/2.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/DirectShowLib-2005.dll",
+        "build/EVRPresenter32.dll",
+        "build/EVRPresenter64.dll",
+        "build/WPFMediaKit.targets",
+        "lib/WPFMediaKit.dll",
+        "wpfmediakit.2.3.0.nupkg.sha512",
+        "wpfmediakit.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -4714,7 +4736,8 @@
       "PDFsharp >= 6.0.0",
       "PdfiumViewer >= 2.13.0",
       "System.Data.SqlClient >= 4.8.6",
-      "System.Linq >= 4.3.0"
+      "System.Linq >= 4.3.0",
+      "WPFMediaKit >= 2.3.0"
     ]
   },
   "packageFolders": {
@@ -4791,6 +4814,10 @@
           "System.Linq": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "WPFMediaKit": {
+            "target": "Package",
+            "version": "[2.3.0, )"
           }
         },
         "imports": [
