@@ -7,42 +7,87 @@
       xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Background="Transparent"
+      Background="White"
       Title="OpdDashboard">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="250"/>
+            <!--<ColumnDefinition Width="250"/>-->
         </Grid.ColumnDefinitions>
-
-        <Grid Grid.Column="0">
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <Grid Grid.Column="0">
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"/>
-                <RowDefinition Height="220"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
+                
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="150" MaxWidth="150"/>
+                <ColumnDefinition Width="2.5*"/>
+                <ColumnDefinition Width="2.5*"/>
             </Grid.ColumnDefinitions>
-            <Border Grid.Row="0" Grid.Column="0" Margin="10" Padding="10" CornerRadius="10" Background="White">
+
+            <Border Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="2" MaxWidth="500" Padding="20" Margin="10" CornerRadius="20" Background="White">
+                <Border.Effect>
+                    <DropShadowEffect  Color="Gray" Direction="280" BlurRadius="20" ShadowDepth="5" Opacity="0.6"/>
+                </Border.Effect>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Patient Activity" TextAlignment="Left" FontSize="14" FontWeight="Bold"/>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <lvc:PieChart Name="pieChart" LegendLocation="Bottom" Height="170" Width="190">
+                                <lvc:PieChart.Series>
+                                    <lvc:PieSeries Title="Male"  Fill="#1E929B" Values="100"/>
+                                    <lvc:PieSeries Title="Female" Fill="#FAA26E" Values="200"/>
+                                    <lvc:PieSeries Title="Children" Fill="LightBlue" Values="200"/>
+                                </lvc:PieChart.Series>
+                            </lvc:PieChart>
+                        </StackPanel>
+                        <Line X1="0" Y1="0" X2="0" Y2="170" Margin="20 0 20 0" Stroke="Gray" StrokeThickness="2"/>
+
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+
+
+                            <StackPanel>
+                                <StackPanel Margin="0 50 0 0"  Orientation="Vertical">
+                                    <!--<Icon:PackIconMaterial Kind="NewspaperVariantOutline" Foreground="#1E929B" Margin="0 6 10 0" Height="40" Width="40"/>-->
+                                    <TextBlock Text="167" FontSize="36" Margin="0" FontWeight="Bold"/>
+                                    <TextBlock Text="Total Patients" Foreground="Gray"  FontSize="10" />
+
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Row="0" Grid.Column="2" Margin="10" Padding="10" CornerRadius="10" Background="White">
                 <Border.Effect>
                     <DropShadowEffect  Color="Gray" Direction="280" BlurRadius="20" ShadowDepth="5" Opacity="0.6"/>
                 </Border.Effect>
                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
-                        <TextBlock Text="Total Appointments" FontSize="14" FontWeight="Bold"/>
-            
                     <StackPanel>
                         <StackPanel Margin="10" Orientation="Horizontal">
-                            <Icon:PackIconMaterial Kind="BookCheckOutline" Foreground="#1E929B" Margin="0 6 10 0" Height="40" Width="40"/>
                             <TextBlock Text="35" FontSize="36" FontWeight="Bold"/>
+                            <TextBlock Text="Patients" Foreground="Gray" Margin="0 25 0 0" FontSize="10" FontWeight="Bold"/>
+
                         </StackPanel>
+                            <Line X1="0" Y1="0" X2="300" Y2="0" Margin="20 0 20 0" Stroke="Gray" StrokeThickness="2"/>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                    <Icon:PackIconMaterial Kind="Calendar" Foreground="#1E929B" Margin="10 6 10 0" Height="20" Width="20"/>
+                    <TextBlock Text="Appointments" FontSize="12" Margin="0 8 0 0" FontWeight="SemiBold"/>
+                        
+                    </StackPanel>
+
+            
                 </StackPanel>
             </Border>
-            <Border Grid.Row="0" Grid.Column="1" Margin="10" Padding="10" CornerRadius="10" Background="White">
+            <Border Grid.Row="0" Grid.Column="3" Margin="10" Padding="10" CornerRadius="10" Background="White">
                 <Border.Effect>
                     <DropShadowEffect  Color="Gray" Direction="280" BlurRadius="20" ShadowDepth="5" Opacity="0.6"/>
                 </Border.Effect>
@@ -58,7 +103,7 @@
                     </StackPanel>
                 </StackPanel>
             </Border>
-            <Border Grid.Row="0" Grid.Column="2" Margin="10" Padding="10" CornerRadius="10" Background="White">
+            <!--<Border Grid.Row="0" Grid.Column="2" Margin="10" Padding="10" CornerRadius="10" Background="White">
                 <Border.Effect>
                     <DropShadowEffect  Color="Gray" Direction="280" BlurRadius="20" ShadowDepth="5" Opacity="0.6"/>
                 </Border.Effect>
@@ -73,28 +118,11 @@
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
-            </Border>
+            </Border>-->
 
-            <Border Grid.Column="0" Grid.Row="1" Padding="10" Margin="10" CornerRadius="20" Background="White">
-                <Border.Effect>
-                    <DropShadowEffect  Color="Gray" Direction="280" BlurRadius="20" ShadowDepth="5" Opacity="0.6"/>
-                </Border.Effect>
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Text="Patients by Gender" TextAlignment="Left" FontSize="14" FontWeight="Bold"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <lvc:PieChart Name="pieChart" LegendLocation="Bottom" Height="150" Width="150">
-                            <lvc:PieChart.Series>
-                                <lvc:PieSeries Title="Male" Fill="#1E929B" Values="100"/>
-                                <lvc:PieSeries Title="Female" Fill="#FAA26E" Values="200"/>
-                            </lvc:PieChart.Series>
-                        </lvc:PieChart>
-                    </StackPanel>
-                </StackPanel>
-            </Border>
+       
 
-
-
-            <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Padding="10" Margin="10" CornerRadius="20" Background="White">
+            <!--<Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Padding="10" Margin="10" CornerRadius="20" Background="White">
                 <Border.Effect>
                     <DropShadowEffect  Color="Gray" Direction="280" BlurRadius="20" ShadowDepth="5" Opacity="0.6"/>
                 </Border.Effect>
@@ -114,16 +142,36 @@
                         </lvc:CartesianChart>
                     </StackPanel>
                 </StackPanel>
-               
-            </Border>
-
-
+            </Border>-->
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                    <TextBlock Text="Appointments" Margin="10 8 10 10"  FontWeight="Bold" FontSize="16"/>
+                    <Button Grid.Row="17" Style="{StaticResource editbutton}" Height="28" Margin="0" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click">
+                        <Icon:PackIconMaterial Kind="Plus" Height="15"/>
+                    </Button>
+                    
+                </StackPanel>
+                <Border CornerRadius="10" Grid.Row="1" Height="30" Width="150" HorizontalAlignment="Right" Grid.Column="3" Margin="10 0 10 10" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                    <!--<Border.Effect>
+                        <DropShadowEffect Color="Gray" BlurRadius="10" Direction="280" ShadowDepth="2" Opacity="0.6"/>
+                    </Border.Effect>-->
+                    <!--<ComboBox Background="White"  BorderBrush="White" BorderThickness="0" IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True" SelectedIndex="0" Margin="2.5">
+                        <ComboBoxItem IsEnabled="False" Content="Today"/>
+                        <ComboBoxItem Content="Last"/>
+                        <ComboBoxItem Content="Muhammad Ali"/>
+                        <ComboBoxItem Content="Muhammad Ali"/>
+                    </ComboBox>-->
+                    <DatePicker Margin="2" BorderThickness="0"/>
+                </Border>
+                <DataGrid x:Name="appointmentsgrid" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False"/>
+                
 
         </Grid>
+            
+        </ScrollViewer>
         
         
         
-        <Border Grid.Column="1" CornerRadius="20" Margin="10 10 10 10" Background="white">
+        <!--<Border Grid.Column="1" CornerRadius="20" Margin="10 10 10 10" Background="white">
             <Border.Effect>
                 <DropShadowEffect Color="Gray" BlurRadius="20" Direction="280" ShadowDepth="10" Opacity="0.6"/>
             </Border.Effect>
@@ -144,7 +192,7 @@
 
                 <ScrollViewer Grid.Row="2"  ScrollViewer.VerticalScrollBarVisibility="Hidden" Padding="10">
                     <StackPanel>
-                        <!--Apponitments list-->
+                        --><!--Apponitments list--><!--
                   
                         <Border Background="#FAA26E" CornerRadius="10" Height="60" Margin="5 5" >
                                 <StackPanel Orientation="Horizontal">
@@ -166,6 +214,7 @@
                     </StackPanel>
                 </ScrollViewer>
             </StackPanel>
-        </Border>
+        </Border>-->
+
     </Grid>
 </Page>

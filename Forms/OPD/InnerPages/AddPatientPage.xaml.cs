@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aspose.Pdf.Operators;
+using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,6 +39,24 @@ namespace Final_Project.Forms.HMS.InnerPages
                 // Go back to the previous page
                 NavigationService.GoBack();
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Database db = new Database();
+            //DateTime dobDate, joiningDate;
+            //if (!DateTime.TryParse(dob.Text, out dobDate) || !DateTime.TryParse(joining.Text, out joiningDate))
+            //{
+            //    MessageBox.Show("Invalid date format");
+            //    return;
+            //}
+
+            // Format the DateTime objects to the desired string format ('YYYY-MM-DD')
+            //string dobFormatted = dobDate.ToString("yyyy-MM-dd");
+            //string joiningFormatted = joiningDate.ToString("yyyy-MM-dd");
+
+            // Construct the SQL query with the formatted date strings
+            db.Add($"INSERT INTO Patients (name,status, phone, address) VALUES ('{name.Text}', '{status.SelectedValue.ToString()}', '{phone.Text}', '{address.Text}')");
         }
     }
 }

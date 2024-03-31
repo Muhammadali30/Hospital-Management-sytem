@@ -416,6 +416,35 @@
             </Setter>
         </Style>
 
+        <Style x:Key="CustomDatePickerStyle" TargetType="DatePicker">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="DatePicker">
+                        <Grid>
+                            <Border BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Padding="{TemplateBinding Padding}">
+                                <DatePickerTextBox x:Name="PART_TextBox"
+                                           Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource TemplatedParent}, StringFormat={}{0:MM/dd/yyyy}, UpdateSourceTrigger=PropertyChanged}"
+                                           HorizontalContentAlignment="Stretch"
+                                           VerticalContentAlignment="Center"
+                                           Background="Transparent"
+                                           BorderThickness="0"/>
+                            </Border>
+                            <Popup x:Name="PART_Popup" PlacementTarget="{Binding ElementName=PART_TextBox}" StaysOpen="False">
+                                <!-- Custom calendar design can be defined here -->
+                                <Calendar SelectedDate="{Binding Path=SelectedDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                  DisplayDate="{Binding Path=DisplayDate, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"
+                                  SelectionMode="SingleRange"/>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
 
 
 

@@ -72,6 +72,9 @@
     <Compile Update="Forms\HMS\InnerPages\AppointmentListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\OPD\InnerPages\ApponitmentPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\OPD\InnerPages\DoctorPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -258,6 +261,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\HMS\InnerPages\AppointmentListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\OPD\InnerPages\ApponitmentPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\OPD\InnerPages\DoctorPage.xaml">

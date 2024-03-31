@@ -52,14 +52,12 @@ namespace Final_Project.Forms.HMS.InnerPages
             }
 
             // Format the DateTime objects to the desired string format ('YYYY-MM-DD')
-            string dobFormatted = dobDate.ToString("yyyy-MM-dd");
-            string joiningFormatted = joiningDate.ToString("yyyy-MM-dd");
+            //string dobFormatted = dobDate.ToString("yyyy-MM-dd");
+            //string joiningFormatted = joiningDate.ToString("yyyy-MM-dd");
 
             // Construct the SQL query with the formatted date strings
-            string query = $"INSERT INTO Doctors (name, dob, gender, designation, speacialist, joining, status, phone, address) " +
-                           $"VALUES ('{name.Text}', '{dobFormatted}', '{gender.Text}', '{designation.Text}', '{specialist.SelectedItem}', " +
-                           $"'{joiningFormatted}', '{status.SelectedValue}', '{phone.Text}', '{address.Text}')";
-            db.Add(query);
+            db.Add($"INSERT INTO Doctors (name, designation, phone, address) VALUES ('{name.Text}', '{status.SelectedValue.ToString()}', '{phone.Text}', '{address.Text}')");
+
         }
     }
 }

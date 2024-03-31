@@ -5,188 +5,65 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Final_Project.Forms.HMS.InnerPages"
       mc:Ignorable="d" 
-      Background="{x:Null}"
+      Background="White"
       d:DesignHeight="550" d:DesignWidth="330"
       Title="AddPatientPage">
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="3">
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock FontSize="14" Margin="17 17 20 20" FontWeight="Bold">
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock FontSize="14" Margin="17 17 20 20" FontWeight="Bold">
                             Full name
                             <Run Text="*" Foreground="Red"/>
-                        </TextBlock>
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Full Name" Width="200"/>
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock FontSize="14" Margin="17 17 20 20" FontWeight="Bold">
+                    </TextBlock>
+                    <TextBox  x:Name="name" Style="{DynamicResource textboxstyle}" Tag="Full Name" Width="200"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock FontSize="14" Margin="17 17 20 20" FontWeight="Bold">
         Phone#
         <Run Text="*" Foreground="Red"/>
-                        </TextBlock>
-                        <TextBlock Text="+92" FontSize="14" Margin="10 17 5 20" FontWeight="Bold" />
+                    </TextBlock>
+                    <TextBlock Text="+92" FontSize="14" Margin="10 17 5 20" FontWeight="Bold" />
+                    <TextBox  x:Name="phone" Style="{DynamicResource textboxstyle}" Tag="3123456789" Width="170"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Date of Birth" FontSize="14" Margin="17 17 10 20" FontWeight="Bold" />
 
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="3123456789" Width="170"/>
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock Text="Date of Birth" FontSize="14" Margin="17 17 10 20" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="DD/MM/YYYY" Width="200"/>
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock Text="Gender" FontSize="14" Margin="17 17 45 20" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" HorizontalAlignment="Right"  Width="205" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="Male"/>
-                            <ComboBoxItem Content="Female"/>
-                            <ComboBoxItem Content="Other"/>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock Text="Email" FontSize="14" Margin="17 17 60 20" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Email" Width="200"/>
-                    </StackPanel>
-                    <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
-                        <TextBlock Text="National ID" Margin="5" FontWeight="Bold" />
-                        <Button Style="{DynamicResource editbutton}" Content="Choose PDF File" Background="#a3a3a3" Width="200"/>
-                    </StackPanel>-->
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock Text="Address"  FontSize="14" Margin="17 17 40 20" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Address" Width="205" Height="50"/>
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock Text="Status" FontSize="14" Margin="17 17 50 20" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" HorizontalAlignment="Right"  Width="205" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="Active"/>
-                            <ComboBoxItem Content="Inactive"/>
-                            <ComboBoxItem Content="Inactive-Deceased"/>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel  Orientation="Horizontal">
-                        <TextBlock Text="Add Photo"  FontSize="14" Margin="17 35 0 20" FontWeight="Bold" />
-                        <Button Grid.Row="17"  Content="Take Photo" Margin="20 30 0 30" Width="100" />
-                        <Button Grid.Row="17"  Content="Choose File" Margin="10 30 0 30" Width="100" />
-                    </StackPanel>
-                    <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Blood Group" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="A+"/>
-                            <ComboBoxItem Content="A-"/>
-                            <ComboBoxItem Content="AB+"/>
-                            <ComboBoxItem Content="AB-"/>
-                            <ComboBoxItem Content="B+"/>
-                            <ComboBoxItem Content="B-"/>
-                            <ComboBoxItem Content="O+"/>
-                            <ComboBoxItem Content="O-"/>
-                        </ComboBox>
-                    </StackPanel>-->
-                    <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Height(ft)" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Height" Width="200"/>
-                    </StackPanel>-->
-                    <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
-                        <TextBlock Text="Weight(kg)" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Weight" Width="200"/>
-                    </StackPanel>-->
-                <Button Grid.Row="17" Style="{StaticResource editbutton}" Margin="30 30 10 30" Width="100" Content="Submit" FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Right"/>
-            </StackPanel>
-                <!--<StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Blood Pressure(mmhg)" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Blood Pressure" Width="200"/>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Pulse(BPM)" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Pulse" Width="200"/>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
-                        <TextBlock Text="Temperature(°C)" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Temperature" Width="200"/>
-                    </StackPanel>
+                    <DatePicker Width="202" Height="30" BorderBrush="#1E929B"/>
+                    <!--<TextBox  x:Name="dob" Style="{DynamicResource textboxstyle}" Tag="DD/MM/YYYY" Width="200"/>-->
                 </StackPanel>
-                <TextBlock Text="Madical Condition" TextAlignment="Center" FontSize="22" FontWeight="Bold" Grid.Row="10" Margin="10 10 0 0"/>
-                <TextBlock Text="Details information about patient current medical condition." TextAlignment="Center" Foreground="Gray" FontSize="14" FontWeight="Bold" Grid.Row="11" Margin="10 0 0 20"/>
-                <StackPanel Grid.Row="12" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Symptoms Title" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Symptoms" Width="420"/>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Symptoms type" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="General Symptoms"/>
-                            <ComboBoxItem Content="Uncommon Symptoms"/>
-                            <ComboBoxItem Content="Inherited Symptoms"/>
-                            <ComboBoxItem Content="Viral Symptoms"/>
-                        </ComboBox>
-                    </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Gender" FontSize="14" Margin="17 17 45 20" FontWeight="Bold" />
+                    <ComboBox  x:Name="gender" Style="{StaticResource CustomComboBoxStyle}" HorizontalAlignment="Right"  Width="205" Height="30" SelectedIndex="0" >
+                        <ComboBoxItem Content="Male"/>
+                        <ComboBoxItem Content="Female"/>
+                        <ComboBoxItem Content="Other"/>
+                    </ComboBox>
                 </StackPanel>
-                <StackPanel Grid.Row="13" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Casuality" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="General Symptoms"/>
-                            <ComboBoxItem Content="Uncommon Symptoms"/>
-                            <ComboBoxItem Content="Inherited Symptoms"/>
-                            <ComboBoxItem Content="Viral Symptoms"/>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Department" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="Gynacology"/>
-                            <ComboBoxItem Content="Surgery"/>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Consultant Doctor" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="Muhammad ALi"/>
-                            <ComboBoxItem Content="Abdur Rafay"/>
-                            <ComboBoxItem Content="Adnan Ahmed"/>
-                        </ComboBox>
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Grid.Row="14" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Patient Type" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="OPD Patient"/>
-                            <ComboBoxItem Content="IPD Patient"/>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Admit Date" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="DD/MM/YYYY" Width="200"/>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Bed Group" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="Male Ward - 1st Floor"/>
-                            <ComboBoxItem Content="FeMale Ward - 1st Floor"/>
-                        </ComboBox>
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Grid.Row="15" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                        <TextBlock Text="Bed Number" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{StaticResource CustomComboBoxStyle}" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="190" Height="30" SelectedIndex="0" >
-                            <ComboBoxItem Content="101"/>
-                            <ComboBoxItem Content="102"/>
-                        </ComboBox>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                        <TextBlock Text="Admit Date" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="DD/MM/YYYY" Width="200"/>
-                    </StackPanel>
-                </StackPanel>
-
-                <StackPanel Grid.Row="16" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                        <TextBlock Text="Symptoms Description" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Please describe little bit!" Width="640" Height="150"/>
-                    </StackPanel>
+                <!--<StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Email" FontSize="14" Margin="17 17 60 20" FontWeight="Bold" />
+                    <TextBox Style="{DynamicResource textboxstyle}" Tag="Email" Width="200"/>
                 </StackPanel>-->
-            
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Address"  FontSize="14" Margin="17 17 40 20" FontWeight="Bold" />
+                    <TextBox  x:Name="address" Style="{DynamicResource textboxstyle}" Tag="Address" Width="205" Height="50"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Status" FontSize="14" Margin="17 17 50 20" FontWeight="Bold" />
+                    <ComboBox  x:Name="status" Style="{StaticResource CustomComboBoxStyle}" HorizontalAlignment="Right"  Width="205" Height="30" SelectedIndex="0" >
+                        <ComboBoxItem Content="Active"/>
+                        <ComboBoxItem Content="Inactive"/>
+                        <ComboBoxItem Content="Inactive-Deceased"/>
+                    </ComboBox>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal">
+                    <TextBlock Text="Add Photo"  FontSize="14" Margin="17 35 0 20" FontWeight="Bold" />
+                    <Button Grid.Row="17"  Content="Take Photo" Margin="20 30 0 30" Width="100" />
+                    <Button Grid.Row="17"  Content="Choose File" Margin="10 30 0 30" Width="100" />
+                </StackPanel>
+
+                <Button Grid.Row="17" Style="{StaticResource editbutton}" Margin="30 30 10 30" Width="100" Content="Submit" FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click"/>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </Page>

@@ -242,3 +242,5 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\DirectShowLib-2005.dll
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\EVRPresenter32.dll
 C:\Users\Ali\source\repos\Final Project\Final Project\bin\Debug\net6.0-windows\EVRPresenter64.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\OPD\InnerPages\ApponitmentPage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\OPD\InnerPages\ApponitmentPage.baml
