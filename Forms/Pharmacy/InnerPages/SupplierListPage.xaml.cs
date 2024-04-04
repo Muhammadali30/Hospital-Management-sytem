@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using Final_Project.Forms.HMS.InnerPages;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,21 +26,35 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         public SupplierListPage()
         {
             InitializeComponent();
+            LoadSuppliers();
+        }
+
+        private void LoadSuppliers()
+        {
+            Database database = new Database();
+            DataTable dt = database.Read("SELECT * from Suppliers");
+            suppliersgrid.ItemsSource = dt.DefaultView;
+            suppliersgrid.AutoGeneratingColumn += (sender, e) =>
+            {
+                e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
+            };
         }
 
         private void OpenNewSupplierPage(object sender, RoutedEventArgs e)
         {
-            if (NavigationService != null)
-            {
-                // Remove the current page from the navigation history
-                if (NavigationService.CanGoBack)
-                {
-                    NavigationService.RemoveBackEntry();
-                }
+            AlertForm AF = new AlertForm(new NewSupplierPage());
+            AF.ShowDialog();
+            //if (NavigationService != null)
+            //{
+            //    // Remove the current page from the navigation history
+            //    if (NavigationService.CanGoBack)
+            //    {
+            //        NavigationService.RemoveBackEntry();
+            //    }
 
-                // Load the new page within the same frame
-                NavigationService.Navigate(new NewSupplierPage());
-            }
+            //    // Load the new page within the same frame
+            //    NavigationService.Navigate(new NewSupplierPage());
+            //}
             //if (frame.NavigationService != null)
             //   {
             //       // Remove the previous page from the navigation history

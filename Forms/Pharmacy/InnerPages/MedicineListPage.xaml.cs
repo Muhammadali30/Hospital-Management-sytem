@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_Project.Forms.HMS.InnerPages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,17 +30,8 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
         private void OpenNewMedPage(object sender, RoutedEventArgs e)
         {
-            if (NavigationService != null)
-            {
-                // Remove the current page from the navigation history
-                if (NavigationService.CanGoBack)
-                {
-                    NavigationService.RemoveBackEntry();
-                }
-
-                // Load the new page within the same frame
-                NavigationService.Navigate(new AddMedicinePage());
-            }
+            AlertForm AF = new AlertForm(new AddMedicinePage());
+            AF.ShowDialog();
         }
 
         private void OpenMulItemsPage(object sender, RoutedEventArgs e)

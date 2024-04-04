@@ -19,7 +19,7 @@
 
         <TextBlock Text="Supplier List" FontSize="22" FontWeight="Bold" Grid.Row="0" Margin="10 10 0 0"/>
         <TextBlock Text="Here is the Supplier List" Foreground="Gray" FontSize="14" FontWeight="Bold" Grid.Row="1" Margin="10 0 0 0"/>
-        <Button x:Name="showdoctorsbutton" Grid.Row="0" Style="{StaticResource editbutton}" Background="#a3a3a3" Margin="5 20 5 5" HorizontalAlignment="Right" Click="OpenNewSupplierPage">
+        <Button x:Name="showdoctorsbutton" Grid.Row="0" Style="{StaticResource editbutton}" Margin="5 20 5 5" HorizontalAlignment="Right" Click="OpenNewSupplierPage">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Add New Supplier" FontSize="14"/>
             </StackPanel>
@@ -30,7 +30,7 @@
             <ComboBoxItem Content="Category"/>
             <ComboBoxItem Content="Best Selling"/>
         </ComboBox>-->
-        <DataGrid  Grid.Row="3" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+        <DataGrid x:Name="suppliersgrid"  Grid.Row="3" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
         </DataGrid>
     </Grid>
 </Page>

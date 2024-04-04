@@ -30,9 +30,9 @@ namespace Final_Project
         {
             InitializeComponent();
 
-            OPD();
+            //OPD();
             //LAB();
-            //PHARMACY();
+            PHARMACY();
 
 
         }

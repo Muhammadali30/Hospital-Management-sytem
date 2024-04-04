@@ -9,7 +9,7 @@
  Background="{x:Null}"
  WindowStyle="None"
  WindowStartupLocation="CenterScreen"
-        Title="AlertForm" Height="auto" Width="400">
+        Title="AlertForm" Height="auto" Width="330">
     <Border Grid.Row="0" Background="White" CornerRadius="20" BorderThickness="5" BorderBrush="#1E929B">
         <Border.Effect>
             <DropShadowEffect Color="Gray" BlurRadius="20" Direction="280" ShadowDepth="5" Opacity="0.6"/>

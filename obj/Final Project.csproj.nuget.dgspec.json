@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Ali\\source\\repos\\Final Project\\Final Project\\Final Project.csproj": {}
+    "C:\\Users\\Ali\\source\\repos\\Final Project\\Final_year_project\\Final Project\\Final Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Ali\\source\\repos\\Final Project\\Final Project\\Final Project.csproj": {
+    "C:\\Users\\Ali\\source\\repos\\Final Project\\Final_year_project\\Final Project\\Final Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final Project\\Final Project.csproj",
+        "projectUniqueName": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final_year_project\\Final Project\\Final Project.csproj",
         "projectName": "Final Project",
-        "projectPath": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final Project\\Final Project.csproj",
+        "projectPath": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final_year_project\\Final Project\\Final Project.csproj",
         "packagesPath": "C:\\Users\\Ali\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final Project\\obj\\",
+        "outputPath": "C:\\Users\\Ali\\source\\repos\\Final Project\\Final_year_project\\Final Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ali\\AppData\\Roaming\\NuGet\\NuGet.Config",
