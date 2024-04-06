@@ -42,6 +42,16 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
         private void OpenNewSupplierPage(object sender, RoutedEventArgs e)
         {
+            if (dropdown.SelectedItem != null)
+            {
+                // Get the content of the selected item
+                string selectedValue = ((ComboBoxItem)dropdown.SelectedItem).Content.ToString();
+
+                // Now you have the selected value in the 'selectedValue' variable
+                // You can use it as needed, for example, you can display it in a message box
+                MessageBox.Show("Selected value: " + selectedValue);
+            }
+
             AlertForm AF = new AlertForm(new NewSupplierPage());
             AF.ShowDialog();
             //if (NavigationService != null)
@@ -67,6 +77,27 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
             //   }
             //   frame.Content = new NewSupplierPage();
+        }
+
+        private void dropdown_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBoxItem selectedItem = (ComboBoxItem)dropdown.SelectedItem;
+
+            if (selectedItem != null)
+            {
+                // Get the content of the selected item
+                string selectedValue = selectedItem.Content.ToString();
+
+                // Now you have the selected value in the 'selectedValue' variable
+                // You can use it as needed, for example, you can display it in a message box
+                pagename.Text = selectedValue+" List";
+                if (addnewbutton != null)
+                {
+                addnewbutton.Content = "Add " + selectedValue;
+
+                }
+                //MessageBox.Show("Selected value: " + selectedValue);
+            }
         }
     }
 }
