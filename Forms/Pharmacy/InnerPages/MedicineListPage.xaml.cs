@@ -1,6 +1,8 @@
-﻿using Final_Project.Forms.HMS.InnerPages;
+﻿using Final_Project.Classes;
+using Final_Project.Forms.HMS.InnerPages;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +26,20 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         public MedicineListPage()
         {
             InitializeComponent();
+            LoadMedicines();
         }
+        private void LoadMedicines()
+        {
+            Database database = new Database();
+            DataTable dt = database.Read("SELECT * from Medicines");
+            medicinegrid.ItemsSource = dt.DefaultView;
+            medicinegrid.AutoGeneratingColumn += (sender, e) =>
+            {
+                e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
+            };
 
-     
 
+        }
         private void OpenNewMedPage(object sender, RoutedEventArgs e)
         {
             AlertForm AF = new AlertForm(new AddMedicinePage());

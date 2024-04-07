@@ -14,17 +14,14 @@
 
         <ScrollViewer VerticalScrollBarVisibility="Hidden">
             <StackPanel>
-
-            
-                   
-                    <StackPanel Grid.Row="1" Orientation="Vertical">
+                <StackPanel Grid.Row="1" Orientation="Vertical">
                         <StackPanel Margin="10" Orientation="Vertical" >
                             <TextBlock Text="Item Name" Margin="5" FontWeight="Bold" />
-                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="300"/>
+                            <TextBox x:Name="medname" Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="300"/>
                         </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
                         <TextBlock Text="Category" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="295" Height="30" SelectedIndex="0">
+                        <ComboBox x:Name="medcategory" Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="295" Height="30" SelectedIndex="0">
                             <ComboBoxItem IsEnabled="False" Content="Select"/>
                             <ComboBoxItem Content="Syrup"/>
                             <ComboBoxItem Content="Tablet"/>
@@ -32,16 +29,20 @@
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                             <TextBlock Text="Rack#" Margin="5" FontWeight="Bold" />
-                            <TextBox Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
+                            <TextBox x:Name="medrackno" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
                         </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Active Ingredients" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Ingredients" Width="300"/>
+                        <TextBox x:Name="medingredients" Style="{DynamicResource textboxstyle}" Tag="Ingredients" Width="300"/>
+                    </StackPanel>
+                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
+                        <TextBlock Text="Storage Condition" Margin="5" FontWeight="Bold" />
+                        <TextBox x:Name="medstoragecondition" Style="{DynamicResource textboxstyle}" Tag="Storage Condition" Width="300"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
                         <TextBlock Text="Dosage Form" Margin="5" FontWeight="Bold" />
-                        <ComboBox Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="295" Height="30" SelectedIndex="0">
-                            <ComboBoxItem IsEnabled="False" Content="Select"/>
+                        <ComboBox x:Name="meddosageform" Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="295" Height="30" SelectedIndex="0">
+                            <ComboBoxItem IsEnabled="False" Content="Tablet"/>
                             <ComboBoxItem Content="Syrup"/>
                             <ComboBoxItem Content="Tablet"/>
                             <ComboBoxItem Content="Capsule"/>
@@ -86,11 +87,11 @@
                         </StackPanel>-->
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Unit Value" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="e.g 600" Width="300"/>
+                        <TextBox x:Name="medunitvalue" Style="{DynamicResource textboxstyle}" Tag="e.g 600" Width="300"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
-                            <TextBlock Text="Unit" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="e.g ml,mg" Width="300"/>
+                        <TextBlock Text="Unit" Margin="5" FontWeight="Bold" />
+                        <TextBox x:Name="medunit" Style="{DynamicResource textboxstyle}" Tag="e.g ml,mg" Width="300"/>
                     </StackPanel>
                         <!--<StackPanel Margin="10" Grid.Column="2" Grid.Row="1">
                             <TextBlock Text="Re-ordering Level" Margin="5" FontWeight="Bold" />
@@ -128,23 +129,32 @@
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
                                 <TextBlock Text="Add Med to Alternatives" Margin="5" FontWeight="Bold" />
-                                <ComboBox Grid.Row="2" IsEditable="True" IsTextSearchEnabled="True" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0" HorizontalAlignment="Right"  Width="250" Height="30" SelectedIndex="0">
-                                    <ComboBoxItem Content="Available"/>
-                                    <ComboBoxItem Content="NotAvailable"/>
-                                </ComboBox>
+                                <Border CornerRadius="10" Margin="0 0 20 0" Width="240" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                                    <ComboBox Background="White"  BorderBrush="White"
+                                        BorderThickness="0"
+                                        Width="230" IsEditable="True"
+                                        IsTextSearchEnabled="True"
+                                        StaysOpenOnEdit="True"
+                                        SelectedIndex="0"
+                                        Margin="2"
+                                        x:Name="medicinecombobox"
+                                    />
+                                </Border>
                             </StackPanel>
                             <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                                <Button Style="{DynamicResource editbutton}" Content="ADD" Margin="-20 25 0 0"/>
+                                <Button Style="{DynamicResource editbutton}" Content="ADD" ToolTip="Add medcine alternatives" Margin="-20 25 0 0" Click="Button_Click_1"/>
                             </StackPanel>
                         </StackPanel>
+                    <StackPanel x:Name="alternativemedicinelist">
+                    </StackPanel>
                     </StackPanel>
                     <StackPanel Grid.Row="7" Orientation="Horizontal">
                         <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
                             <TextBlock Text="Instuctions" Margin="5" FontWeight="Bold" />
-                            <TextBox Style="{DynamicResource textboxstyle}" Tag="Details....." Width="300" Height="150"/>
+                            <TextBox x:Name="medinstructions" Style="{DynamicResource textboxstyle}" Tag="Details....." Width="300" Height="60"/>
                         </StackPanel>
                     </StackPanel>
-                    <Button Grid.Row="8" Style="{StaticResource editbutton}" Margin="30" Width="100" HorizontalAlignment="Right">
+                    <Button Grid.Row="8" Style="{StaticResource editbutton}" Margin="30" Width="100" HorizontalAlignment="Right" Click="Button_Click">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Submit" FontSize="14"/>
                         </StackPanel>
