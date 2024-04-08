@@ -138,5 +138,10 @@ namespace Final_Project.Forms.Pharmacy
             }
             MainFrame.Content = new AddMedicinePage();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

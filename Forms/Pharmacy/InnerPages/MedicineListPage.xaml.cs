@@ -75,5 +75,11 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 NavigationService.Navigate(new AddStockPage());
             }
         }
+
+        private void purchase_button(object sender, RoutedEventArgs e)
+        {
+            AlertForm AF = new AlertForm(new PurchasePage());
+            AF.ShowDialog();
+        }
     }
 }

@@ -490,3 +490,7 @@ C:\Users\Ali\source\repos\Final Project\Final_year_project\Final Project\obj\Deb
 C:\Users\Ali\source\repos\Final Project\Final_year_project\Final Project\obj\Debug\net6.0-windows\Final Project.pdb
 C:\Users\Ali\source\repos\Final Project\Final_year_project\Final Project\obj\Debug\net6.0-windows\Final Project.genruntimeconfig.cache
 C:\Users\Ali\source\repos\Final Project\Final_year_project\Final Project\obj\Debug\net6.0-windows\ref\Final Project.dll
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\Med_PurchasePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\Med_PurchasePage.baml
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\PurchasePage.g.cs
+C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\PurchasePage.baml

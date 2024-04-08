@@ -174,10 +174,16 @@
     <Compile Update="Forms\Pharmacy\InnerPages\MedReturnPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\Med_PurchasePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\NewOrderPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\PurchasePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\RequestMultipleItemsPage.xaml.cs">
@@ -368,10 +374,16 @@
     <Page Update="Forms\Pharmacy\InnerPages\MedReturnPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\Med_PurchasePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Forms\Pharmacy\InnerPages\NewOrderPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\PurchasePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\RequestMultipleItemsPage.xaml">

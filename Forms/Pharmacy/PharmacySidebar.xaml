@@ -15,5 +15,7 @@ Background="#1E929B"
         <Button   Style="{StaticResource editbutton}" Content="Return"  Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedReturnPage"/>
         <Button   Style="{StaticResource editbutton}" Content="Supplier" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenSupplierPage"/>
         <Button   Style="{StaticResource editbutton}" Content="Content" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenOrderPage"/>
+        <Button   Style="{StaticResource editbutton}" Content="Purchase" Margin="5" FontSize="16" FontWeight="SemiBold"/>
+
     </StackPanel>
 </Page>

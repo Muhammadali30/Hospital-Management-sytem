@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Final_Project.Forms.Pharmacy.InnerPages" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       Background="white"
-      d:DesignHeight="1650" d:DesignWidth="320"
+      d:DesignHeight="450" d:DesignWidth="320"
       Title="AddMedicinePage">
 
     <Grid>
