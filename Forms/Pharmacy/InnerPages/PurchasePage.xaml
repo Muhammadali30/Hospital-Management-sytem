@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Final_Project.Forms.Pharmacy.InnerPages"
       mc:Ignorable="d" 
       Background="White"
-      d:DesignHeight="850" d:DesignWidth="320"
+      d:DesignHeight="1550" d:DesignWidth="320"
       Title="PurchasePage">
 
     <Grid>
@@ -19,12 +19,12 @@
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Voucher No" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="k" Style="{DynamicResource textboxstyle}" Tag="Voucher No" Width="300"/>
+                        <TextBox x:Name="voucher_no" Style="{DynamicResource textboxstyle}" Tag="Voucher No" Width="300"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
                             <TextBlock Text="Supplier" Margin="5" FontWeight="Bold" />
-                            <Border CornerRadius="10" Margin="0 0 20 0" Width="240" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                            <Border CornerRadius="5" Margin="0 0 20 0" Width="240" Background="white" BorderBrush="#1E929B" BorderThickness="1">
                                 <ComboBox Background="White"  BorderBrush="White"
                                      BorderThickness="0"
                                      Width="230" IsEditable="True"
@@ -42,7 +42,7 @@
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
                         <TextBlock Text="Dosage Form" Margin="5" FontWeight="Bold" />
-                        <ComboBox x:Name="meddosageform" Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="290" Height="30" SelectedIndex="0">
+                        <ComboBox x:Name="meddosageform" SelectionChanged="meddosageform_SelectionChanged" Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="290" Height="30" SelectedIndex="0">
                             <ComboBoxItem IsEnabled="False" Content="Tablet"/>
                             <ComboBoxItem Content="Syrup"/>
                             <ComboBoxItem Content="Tablet"/>
@@ -61,7 +61,7 @@
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
                             <TextBlock Text="Medicine" Margin="5" FontWeight="Bold" />
-                            <Border CornerRadius="10" Margin="0 0 20 0" Width="240" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                            <Border CornerRadius="5" Margin="0 0 20 0" Width="240" Background="white" BorderBrush="#1E929B" BorderThickness="1">
                                 <ComboBox Background="White"  BorderBrush="White"
                                        BorderThickness="0"
                                        Width="230" IsEditable="True"
@@ -87,7 +87,7 @@
                     </StackPanel>-->
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="No of Boxes" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="medrackno" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
+                        <TextBox x:Name="noofboxes" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Units in Box" Margin="5" FontWeight="Bold" />
@@ -197,7 +197,7 @@
                         <TextBox x:Name="medinstructions" Style="{DynamicResource textboxstyle}" Tag="Details....." Width="300" Height="60"/>
                     </StackPanel>
                 </StackPanel>
-                <Button Grid.Row="8" Style="{StaticResource editbutton}" Margin="30" Width="100" HorizontalAlignment="Right">
+                <Button Grid.Row="8" Style="{StaticResource editbutton}" Margin="30" Width="100" HorizontalAlignment="Right" Click="Button_Click">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Submit" FontSize="14"/>
                     </StackPanel>
