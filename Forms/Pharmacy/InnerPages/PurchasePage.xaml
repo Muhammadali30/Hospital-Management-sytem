@@ -91,31 +91,31 @@
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Units in Box" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="medingredients" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
+                        <TextBox x:Name="unitsinbox" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Stock Qty" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="j" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
+                        <TextBox x:Name="stockqty" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Date" Margin="5" FontWeight="Bold" />
                         <Border CornerRadius="10" Height="30" Width="300" Margin="0" Background="white" BorderBrush="#1E929B" BorderThickness="1">
-                            <DatePicker Margin="2" BorderThickness="0"/>
+                            <DatePicker x:Name="date" Margin="2" BorderThickness="0"/>
                         </Border>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Expiry Date" Margin="5" FontWeight="Bold" />
                         <Border CornerRadius="10" Height="30" Width="300" Margin="0" Background="white" BorderBrush="#1E929B" BorderThickness="1">
-                            <DatePicker Margin="2" BorderThickness="0"/>
+                            <DatePicker x:Name="expiry" Margin="2" BorderThickness="0"/>
                         </Border>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Unit Price" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="jnn" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
+                        <TextBox x:Name="unitprice" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                         <TextBlock Text="Purchase Price" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="aa" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
+                        <TextBox x:Name="purchaseprice" Style="{DynamicResource textboxstyle}" Tag="0" Width="300"/>
                     </StackPanel>
 
                     <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
