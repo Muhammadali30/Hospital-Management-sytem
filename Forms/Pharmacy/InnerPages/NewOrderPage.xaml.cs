@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,17 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         public NewOrderPage()
         {
             InitializeComponent();
+        }
+
+        private void TextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            TextBox tb = (TextBox)sender;
+            Database db = new Database();
+            ComboBoxItem dosageform = (ComboBoxItem)meddosageform.SelectedItem;
+            string df = dosageform.Content.ToString();
+            DataTable dt = db.Read($"SELECT * from Medicines where name like '{tb.Text}%' and dosageForm = '{df}'");
+            sellmedicine.ItemsSource = dt.DefaultView;
+            MessageBox.Show(tb.Text);
         }
     }
 }

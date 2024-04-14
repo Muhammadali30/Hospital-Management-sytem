@@ -30,7 +30,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages.Labreports
         private void LoadCompleteReports()
         {
             Database database = new Database();
-            DataTable dt = database.Read("SELECT i.id as Invoice_NO , p.name as Patient, i.datetime as Date, i.priority as Priority FROM Lab_Invoice AS i LEFT JOIN Unregister_Patients AS p ON i.unregistered_patient_id = p .id where i.status='Complete'");
+            DataTable dt = database.Read("SELECT i.id as Invoice_NO , p.name as Patient, i.datetime as Date, i.priority as Priority FROM Lab_Invoice AS i LEFT JOIN Patients AS p ON i.unregistered_patient_id = p .id where i.status='Complete'");
             completetestgrid.ItemsSource = dt.DefaultView;
             completetestgrid.AutoGeneratingColumn += (sender, e) =>
             {

@@ -9,117 +9,52 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="NewOrderPage">
 
-    <Grid>
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>-->
         <!--<TextBlock Text="Order Medicine" FontSize="22" FontWeight="Bold" Grid.Row="0" Margin="10 10 0 0"/>-->
 
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <!--<ScrollViewer VerticalScrollBarVisibility="Hidden">-->
 
             <Grid Grid.Row="2" Margin="10">
                 <Grid.ColumnDefinitions>
-                     <ColumnDefinition Width=".7*"/>
-                     <ColumnDefinition Width=".3*"/>
-                </Grid.ColumnDefinitions> 
+                    <ColumnDefinition Width=".7*"/>
+                    <ColumnDefinition Width=".3*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition Height="auto"/>
-                </Grid.RowDefinitions>
-                <Button x:Name="showdoctorsbutton" Grid.Row="0" Style="{StaticResource editbutton}" Margin="5 20 5 5" HorizontalAlignment="Right">
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Use BarCode" FontSize="14"/>
-                    </StackPanel>
-                </Button>
-                <!--<StackPanel Margin="10 0" Orientation="Vertical" Grid.Column="0" Grid.Row="0">
-                    <TextBlock Text="Invoice no" Margin="5" FontWeight="Bold" />
-                    <TextBlock Text="7654" Margin="5"/>
-                </StackPanel>-->
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                    <RowDefinition Height="*"/>
 
+                </Grid.RowDefinitions>
+                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0">
+                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
+                        <TextBlock Text="Dosage Form" Margin="5" FontWeight="Bold" />
+                        <ComboBox x:Name="meddosageform" Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="150" Height="30" SelectedIndex="0">
+                            <ComboBoxItem IsEnabled="False" Content="Tablet"/>
+                            <ComboBoxItem Content="Syrup"/>
+                            <ComboBoxItem Content="Tablet"/>
+                            <ComboBoxItem Content="Capsule"/>
+                            <ComboBoxItem Content="Suspension"/>
+                            <ComboBoxItem Content="Solution"/>
+                            <ComboBoxItem Content="Injection"/>
+                            <ComboBoxItem Content="Cream"/>
+                            <ComboBoxItem Content="Ointment"/>
+                            <ComboBoxItem Content="Gel"/>
+                            <ComboBoxItem Content="Patch"/>
+                            <ComboBoxItem Content="Inhaler"/>
+                            <ComboBoxItem Content="Suppository"/>
+                        </ComboBox>
+                    </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" >
                         <TextBlock Text="Medicine Name" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="200"/>
+                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="200" KeyDown="TextBox_KeyDown"/>
                     </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
-                        <TextBlock Text="Purchase Quantity" Margin="5" FontWeight="Bold" />
-                        <TextBox Style="{DynamicResource textboxstyle}" Tag="Quantity" Width="200"/>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="0">
-                        <TextBlock Text="Amount" Margin="5" FontWeight="Bold" />
-                        <TextBlock Text="200" Margin="5"/>
-                    </StackPanel>
-
-                    <Button  Style="{StaticResource editbutton}"  Margin="25 20 5 5" Height="30" HorizontalAlignment="Right">
-                        <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Add To Cart" FontSize="14"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-                <TextBlock Text="Cart" Grid.Row="2" FontWeight="Bold" FontSize="16"/>
-                <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
-                        <StackPanel Orientation="Horizontal">
-                            <!--Cart-->
-                            <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                                <TextBlock Text="Item Name" FontWeight="Bold" />
-                                <TextBlock Text="Panadol"/>
-                                <TextBlock Text="Quantity" FontWeight="Bold" />
-                                <TextBlock Text="2"/>
-                                <TextBlock Text="Amount" FontWeight="Bold" />
-                                <TextBlock Text="200"/>
-                                <Button  Style="{StaticResource editbutton}"  Margin="5" Background="Red">
-                                    <StackPanel Orientation="Horizontal" >
-                                        <Icon:PackIconMaterial Kind="Delete"/>
-                                        <!--<TextBlock Text=" Remove From Cart" FontSize="14"/>-->
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-
-                            <!--Cart-->
-                            <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                                <TextBlock Text="Item Name" FontWeight="Bold" />
-                                <TextBlock Text="Panadol"/>
-                                <TextBlock Text="Quantity" FontWeight="Bold" />
-                                <TextBlock Text="2"/>
-                                <TextBlock Text="Amount" FontWeight="Bold" />
-                                <TextBlock Text="200"/>
-                                <Button  Style="{StaticResource editbutton}"  Margin="5" Background="Red">
-                                    <StackPanel Orientation="Horizontal" >
-                                        <Icon:PackIconMaterial Kind="Delete"/>
-                                        <!--<TextBlock Text=" Remove From Cart" FontSize="14"/>-->
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-
-                            <!--Cart-->
-                            <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
-                                <TextBlock Text="Item Name" FontWeight="Bold" />
-                                <TextBlock Text="Panadol"/>
-                                <TextBlock Text="Quantity" FontWeight="Bold" />
-                                <TextBlock Text="2"/>
-                                <TextBlock Text="Amount" FontWeight="Bold" />
-                                <TextBlock Text="200"/>
-                                <Button  Style="{StaticResource editbutton}"  Margin="5" Background="Red">
-                                    <StackPanel Orientation="Horizontal" >
-                                        <Icon:PackIconMaterial Kind="Delete"/>
-                                        <!--<TextBlock Text=" Remove From Cart" FontSize="14"/>-->
-                                    </StackPanel>
-                                </Button>
-                            </StackPanel>
-                        </StackPanel>
-                    </ScrollViewer>
-                </StackPanel>
-                <TextBlock Text="Total Amount PKR:" Grid.Row="4" FontSize="16" FontWeight="Bold" />
+                </WrapPanel>
+        <DataGrid x:Name="sellmedicine" Grid.Row="1" Grid.Column="0" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False"/>
+        <!--<DataGrid Grid.Row="1" />-->
+        <!--<TextBlock Text="Total Amount PKR:" Grid.Row="4" FontSize="16" FontWeight="Bold" />
                 <TextBlock Text="600" Grid.Row="4" Margin="160 0 0 0" FontSize="16"/>
                 <TextBlock Text="Discount:" Grid.Row="5" FontSize="16" FontWeight="Bold" Margin="0 15 0 0" />
                 <TextBox Style="{DynamicResource textboxstyle}" Tag="Discount" Width="150" Grid.Row="5" Margin="100 10 0 0" FontSize="16"/>
@@ -134,17 +69,16 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Cancel" FontSize="14"/>
                     </StackPanel>
-                </Button>
-                <TextBlock Text="Select Medicine" FontSize="22" FontWeight="Bold" Grid.Row="8" Margin="10 10 0 0"/>
+                </Button>-->
+                <!--<TextBlock Text="Select Medicine" FontSize="22" FontWeight="Bold" Grid.Row="8" Margin="10 10 0 0"/>
                 <TextBox Grid.Row="9" Margin="10" HorizontalAlignment="Right" Tag="Search" Style="{DynamicResource textboxstyle}" Width="150"/>
                 <ComboBox Grid.Row="9" Style="{StaticResource CustomComboBoxStyle}"  HorizontalAlignment="Right" Margin="0 0 180 0"  Width="100" Height="30" SelectedIndex="0" >
                     <ComboBoxItem Content="Medicine"/>
                     <ComboBoxItem Content="Category"/>
                     <ComboBoxItem Content="Best Selling"/>
-                </ComboBox>
-                <DataGrid  Grid.Row="10" Height="200" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
-                </DataGrid>
+                </ComboBox>-->
+
             </Grid>
-        </ScrollViewer>
-    </Grid>
+        <!--</ScrollViewer>-->
+    <!--</Grid>-->
 </Page>

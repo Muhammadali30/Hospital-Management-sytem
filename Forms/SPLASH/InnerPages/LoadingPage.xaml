@@ -12,7 +12,7 @@
     <Grid>
         <TextBlock Text="Loading Resources..." FontSize="17" FontWeight="SemiBold"
                    Margin="50 80 0 15"/>
-        <ProgressBar Value="0" Height="5" Width="220" BorderBrush="#1E929B" Background="White" Margin="-5 10 0 0" IsIndeterminate="True" Foreground="#1E929B"
+        <ProgressBar Value="0" Height="5" Width="220" BorderBrush="black" Background="White" Margin="-5 10 0 0" IsIndeterminate="True" Foreground="black"
                      />
     </Grid>
 </Page>

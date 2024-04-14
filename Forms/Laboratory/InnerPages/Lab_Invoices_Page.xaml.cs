@@ -31,7 +31,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         private void LoadInvoices()
         {
             Database database = new Database();
-            DataTable dt = database.Read("SELECT i.id as Invoice_NO , p.name as Patient ,  i.total as Total, i.datetime as Date FROM Lab_Invoice AS i LEFT JOIN Unregister_Patients AS p ON i.unregistered_patient_id = p .id");
+            DataTable dt = database.Read("SELECT i.id as Invoice_NO , p.name as Patient ,  i.total as Total, i.datetime as Date FROM Lab_Invoice AS i LEFT JOIN Patients AS p ON i.unregistered_patient_id = p .id");
             labinvoicegrid.ItemsSource = dt.DefaultView;
             labinvoicegrid.AutoGeneratingColumn += (sender, e) =>
             {

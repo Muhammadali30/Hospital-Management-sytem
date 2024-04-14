@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:Final_Project.Forms.Pharmacy"
       mc:Ignorable="d" 
             d:DesignHeight="300" d:DesignWidth="190"
-Background="#1E929B"
       Title="PharmacySidebar">
 
     <StackPanel>

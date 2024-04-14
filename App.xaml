@@ -14,38 +14,39 @@
 
 
         <Style x:Key="button" TargetType="Button">
-            <Setter Property="Background" Value="white"/>
-            <Setter Property="Foreground" Value="black"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Width" Value="auto"/>
-            <Setter Property="MinWidth" Value="130"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="white"/>
+            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
 
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="Padding" Value="25"/>
-            <Setter Property="FontSize" Value="4"/>
-            <Setter Property="FontFamily" Value="Cascadia Code"/>
-
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Template" >
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="btnBorder"
+             Background="{TemplateBinding Background}"
+             BorderThickness="{TemplateBinding BorderThickness}"
+             BorderBrush="{TemplateBinding BorderBrush}"
+             CornerRadius="5"
+             SnapsToDevicePixels="True">
+                            <Grid 
+             Margin="{TemplateBinding Padding}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="btnBorder" Property="Background" Value="white"/>
+                                <Setter Property="BorderBrush" Value="black"/>
+                                <Setter Property="Foreground" Value="black"/>
+                                <Setter Property="FontWeight" Value="Bold"/>
+                            </Trigger>
+                            <!-- Add other triggers as needed -->
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="white"/>
-                    <Setter Property="Background" Value="#1E929B"/>
-                </Trigger>
-            </Style.Triggers>
-            
-
-
-
-
         </Style>
 
         <Style x:Key="datagrid" TargetType="DataGrid">
@@ -122,8 +123,8 @@
         </Style>
 
         <Style x:Key="notifybutton" TargetType="Button">
-            <Setter Property="Background" Value="white"/>
-            <Setter Property="Foreground" Value="#1E929B"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="black"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Width" Value="25"/>
             <Setter Property="Height" Value="25"/>
@@ -134,7 +135,7 @@
             <Setter Property="Template" >
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="100" BorderThickness="0" BorderBrush="#d3faaa">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="0" BorderThickness="0" BorderBrush="black">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -166,7 +167,7 @@
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>-->
-            <Setter Property="BorderBrush" Value="#1E929B"/>
+            <Setter Property="BorderBrush" Value="Black"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="Padding" Value="5"/>
             <Setter Property="Template">
@@ -268,10 +269,10 @@
         </Style>
 
         <Style x:Key="editbutton" TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#1E929B"/>
+            <Setter Property="Background" Value="white"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="BorderBrush" Value="white"/>
-            <Setter Property="Foreground" Value="white"/>
+            <Setter Property="Foreground" Value="black"/>
 
             <Setter Property="Padding" Value="5"/>
             <Setter Property="Template">
@@ -290,9 +291,9 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="btnBorder" Property="Background" Value="white"/>
+                                <Setter TargetName="btnBorder" Property="Background" Value="black"/>
                                 <Setter Property="BorderBrush" Value="black"/>
-                                <Setter Property="Foreground" Value="black"/>
+                                <Setter Property="Foreground" Value="white"/>
                                 <Setter Property="FontWeight" Value="Bold"/>
                             </Trigger>
                             <!-- Add other triggers as needed -->
@@ -305,7 +306,7 @@
         <Style x:Key="textboxstyle" TargetType="TextBox">
             <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="BorderBrush" Value="#1E929B"/>
+            <Setter Property="BorderBrush" Value="black"/>
             <Setter Property="Padding" Value="6 3"/>
             <Setter Property="AllowDrop" Value="True"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -318,7 +319,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="TextBox">
                         <Border x:Name="txtborder"
-                        CornerRadius="3"
+                        CornerRadius="0"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         SnapsToDevicePixels="True">
@@ -444,6 +445,7 @@
             </Setter>
         </Style>
 
+        
 
 
 

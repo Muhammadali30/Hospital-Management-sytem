@@ -31,8 +31,8 @@ namespace Final_Project
             InitializeComponent();
 
             //OPD();
-            //LAB();
-            PHARMACY();
+            LAB();
+            //PHARMACY();
 
 
         }

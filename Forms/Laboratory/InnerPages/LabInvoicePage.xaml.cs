@@ -243,7 +243,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Database db = new Database();
-            BigInteger patient_id = db.GetInsertedId($@"INSERT INTO Unregister_Patients (name,age,email,phone) OUTPUT INSERTED.id 
+            BigInteger patient_id = db.GetInsertedId($@"INSERT INTO Patients (name,age,email,phone) OUTPUT INSERTED.id 
 VALUES ('{unregistername.Text}',{Convert.ToInt32(unregisterage.Text)},'{unregisteremail.Text}','{unregisterphone.Text}')");
             MessageBox.Show(patient_id.ToString());
 

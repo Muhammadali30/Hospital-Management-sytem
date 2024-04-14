@@ -19,10 +19,10 @@
         </Grid.RowDefinitions>
         <TextBlock Text="Pharmacy Items" FontSize="22" FontWeight="Bold" Grid.Row="0" Margin="10 10 0 0"/>
         <WrapPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Add New Item" Style="{StaticResource editbutton}" Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenNewMedPage"/>
-            <Button Content="Add Multiple Items" Style="{StaticResource editbutton}"  Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenMulItemsPage"/>
-            <Button Content="Purchase" Style="{StaticResource editbutton}"  Margin="5 20 5 5" HorizontalAlignment="Right" Click="purchase_button"/>
-            <Button Content="Bulk Purchase" Style="{StaticResource editbutton}"  Margin="5 20 5 5" HorizontalAlignment="Right" Click="OpenAddStockPage"/>
+            <Button Content="Add New Item" Style="{StaticResource button}" Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenNewMedPage"/>
+            <Button Content="Add Multiple Items" Style="{StaticResource button}"  Margin="5 20 5 5" HorizontalAlignment="Right"  Click="OpenMulItemsPage"/>
+            <Button Content="Purchase" Style="{StaticResource button}"  Margin="5 20 5 5" HorizontalAlignment="Right" Click="purchase_button"/>
+            <Button Content="Bulk Purchase" Style="{StaticResource button}"  Margin="5 20 5 5" HorizontalAlignment="Right" Click="OpenAddStockPage"/>
         </WrapPanel>
         <WrapPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
         <TextBox Grid.Row="3" Margin="10" HorizontalAlignment="Right" Tag="Search" Style="{DynamicResource textboxstyle}" Width="150"/>

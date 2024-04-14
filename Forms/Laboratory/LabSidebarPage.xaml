@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:Final_Project.Forms.Laboratory"
       mc:Ignorable="d" 
         d:DesignHeight="300" d:DesignWidth="190"
-  Background="#1E929B"
       Title="LabSidebarPage">
 
     <StackPanel>
