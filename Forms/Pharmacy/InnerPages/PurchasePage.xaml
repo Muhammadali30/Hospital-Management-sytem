@@ -10,7 +10,7 @@
       Title="PurchasePage">
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" MouseMove="ScrollViewer_MouseMove">
             <StackPanel>
                 <StackPanel Grid.Row="1" Orientation="Vertical">
                     <StackPanel Margin="10" Orientation="Vertical" >
@@ -30,14 +30,13 @@
                                      Width="230" IsEditable="True"
                                      IsTextSearchEnabled="True"
                                      StaysOpenOnEdit="True"
-                                     SelectedIndex="0"
                                      Margin="2"
-                                     x:Name="medicinecombobox"
+                                     x:Name="suppliercombo"
                                  />
                             </Border>
                         </StackPanel>
                         <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                            <Button Style="{DynamicResource editbutton}" Content="ADD" ToolTip="Add medcine alternatives" Margin="-20 25 0 0" />
+                            <Button Style="{DynamicResource button}" Content="ADD" ToolTip="Add medcine alternatives" Margin="-20 25 0 0" />
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
@@ -67,14 +66,14 @@
                                        Width="230" IsEditable="True"
                                        IsTextSearchEnabled="True"
                                        StaysOpenOnEdit="True"
-                                       SelectedIndex="0"
+                                       
                                        Margin="2"
-                                       x:Name="medicinecovmbobox"
+                                       x:Name="medcombo"
                                    />
                             </Border>
                         </StackPanel>
                         <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
-                            <Button Style="{DynamicResource editbutton}" Content="ADD" ToolTip="Add medcine alternatives" Margin="-20 25 0 0" />
+                            <Button Style="{DynamicResource button}" Content="ADD" ToolTip="Add medcine alternatives" Margin="-20 25 0 0" />
                         </StackPanel>
                     </StackPanel>
                     <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
@@ -197,7 +196,7 @@
                         <TextBox x:Name="medinstructions" Style="{DynamicResource textboxstyle}" Tag="Details....." Width="300" Height="60"/>
                     </StackPanel>
                 </StackPanel>
-                <Button Grid.Row="8" Style="{StaticResource editbutton}" Margin="30" Width="100" HorizontalAlignment="Right" Click="Button_Click">
+                <Button Grid.Row="8" Style="{StaticResource button}" Margin="30" Width="100" HorizontalAlignment="Right" Click="Button_Click">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Submit" FontSize="14"/>
                     </StackPanel>

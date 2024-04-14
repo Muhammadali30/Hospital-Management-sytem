@@ -3,18 +3,32 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Final_Project.Forms.Pharmacy"
+      xmlns:local="clr-namespace:Final_Project.Forms.Pharmacy" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
             d:DesignHeight="300" d:DesignWidth="190"
       Title="PharmacySidebar">
 
     <StackPanel>
-        <Button   Style="{StaticResource editbutton}" Content="Medcine" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedListPage"/>
-        <Button   Style="{StaticResource editbutton}" Content="Detail"  Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedDetailPage"/>
-        <Button   Style="{StaticResource editbutton}" Content="Return"  Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedReturnPage"/>
-        <Button   Style="{StaticResource editbutton}" Content="Supplier" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenSupplierPage"/>
-        <Button   Style="{StaticResource editbutton}" Content="Content" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenOrderPage"/>
-        <Button   Style="{StaticResource editbutton}" Content="Purchase" Margin="5" FontSize="16" FontWeight="SemiBold"/>
+        <Button   Style="{StaticResource editbutton}" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedListPage">
+            <StackPanel Orientation="Horizontal" Margin="0 0 60 0">
+                <Icon:PackIconMaterial Kind="MedicalBag" Margin="0 3 5 0"/>
+                <TextBlock Text="Medicine" />
+            </StackPanel>
+        </Button>
+        <Button   Style="{StaticResource editbutton}"  Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedDetailPage">
+            <StackPanel Orientation="Horizontal" Margin="0 0 90 0">
+                <Icon:PackIconMaterial Kind="Details" Margin="0 3 5 0"/>
+                <TextBlock Text="Detail"/>
+            </StackPanel>
+        </Button>
+        <Button Style="{StaticResource editbutton}" Content="Return"  Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenMedReturnPage"/>
+        <Button Style="{StaticResource editbutton}" Content="Supplier" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenSupplierPage"/>
+        <Button Style="{StaticResource editbutton}" Margin="5" FontSize="16" FontWeight="SemiBold" Click="OpenOrderPage">
+            <StackPanel Orientation="Horizontal" Margin="0 0 90 0">
+                <Icon:PackIconMaterial Kind="Shopping" Margin="0 3 5 0"/>
+                <TextBlock Text="Order"/>
+            </StackPanel>
+        </Button>
 
     </StackPanel>
 </Page>

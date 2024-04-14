@@ -52,11 +52,11 @@ namespace Final_Project.Classes
             return textbox;
         }
 
-        public static Button create_button(string icon = null,string? text = null, double? width = null,string? tooltip = null)
+        public static Button create_button(string icon = null,string? text = null, double? width = null,string? tooltip = null, string? colorname = null)
         {
             
 
-            Style buttonstyle = (Style)Application.Current.FindResource("editbutton");
+            Style buttonstyle = (Style)Application.Current.FindResource("button");
             Button button = new Button();
             if (icon != null)
             {
@@ -70,7 +70,12 @@ namespace Final_Project.Classes
             button.Style = buttonstyle;
             button.Width = width.HasValue ? width.Value : double.NaN;
             //button.IsEnabled = visibility.HasValue ? visibility.Value : true;
-            button.Background = System.Windows.Media.Brushes.Red;
+
+            
+            // Get the SolidColorBrush corresponding to the color name
+            System.Windows.Media.Brush brush = (System.Windows.Media.Brush)new BrushConverter().ConvertFromString(colorname);
+
+            button.Background = brush;
             button.ToolTip = tooltip;
             //if (visibility == false) { button.BorderBrush = new SolidColorBrush(Colors.Gray); }
             button.Margin = new Thickness(10);

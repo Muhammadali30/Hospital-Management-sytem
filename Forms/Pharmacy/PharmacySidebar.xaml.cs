@@ -27,8 +27,28 @@ namespace Final_Project.Forms.Pharmacy
             InitializeComponent();
             MainFrame = mainFrame;
         }
+
+        private Button previousButton = null;
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Check if there's a previously clicked button
+            if (previousButton != null)
+            {
+                // Revert the background color of the previous button
+                previousButton.BorderBrush = Brushes.White;
+            }
+
+            // Set the background color of the clicked button
+            var button = (Button)sender;
+            button.BorderBrush = Brushes.Black;
+
+            // Store the current button as the previously clicked button
+            previousButton = button;
+        }
         private void OpenAddMedForm(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -45,6 +65,7 @@ namespace Final_Project.Forms.Pharmacy
 
         private void OpenMedListPage(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -61,6 +82,7 @@ namespace Final_Project.Forms.Pharmacy
 
         private void OpenMedDetailPage(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -77,6 +99,7 @@ namespace Final_Project.Forms.Pharmacy
 
         private void OpenMedReturnPage(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -93,6 +116,7 @@ namespace Final_Project.Forms.Pharmacy
 
         private void OpenOrderPage(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -109,6 +133,7 @@ namespace Final_Project.Forms.Pharmacy
 
         private void OpenSupplierPage(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -137,11 +162,6 @@ namespace Final_Project.Forms.Pharmacy
 
             }
             MainFrame.Content = new AddMedicinePage();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
