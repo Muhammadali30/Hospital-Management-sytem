@@ -104,24 +104,65 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
             db.Add($@"
 INSERT INTO Med_Purchase 
-(batch_no, voucher_no, supplier_id, med_id, no_of_boxes, units_in_box, expiry, date, unit_price, purchase_price) 
+(batch_no, voucher_no, supplier_id, med_id, units_in_box, expiry, date, cost_price, sale_price,stock_qty) 
 VALUES 
 ('{medselectedRow["name"]}' + CAST((SELECT MAX(id) + 1 FROM Med_Purchase) AS NVARCHAR(10)), 
  '{voucher_no.Text}', 
  {Convert.ToInt64(selectedRow["id"])}, 
  {Convert.ToInt64(medselectedRow["id"])}, 
- {Convert.ToInt32(noofboxes.Text)}, 
  {Convert.ToInt32(unitsinbox.Text)}, 
  '{seleexpiryctedDate:yyyy-MM-dd}', 
  '{selectedDate:yyyy-MM-dd}', 
- {Convert.ToInt32(unitprice.Text)}, 
- {Convert.ToInt32(purchaseprice.Text)})");
-
+ {Convert.ToInt32(costprice.Text)}, 
+ {Convert.ToInt32(saleprice.Text)},
+ {Convert.ToInt32(unitsinbox.Text)})");
         }
 
         private void ScrollViewer_MouseMove(object sender, MouseEventArgs e)
         {
             flag = true;
         }
+
+        private void get_price_per_piece()
+        {
+            if (!string.IsNullOrEmpty(saleprice.Text) && !string.IsNullOrEmpty(unitsinbox.Text))
+            {
+                if (float.TryParse(saleprice.Text, out float salePrice) && float.TryParse(unitsinbox.Text, out float unitsInBox))
+                {
+                    if (unitsInBox != 0)
+                    {
+                        float pricePerPiece = salePrice / unitsInBox;
+                        priceperpiece.Text = pricePerPiece.ToString();
+                    }
+                    else
+                    {
+                        // Handle division by zero
+                        priceperpiece.Text = "N/A";
+                    }
+                }
+                else
+                {
+                    priceperpiece.Text = "";
+                    MessageBox.Show("Please add integer or float value");
+                }
+            }
+            else
+            {
+                priceperpiece.Text = "";
+            }
+        }
+
+        private void saleprice_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(saleprice.Text)) { return; }
+            get_price_per_piece();
+        }
+
+        private void unitsinbox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (string.IsNullOrEmpty(unitsinbox.Text)) { return; }
+            get_price_per_piece();
+        }
+
     }
 }

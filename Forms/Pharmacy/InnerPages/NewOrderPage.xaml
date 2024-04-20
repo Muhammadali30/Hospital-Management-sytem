@@ -53,15 +53,15 @@
                     </StackPanel>
                 </WrapPanel>
         <DataGrid x:Name="sellmedicine" Grid.Row="1" Grid.Column="0" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False"/>
-        <ScrollViewer  Height="250" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
+        <ScrollViewer  Height="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
             <StackPanel x:Name="cartpanel" Orientation="Vertical">
                 
             </StackPanel>
             </ScrollViewer>
-            <StackPanel Height="185" VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1">
+            <StackPanel Height="185" VerticalAlignment="Bottom" Panel.ZIndex="1" Grid.Row="1" Grid.Column="1">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Total PKR:" Grid.Row="4" FontSize="16" FontWeight="Bold" />
-                <TextBlock Text="600" Grid.Row="4" Margin="20 0 0 0" FontSize="16"/>
+                <TextBlock x:Name="totalpricetextblock" Text="0" Grid.Row="4" Margin="20 0 0 0" FontSize="16"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     
@@ -70,7 +70,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="After Discount:" Grid.Row="6" FontSize="16" Margin="0 10 0 0" FontWeight="Bold" />
-                    <TextBlock Text="600" Grid.Row="6" Margin="10 10 0 0" FontSize="16"/>
+                    <TextBlock Text="0" Grid.Row="6" Margin="10 10 0 0" FontSize="16"/>
                 </StackPanel>
                 <Button Grid.Row="7" Style="{StaticResource button}" Content="Submit" Margin="30" Width="100" Height="30" HorizontalAlignment="Right"/>
 

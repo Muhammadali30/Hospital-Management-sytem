@@ -79,6 +79,7 @@ namespace Final_Project.Classes
             button.ToolTip = tooltip;
             //if (visibility == false) { button.BorderBrush = new SolidColorBrush(Colors.Gray); }
             button.Margin = new Thickness(10);
+            button.HorizontalAlignment = HorizontalAlignment.Left;
             return button;
         }
 

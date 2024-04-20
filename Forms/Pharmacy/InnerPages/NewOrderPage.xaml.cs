@@ -55,7 +55,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             Database db = new Database();
             ComboBoxItem dosageform = (ComboBoxItem)meddosageform.SelectedItem;
             string df = dosageform.Content.ToString();
-            DataTable dt = db.Read($"SELECT m.id,m.name,m.rack_no,p.unit_price,p.batch_no from Medicines m JOIN Med_Purchase p ON m.id = p.med_id where name like '{tb.Text}%' and dosageForm = '{df}'");
+            DataTable dt = db.Read($"SELECT p.id,m.name,m.rack_no,ROUND((p.units_in_box / p.sale_price), 2) as PricePerUnit,p.batch_no,p.date from Medicines m JOIN Med_Purchase p ON m.id = p.med_id where name like '{tb.Text}%' and dosageForm = '{df}' and p.stock_qty > 0");
             sellmedicine.ItemsSource = dt.DefaultView;
             MessageBox.Show(tb.Text);
             sellmedicine.MouseDoubleClick += Collectsamplegrid_MouseDoubleClick;
@@ -71,33 +71,65 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 //MessageBox.Show(selectedRow["name"].ToString());
                 StackPanel spid = CreateTags.create_stackpanel(null, "vertical");
                 spid.Tag = selectedRow["id"];
-                spid.Children.Add(CreateTags.create_textblock(selectedRow["name"].ToString()));
-                StackPanel head = CreateTags.create_stackpanel(null, "horizontal");
+                StackPanel namepanel = CreateTags.create_stackpanel(null, "horizontal");
+                namepanel.Children.Add(CreateTags.create_textblock("Name"));
+                namepanel.Children.Add(CreateTags.create_textblock(selectedRow["name"].ToString()));
+                spid.Children.Add(namepanel);
+                StackPanel pricepanel = CreateTags.create_stackpanel(null, "horizontal");
+                pricepanel.Children.Add(CreateTags.create_textblock("PricePerPiece(Rs)"));
+                pricepanel.Children.Add(CreateTags.create_textblock(selectedRow["PricePerUnit"].ToString()));
+                spid.Children.Add(pricepanel);
                 StackPanel heada = CreateTags.create_stackpanel(null, "horizontal");
                 Button decrement = CreateTags.create_button("WindowMinimize", null, 30, "Remove","Gray");
+                decrement.Click += (sender, e) => cartitemcount(sender,e,false);
                 Button increment = CreateTags.create_button("Plus", null, 30, "Add","Gray");
+                increment.Click += (sender, e) => cartitemcount(sender, e, true);
                 heada.Children.Add(decrement);
-                heada.Children.Add(CreateTags.create_textbox(null, 50, false, "0"));
+                heada.Children.Add(CreateTags.create_textbox("0", 50, false, "0"));
                 heada.Children.Add(increment);
                 Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete","Red");
-                newbutton.Click += new RoutedEventHandler(OnButtonClick);
-                head.Children.Add(heada);
-                head.Children.Add(newbutton);
-
-                spid.Children.Add(head);
+                newbutton.Click += new RoutedEventHandler(DeleteFromCart);
+                spid.Children.Add(heada);
+                spid.Children.Add(newbutton);
                 cartpanel.Children.Add(spid);
+                //totalpricetextblock.Text = (float.Parse(totalpricetextblock.Text) + float.Parse(selectedRow["PricePerUnit"].ToString())).ToString();
             }
-
         }
-        private void OnButtonClick(object sender, RoutedEventArgs e)
+        private void DeleteFromCart(object sender, RoutedEventArgs e)
         {
             Button button = (Button)sender;
             StackPanel buttonparent = button.Parent as StackPanel;
-            StackPanel buttonparent_parent = buttonparent.Parent as StackPanel;
-            if (buttonparent_parent != null)
+            if (buttonparent != null)
             {
-                MessageBox.Show(buttonparent_parent.Tag.ToString());
-                cartpanel.Children.Remove(buttonparent_parent);
+                MessageBox.Show(buttonparent.Tag.ToString());
+                cartpanel.Children.Remove(buttonparent);
+            }
+        }
+        private void cartitemcount(object sender, RoutedEventArgs e, bool flag)
+        {
+            Button button = (Button)sender;
+            StackPanel buttonparent = button.Parent as StackPanel;
+            StackPanel buttongrandparent = buttonparent.Parent as StackPanel;
+            StackPanel grandparentsecondchild = (StackPanel)buttongrandparent.Children[1];
+            TextBlock uncle = (TextBlock)grandparentsecondchild.Children[1];
+            if (buttonparent != null)
+            {
+                TextBox itemcount = (TextBox)buttonparent.Children[1];
+                int value = Convert.ToInt32(itemcount.Text);
+                float totalprice = float.Parse(totalpricetextblock.Text);
+                float itemprice = float.Parse(uncle.Text);
+                if (flag == true)
+                {
+                    itemcount.Text = (++value).ToString();
+                    totalpricetextblock.Text = ((value * itemprice)).ToString();
+                }
+                else
+                {
+                    if (value == 0) { return; }
+                    totalpricetextblock.Text = (totalprice - itemprice).ToString();
+                    itemcount.Text = (value -= 1).ToString();
+
+                }
             }
         }
     }
