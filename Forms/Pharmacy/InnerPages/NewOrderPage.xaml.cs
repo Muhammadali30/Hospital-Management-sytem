@@ -1,8 +1,10 @@
 ﻿using Final_Project.Classes;
+using Humanizer;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -130,6 +132,48 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                     itemcount.Text = (value -= 1).ToString();
 
                 }
+            }
+        }
+
+        private void TextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            //if (int.TryParse(discounttextbox.Text,out int discount)) {
+            //    discounttextbox.Text = "";
+            //    return; 
+            //}
+            //if (totalpricetextblock.Text == "0" && discount == 0) { return; }
+            //afterdiscount.Text = (float.Parse(totalpricetextblock.Text) - discount).ToString();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Database db = new Database();
+
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            BigInteger order_id = db.GetInsertedId($@"INSERT INTO [Order] ([date], discount, total) OUTPUT INSERTED.id 
+            VALUES ('{currentDate}', {float.Parse(discounttextbox.Text.ToString())}, '{float.Parse(totalpricetextblock.Text.ToString())}')");
+
+            string data = "INSERT INTO Medicine_Orders(med_id,item_qty,order_id) VALUES";
+            for (int i = 0; i < cartpanel.Children.Count; i++)
+            {
+                StackPanel cartpanelchild = (StackPanel)cartpanel.Children[i];
+                StackPanel child1 = (StackPanel)cartpanelchild.Children[1];
+                StackPanel child2 = (StackPanel)cartpanelchild.Children[2];
+
+                //TextBlock price = (TextBlock)child1.Children[1];
+                TextBox item_qty = (TextBox)child2.Children[1];
+
+                if (cartpanel.Children.Count == i + 1)
+                {
+                    data += $"({Convert.ToInt32(cartpanelchild.Tag.ToString())},{Convert.ToInt32(item_qty.Text)},{order_id})";
+                }
+                else
+                {
+                    data += $"({Convert.ToInt32(cartpanelchild.Tag.ToString())},{Convert.ToInt32(item_qty.Text)},{order_id}),";
+                }
+                db.Add(data);
+                MessageBox.Show("Record Successfully Created");
             }
         }
     }
