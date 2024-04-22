@@ -141,5 +141,11 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 //MessageBox.Show(alternativemedicinelist.Children.Count.ToString());
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            AlertForm AF = new AlertForm(new AddCategoryPage());
+            AF.ShowDialog();
+        }
     }
 }

@@ -37,40 +37,40 @@
                     <Button Grid.Row="0" Style="{StaticResource editbutton}" Content="Back" Background="#a3a3a3" Margin="25 20 5 5" HorizontalAlignment="Left"/>
                     <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden">
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel x:Name="itemname" Width="130">
-                                <TextBlock Text="Item Name" Margin="5" FontWeight="Bold" />
+                            <StackPanel x:Name="itemname" Width="150">
+                                <TextBlock Text="Name" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="genericname"  Width="140">
-                                <TextBlock Text="Generic Name" Margin="5" FontWeight="Bold" />
-                            </StackPanel>
-                            <StackPanel x:Name="rack"  Width="80">
-                                <TextBlock Text="Rack#" Margin="5" FontWeight="Bold" />
-                            </StackPanel>
-                            <StackPanel x:Name="barcode"  Width="120">
-                                <TextBlock Text="Barcode" Margin="5" FontWeight="Bold" />
-                            </StackPanel>
-                            <StackPanel x:Name="manufacturer"  Width="110">
-                                <TextBlock Text="Manufacturer" Margin="5" FontWeight="Bold" />
-                            </StackPanel>
-                            <StackPanel x:Name="suppliers"  Width="140">
-                                <TextBlock Text="Suppliers" Margin="5" FontWeight="Bold" />
-                            </StackPanel>
-                            <StackPanel x:Name="category"  Width="140">
+                            <StackPanel x:Name="genericname"  Width="160">
                                 <TextBlock Text="Category" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="unit"  Width="140">
-                                <TextBlock Margin="5" FontWeight="Bold" Text="Unit"/>
+                            <StackPanel x:Name="rack"  Width="80">
+                                <TextBlock Text="Generic" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="conversionunit"  Width="140">
+                            <StackPanel x:Name="barcode"  Width="160">
+                                <TextBlock Text="Status" Margin="5" FontWeight="Bold" />
+                            </StackPanel>
+                            <StackPanel x:Name="manufacturer"  Width="160">
+                                <TextBlock Text="Rack#" Margin="5" FontWeight="Bold" />
+                            </StackPanel>
+                            <StackPanel x:Name="suppliers"  Width="160">
+                                <TextBlock Text="StorageCondition" Margin="5" FontWeight="Bold" />
+                            </StackPanel>
+                            <StackPanel x:Name="category"  Width="160">
+                                <TextBlock Text="DosageForm" Margin="5" FontWeight="Bold" />
+                            </StackPanel>
+                            <StackPanel x:Name="unit"  Width="160">
+                                <TextBlock Margin="5" FontWeight="Bold" Text="MedictionUnit"/>
+                            </StackPanel>
+                            <StackPanel x:Name="conversionunit"  Width="160">
                                 <TextBlock Text="Conversion Unit" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="noofstrips"  Width="80">
-                                <TextBlock Text="No of Strips" Margin="5" FontWeight="Bold" />
+                            <StackPanel x:Name="noofstrips"  Width="100">
+                                <TextBlock Text="Unit Value" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="reordering"  Width="120">
-                                <TextBlock Text="Re-Ordering Level" Margin="5" FontWeight="Bold" />
+                            <StackPanel x:Name="reordering"  Width="160">
+                                <TextBlock Text="Instruction" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="retailprice"  Width="80">
+                            <!--<StackPanel x:Name="retailprice"  Width="80">
                                 <TextBlock Text="Retail Price" Margin="5" FontWeight="Bold" />
                             </StackPanel>
                             <StackPanel x:Name="openingstock"  Width="120">
@@ -78,11 +78,11 @@
                             </StackPanel>
                             <StackPanel x:Name="unitcostprice"  Width="110">
                                 <TextBlock Text="Unit Cost Price" Margin="5" FontWeight="Bold" />
-                            </StackPanel>
-                            <StackPanel x:Name="narcotic"  Width="70">
+                            </StackPanel>-->
+                            <StackPanel x:Name="narcotic"  Width="90">
                                 <TextBlock Text="Narcotic" Margin="5" FontWeight="Bold" />
                             </StackPanel>
-                            <StackPanel x:Name="delete"  Width="60">
+                            <StackPanel x:Name="delete"  Width="120">
                                 <TextBlock Text="Delete" Margin="5" FontWeight="Bold" />
                             </StackPanel>
                         </StackPanel>

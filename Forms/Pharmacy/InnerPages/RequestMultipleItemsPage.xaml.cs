@@ -133,32 +133,32 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             };
             reordering.Children.Add(textreorderinglevel);
 
-            TextBox textretail = new TextBox
-            {
-                Width = 70,
-                Margin = new Thickness(5),
-                Tag = "0",
-                Style = textBoxStyle
-            };
-            retailprice.Children.Add(textretail);
+            //TextBox textretail = new TextBox
+            //{
+            //    Width = 70,
+            //    Margin = new Thickness(5),
+            //    Tag = "0",
+            //    Style = textBoxStyle
+            //};
+            //retailprice.Children.Add(textretail);
 
-            TextBox textopeningstock = new TextBox
-            {
-                Width = 70,
-                Margin = new Thickness(5),
-                Tag = "Stock",
-                Style = textBoxStyle
-            };
-            openingstock.Children.Add(textopeningstock);
+            //TextBox textopeningstock = new TextBox
+            //{
+            //    Width = 70,
+            //    Margin = new Thickness(5),
+            //    Tag = "Stock",
+            //    Style = textBoxStyle
+            //};
+            //openingstock.Children.Add(textopeningstock);
 
-            TextBox textcostprice = new TextBox
-            {
-                Width = 80,
-                Margin = new Thickness(5),
-                Tag = "0",
-                Style = textBoxStyle
-            };
-            unitcostprice.Children.Add(textcostprice);
+            //TextBox textcostprice = new TextBox
+            //{
+            //    Width = 80,
+            //    Margin = new Thickness(5),
+            //    Tag = "0",
+            //    Style = textBoxStyle
+            //};
+            //unitcostprice.Children.Add(textcostprice);
 
             TextBox textnarcotic = new TextBox
             {
@@ -202,9 +202,9 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             conversionunit.Children.RemoveAt(del);
             noofstrips.Children.RemoveAt(del);
             reordering.Children.RemoveAt(del);
-            retailprice.Children.RemoveAt(del);
-            openingstock.Children.RemoveAt(del);
-            unitcostprice.Children.RemoveAt(del);
+            //retailprice.Children.RemoveAt(del);
+            //openingstock.Children.RemoveAt(del);
+            //unitcostprice.Children.RemoveAt(del);
             narcotic.Children.RemoveAt(del);
         }
     }

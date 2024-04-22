@@ -19,13 +19,24 @@
                             <TextBlock Text="Item Name" Margin="5" FontWeight="Bold" />
                             <TextBox x:Name="medname" Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="300"/>
                         </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
-                        <TextBlock Text="Category" Margin="5" FontWeight="Bold" />
-                        <ComboBox x:Name="medcategory" Style="{DynamicResource CustomComboBoxStyle}" StaysOpenOnEdit="True"  Grid.Column="0" Margin="0 0 10 0"  Width="295" Height="30" SelectedIndex="0">
-                            <ComboBoxItem IsEnabled="False" Content="Select"/>
-                            <ComboBoxItem Content="Syrup"/>
-                            <ComboBoxItem Content="Tablet"/>
-                        </ComboBox>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+                            <TextBlock Text="Category" Margin="5" FontWeight="Bold" />
+                            <Border CornerRadius="10" Margin="0 0 20 0" Width="240" Background="white" BorderBrush="#1E929B" BorderThickness="2">
+                                <ComboBox Background="White"  BorderBrush="White"
+                                     BorderThickness="0"
+                                     Width="230" IsEditable="True"
+                                     IsTextSearchEnabled="True"
+                                     StaysOpenOnEdit="True"
+                                     SelectedIndex="0"
+                                     Margin="2"
+                                     x:Name="a"
+                                 />
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="2">
+                            <Button Style="{DynamicResource button}" Content="ADD" ToolTip="Add medcine alternatives" Margin="-20 25 0 0" Click="Button_Click_2"/>
+                        </StackPanel>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="0">
                             <TextBlock Text="Rack#" Margin="5" FontWeight="Bold" />

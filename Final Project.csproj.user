@@ -159,6 +159,9 @@
     <Compile Update="Forms\patientdoctorform.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\AddCategoryPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\AddMedicinePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -357,6 +360,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\patientdoctorform.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\AddCategoryPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\AddMedicinePage.xaml">
