@@ -28,9 +28,8 @@
                                      Width="230" IsEditable="True"
                                      IsTextSearchEnabled="True"
                                      StaysOpenOnEdit="True"
-                                     SelectedIndex="0"
                                      Margin="2"
-                                     x:Name="a"
+                                     x:Name="medcategorycombo"
                                  />
                             </Border>
                         </StackPanel>

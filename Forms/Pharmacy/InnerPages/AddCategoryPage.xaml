@@ -16,10 +16,10 @@
             <StackPanel Grid.Row="1" Orientation="Vertical">
                 <StackPanel Margin="10" Orientation="Vertical" >
                     <TextBlock Text="Category Name" Margin="5" FontWeight="Bold" />
-                    <TextBox x:Name="Category" Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="300"/>
+                    <TextBox x:Name="category" Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="300"/>
                 </StackPanel>
             </StackPanel>
-            <Button Grid.Row="8" Style="{StaticResource editbutton}" Margin="30" Width="100" HorizontalAlignment="Right">
+            <Button Grid.Row="8" Style="{StaticResource button}" Margin="30" Width="100" HorizontalAlignment="Right" Click="Button_Click">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Submit" FontSize="14"/>
                     </StackPanel>

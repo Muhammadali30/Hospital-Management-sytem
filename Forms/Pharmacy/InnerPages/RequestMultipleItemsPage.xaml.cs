@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using Humanizer;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +24,32 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
     /// </summary>
     public partial class RequestMultipleItemsPage : Page
     {
+        DataTable categories = null;
+        DataTable manufacturers = null;
         public RequestMultipleItemsPage()
         {
             InitializeComponent();
+            LoadCategory();
+            LoadManufacturer();
+        }
+
+        private void LoadCategory()
+        {
+            Database db = new Database();
+            categories = db.Read($"SELECT * from Medicine_Categories");
+            DataRow newRow = categories.NewRow();
+            newRow["name"] = "Select Category";
+            newRow["id"] = -1;
+            categories.Rows.InsertAt(newRow, 0);
+        }
+        private void LoadManufacturer()
+        {
+            Database db = new Database();
+            manufacturers = db.Read($"SELECT * from Medicine_Manufacturers");
+            DataRow newRow = manufacturers.NewRow();
+            newRow["name"] = "Select Manufacturer";
+            newRow["id"] = -1;
+            manufacturers.Rows.InsertAt(newRow, 0);
         }
 
         private void AddNewItemButton(object sender, RoutedEventArgs e)
@@ -40,15 +67,35 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             itemname.Children.Add(textitemname);
 
             // For fieldunit
-            TextBox textgenericname = new TextBox
+            ComboBox comboboxcategory = new ComboBox
             {
-                Width = 130,
-                Margin = new Thickness(5),
-                Tag = "Generic Name",
-                Style = textBoxStyle
+                Name = "comboboxcategory",
+                Background = Brushes.White,
+                BorderBrush = Brushes.White,
+                BorderThickness = new Thickness(0),
+                Width = 125,
+                IsEditable = true,
+                IsTextSearchEnabled = true,
+                StaysOpenOnEdit = true,
+                Margin = new Thickness(2)
             };
-            genericname.Children.Add(textgenericname);
 
+            comboboxcategory.SelectionChanged += comboboxcategory_SelectionChanged;
+            comboboxcategory.ItemsSource = categories.DefaultView;
+            comboboxcategory.DisplayMemberPath = "name";
+            comboboxcategory.SelectedIndex = 0;
+
+            Border border = new Border
+            {
+                CornerRadius = new CornerRadius(3),
+                Margin = new Thickness(7),
+                Background = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(30, 146, 155)), // #1E929B
+                BorderThickness = new Thickness(1),
+                Child = comboboxcategory
+            };
+
+            categorypanel.Children.Add(border);
             // For fieldnormalrangemale
             TextBox textrack = new TextBox
             {
@@ -57,117 +104,93 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 Tag = "Rack#",
                 Style = textBoxStyle
             };
-            rack.Children.Add(textrack  );
+            rack.Children.Add(textrack);
 
             // For fieldnormalrangefemale
-            TextBox textbarcode = new TextBox
+            TextBox textstatus = new TextBox
             {
                 Width = 120,
                 Margin = new Thickness(5),
-                Tag = "Barcode",
+                Tag = "Status",
                 Style = textBoxStyle
             };
-            barcode.Children.Add(textbarcode);
+            status.Children.Add(textstatus);
 
             // For fieldsubheading
-            TextBox textmanufacturer = new TextBox
+            ComboBox comboboxmanufacturer = new ComboBox
             {
-                Width = 100,
-                Margin = new Thickness(5),
-                Tag = "Manufacturer",
-                Style = textBoxStyle
+                Name = "comboboxmanufacturer",
+                Background = Brushes.White,
+                BorderBrush = Brushes.White,
+                BorderThickness = new Thickness(0),
+                Width = 125,
+                IsEditable = true,
+                IsTextSearchEnabled = true,
+                StaysOpenOnEdit = true,
+                Margin = new Thickness(2)
             };
-            manufacturer.Children.Add(textmanufacturer);
 
-            TextBox textsupplier = new TextBox
+            comboboxmanufacturer.SelectionChanged += comboboxcategory_SelectionChanged;
+            comboboxmanufacturer.ItemsSource = manufacturers.DefaultView;
+            comboboxmanufacturer.DisplayMemberPath = "name";
+            comboboxmanufacturer.SelectedIndex = 0;
+
+            Border border1 = new Border
+            {
+                CornerRadius = new CornerRadius(3),
+                Margin = new Thickness(7),
+                Background = Brushes.White,
+                BorderBrush = new SolidColorBrush(Color.FromRgb(30, 146, 155)), // #1E929B
+                BorderThickness = new Thickness(1),
+                Child = comboboxmanufacturer
+            };
+
+            manufacturer.Children.Add(border1);
+
+            TextBox textcondition = new TextBox
             {
                 Width = 140,
                 Margin = new Thickness(5),
-                Tag = "Supplier",
+                Tag = "Storage Condition",
                 Style = textBoxStyle
             };
-            suppliers.Children.Add(textsupplier);
+            storagecondition.Children.Add(textcondition);
 
-            TextBox textcategory = new TextBox
+            TextBox textdosage = new TextBox
             {
                 Width = 140,
                 Margin = new Thickness(5),
-                Tag = "Category",
+                Tag = "Dosage Form",
                 Style = textBoxStyle
             };
-            category.Children.Add(textcategory);
+            dosageForm.Children.Add(textdosage);
 
             TextBox textunit = new TextBox
             {
                 Width = 120,
                 Margin = new Thickness(5),
-                Tag = "E.G,Strips,Boxes",
+                Tag = "E.G,mg, ml",
                 Style = textBoxStyle
             };
             unit.Children.Add(textunit);
 
-            TextBox textconversionunit = new TextBox
+            TextBox textunitvalue = new TextBox
             {
                 Width = 140,
-                Margin = new Thickness(5),
-                Tag = "Conversion Unit",
-                Style = textBoxStyle
-            };
-            conversionunit.Children.Add(textconversionunit);
-
-            TextBox textnoofstrips = new TextBox
-            {
-                Width = 60,
                 Margin = new Thickness(5),
                 Tag = "0",
                 Style = textBoxStyle
             };
-            noofstrips.Children.Add(textnoofstrips);
+            unitvalue.Children.Add(textunitvalue);
 
-            TextBox textreorderinglevel = new TextBox
-            {
-                Width = 140,
-                Margin = new Thickness(5),
-                Tag = "Level",
-                Style = textBoxStyle
-            };
-            reordering.Children.Add(textreorderinglevel);
-
-            //TextBox textretail = new TextBox
+            //TextBox textnarcotic = new TextBox
             //{
-            //    Width = 70,
+            //    Width = 20,
             //    Margin = new Thickness(5),
-            //    Tag = "0",
+            //    Tag = "",
             //    Style = textBoxStyle
             //};
-            //retailprice.Children.Add(textretail);
-
-            //TextBox textopeningstock = new TextBox
-            //{
-            //    Width = 70,
-            //    Margin = new Thickness(5),
-            //    Tag = "Stock",
-            //    Style = textBoxStyle
-            //};
-            //openingstock.Children.Add(textopeningstock);
-
-            //TextBox textcostprice = new TextBox
-            //{
-            //    Width = 80,
-            //    Margin = new Thickness(5),
-            //    Tag = "0",
-            //    Style = textBoxStyle
-            //};
-            //unitcostprice.Children.Add(textcostprice);
-
-            TextBox textnarcotic = new TextBox
-            {
-                Width = 20,
-                Margin = new Thickness(5),
-                Tag = "",
-                Style = textBoxStyle
-            };
-            narcotic.Children.Add(textnarcotic);
+            //narcotic.Children.Add(textnarcotic);
 
             Button newButton = new Button
             {
@@ -192,20 +215,73 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             int del = delete.Children.IndexOf(button);
             itemname.Children.RemoveAt(del);
             delete.Children.RemoveAt(del);
-            genericname.Children.RemoveAt(del);
+            categorypanel.Children.RemoveAt(del);
             rack.Children.RemoveAt(del);
-            barcode.Children.RemoveAt(del);
+            status.Children.RemoveAt(del);
             manufacturer.Children.RemoveAt(del);
-            suppliers.Children.RemoveAt(del);
-            category.Children.RemoveAt(del);
+            storagecondition.Children.RemoveAt(del);
+            dosageForm.Children.RemoveAt(del);
             unit.Children.RemoveAt(del);
-            conversionunit.Children.RemoveAt(del);
-            noofstrips.Children.RemoveAt(del);
-            reordering.Children.RemoveAt(del);
-            //retailprice.Children.RemoveAt(del);
-            //openingstock.Children.RemoveAt(del);
-            //unitcostprice.Children.RemoveAt(del);
-            narcotic.Children.RemoveAt(del);
+            unitvalue.Children.RemoveAt(del);
+            //narcotic.Children.RemoveAt(del);
+        }
+
+        private void comboboxcategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            string data = "INSERT INTO Medicines(name,category_id,status,rack_no,manufacturer_id,storage_condition,dosageForm,medication_unit,unit_value)VALUES";
+            DataRowView categoryselectedRow = null;
+            DataRowView manufacrurerselectedRow = null;
+
+            for (int i = 0; i < itemname.Children.Count; i++)
+            {
+                var itemnameT = itemname.Children.Count > i ? itemname.Children[i] as TextBox : null;
+                var categoryC = categorypanel.Children[i] is Border border ? border.Child as ComboBox : null;
+                var rackT = rack.Children.Count > i ? rack.Children[i] as TextBox : null;
+                var statusT = status.Children.Count > i ? status.Children[i] as TextBox : null;
+                var manufacurerC = manufacturer.Children[i] is Border border1 ? border1.Child as ComboBox : null;
+                var conditionT = storagecondition.Children.Count > i ? storagecondition.Children[i] as TextBox : null;
+                var dosageT = dosageForm.Children.Count > i ? dosageForm.Children[i] as TextBox : null;
+                var UnitT = unit.Children.Count > i ? unit.Children[i] as TextBox : null;
+                var valueT = unitvalue.Children.Count > i ? unitvalue.Children[i] as TextBox : null;
+
+                if (categoryC != null && categoryC.SelectedItem is DataRowView)
+                {
+                    categoryselectedRow = categoryC.SelectedItem as DataRowView;
+                }
+                if (manufacurerC != null && manufacurerC.SelectedItem is DataRowView)
+                {
+                    manufacrurerselectedRow = manufacurerC.SelectedItem as DataRowView;
+                }
+                if (itemnameT != null && rackT != null && statusT != null && conditionT != null && dosageT != null && UnitT != null && valueT != null)
+                {
+
+                if (itemname.Children.Count == i + 1)
+                {
+                    data += $"('{itemnameT.Text}',{Convert.ToInt32(categoryselectedRow["id"])},'{rackT.Text}','{statusT.Text}',{Convert.ToInt32(manufacrurerselectedRow["id"])},'{conditionT.Text}','{dosageT.Text}','{UnitT.Text}',{Convert.ToInt32(valueT.Text)})";
+                }
+                else
+                {
+                    data += $"('{itemnameT.Text}',{Convert.ToInt32(categoryselectedRow["id"])},'{rackT.Text}','{statusT.Text}',{Convert.ToInt32(manufacrurerselectedRow["id"])},'{conditionT.Text}','{dosageT.Text}','{UnitT.Text}',{Convert.ToInt32(valueT.Text)}),";
+                }
+                }
+                         
+                    
+                    //else
+                    //{
+                    //    MessageBox.Show("enter correct data");
+                    //}
+                
+            }
+            MessageBox.Show(data);
+            Database db = new Database();
+            db.Add(data);
+            //return data;
         }
     }
 }

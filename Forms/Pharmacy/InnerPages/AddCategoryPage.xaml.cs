@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,13 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         public AddCategoryPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Database db = new Database();
+            db.Add($"INSERT INTO Medicine_Categories(name)VALUES('{category.Text}')");
+            MessageBox.Show("Category Added");
         }
     }
 }

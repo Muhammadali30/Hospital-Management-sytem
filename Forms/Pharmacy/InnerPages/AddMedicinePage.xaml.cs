@@ -33,6 +33,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         {
             InitializeComponent();
             load();
+            LoadCategory();
         }
 
         private void load()
@@ -146,6 +147,19 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         {
             AlertForm AF = new AlertForm(new AddCategoryPage());
             AF.ShowDialog();
+        }
+        private void LoadCategory()
+        {
+            Database db = new Database();
+            DataTable template_name = db.Read($"SELECT * from Medicine_Categories");
+            DataRow newRow = template_name.NewRow();
+            newRow["name"] = "Select Category";
+            newRow["id"] = -1; // Set an arbitrary value for the ID
+            template_name.Rows.InsertAt(newRow, 0);
+
+            medcategorycombo.ItemsSource = template_name.DefaultView;
+            medcategorycombo.DisplayMemberPath = "name";
+            medcategorycombo.SelectedIndex = 0;
         }
     }
 }
