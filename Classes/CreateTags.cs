@@ -54,8 +54,6 @@ namespace Final_Project.Classes
 
         public static Button create_button(string icon = null,string? text = null, double? width = null,string? tooltip = null, string? colorname = null)
         {
-            
-
             Style buttonstyle = (Style)Application.Current.FindResource("button");
             Button button = new Button();
             if (icon != null)

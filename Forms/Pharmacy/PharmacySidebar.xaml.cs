@@ -128,7 +128,7 @@ namespace Final_Project.Forms.Pharmacy
                 // Load the new page
 
             }
-            MainFrame.Content = new NewOrderPage();
+            MainFrame.Content = new MedicineOrdersPage();
         }
 
         private void OpenSupplierPage(object sender, RoutedEventArgs e)

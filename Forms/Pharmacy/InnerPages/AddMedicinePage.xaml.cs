@@ -75,10 +75,9 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             spid.Children.Add(CreateTags.create_textblock(alt_medicine["name"].ToString()));
             StackPanel head = CreateTags.create_stackpanel(null, "horizontal");
             head.Children.Add(CreateTags.create_textbox(null, 250,true,"Reason"));
-            Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete");
+            Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete","Red");
             newbutton.Click += new RoutedEventHandler(OnButtonClick);
             head.Children.Add(newbutton);
-
             spid.Children.Add(head);
             alternativemedicinelist.Children.Add(spid);
         }
