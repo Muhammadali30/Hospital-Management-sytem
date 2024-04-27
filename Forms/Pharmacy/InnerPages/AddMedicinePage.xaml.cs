@@ -100,7 +100,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             ComboBoxItem dosage = (ComboBoxItem)meddosageform.SelectedItem;
             if (dosage != null)
             {
-                med_id = db.GetInsertedId($"INSERT INTO Medicines (name,active_ingredients,rack_no,storage_condition,dosageForm,medication_unit,unit_value,instructions) OUTPUT INSERTED.id  VALUES ('{medname.Text}','{medingredients.Text}','{float.Parse(medrackno.Text)}','{medstoragecondition.Text}','{dosage.Content.ToString()}','{medunit.Text}','{float.Parse(medunitvalue.Text)}','{medinstructions.Text}')");
+                med_id = db.GetInsertedId($"INSERT INTO Medicines (name,active_ingredients,rack_no,storage_condition,dosageForm,medication_unit,unit_value,instructions) OUTPUT INSERTED.id  VALUES ('{medname.Text}','{medingredients.Text}','{medrackno.Text}','{medstoragecondition.Text}','{dosage.Content.ToString()}','{medunit.Text}','{float.Parse(medunitvalue.Text)}','{medinstructions.Text}')");
                 MessageBox.Show("Medicine Added Successfully");
             }
 

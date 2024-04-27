@@ -56,11 +56,24 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             }));
 
             FrameworkElementFactory deleteButtonFactory = new FrameworkElementFactory(typeof(Button));
-            deleteButtonFactory.SetValue(Button.ContentProperty, "Return");
+            deleteButtonFactory.SetValue(Button.ContentProperty, "Show");
             deleteButtonFactory.SetValue(Button.StyleProperty, ButtonStyle);
             deleteButtonFactory.AddHandler(Button.ClickEvent, new RoutedEventHandler((sender, e) =>
             {
-                MessageBox.Show("Are you sure to Return this form");
+                DataRowView row = (DataRowView)((Button)sender).DataContext;
+                int medicineID = (int)row["id"];
+                
+                if (NavigationService != null)
+                {
+                    // Remove the current page from the navigation history
+                    if (NavigationService.CanGoBack)
+                    {
+                        NavigationService.RemoveBackEntry();
+                    }
+
+                    // Load the new page within the same frame
+                    NavigationService.Navigate(new ShowOrderPage(medicineID));
+                }
             }));
 
             stackPanelFactory.AppendChild(editButtonFactory);
