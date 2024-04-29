@@ -42,7 +42,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             discount.Text = order_row["discount"].ToString();
             total.Text = order_row["total"].ToString();
 
-            DataTable items = db.Read($@"SELECT mo.id, m.name, ROUND((mp.units_in_box / mp.sale_price), 2) as itemPrice, mo.item_qty, mo.return_qty
+            DataTable items = db.Read($@"SELECT mo.id, m.name, ROUND((mp.sale_price / mp.units_in_box), 2) as itemPrice, mo.item_qty, mo.return_qty
                                         FROM Medicine_Orders mo
                                         JOIN Med_Purchase mp ON mo.med_id = mp.id
                                         JOIN Medicines m ON mp.med_id = m.id
@@ -261,6 +261,21 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 }
             }
            
+        }
+
+        private void printview_button(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService != null)
+            {
+                // Remove the current page from the navigation history
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page within the same frame
+                NavigationService.Navigate(new OrderInvoicePage(order_id));
+            }
         }
 
         private void ItemQtyBox_TextChanged(object sender, TextChangedEventArgs e, TextBlock totalprice, string itemprice)

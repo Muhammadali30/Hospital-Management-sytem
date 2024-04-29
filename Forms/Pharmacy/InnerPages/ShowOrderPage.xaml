@@ -39,10 +39,10 @@
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Right">
+                        <Button x:Name="printbtn"  Style="{StaticResource button}" Content="Print" Background="Purple" Margin="5 20 5 5" HorizontalAlignment="Right" Click="printview_button"/>
                         <Button x:Name="deleteorderbutton"  Style="{StaticResource button}" Content="Delete" Background="Red" Margin="5 20 5 5" HorizontalAlignment="Right" Click="deleteorder_button"/>
-                        <Button x:Name="return"  Style="{StaticResource button}" Content="Return" Margin="5 20 5 5" HorizontalAlignment="Right" Click="return_Click"/>
-                    <Button x:Name="edit" Style="{StaticResource button}" Content="Edit" Margin="5 20 5 5" HorizontalAlignment="Right" Click="edit_Click"/>
-                        
+                        <Button x:Name="return"  Style="{StaticResource button}" Content="Return" Margin="5 20 5 5" Background="Blue" HorizontalAlignment="Right" Click="return_Click"/>
+                        <Button x:Name="edit" Style="{StaticResource button}" Content="Edit" Margin="5 20 5 5" Background="Green" HorizontalAlignment="Right" Click="edit_Click"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">

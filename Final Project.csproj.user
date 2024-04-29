@@ -189,6 +189,9 @@
     <Compile Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\OrderInvoicePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\PurchasePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -396,6 +399,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\NewSupplierPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\OrderInvoicePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\PurchasePage.xaml">

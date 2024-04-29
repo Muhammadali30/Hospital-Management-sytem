@@ -57,7 +57,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             Database db = new Database();
             ComboBoxItem dosageform = (ComboBoxItem)meddosageform.SelectedItem;
             string df = dosageform.Content.ToString();
-            DataTable dt = db.Read($"SELECT p.id,m.name,m.rack_no,ROUND((p.units_in_box / p.sale_price), 2) as PricePerUnit,p.batch_no,p.date from Medicines m JOIN Med_Purchase p ON m.id = p.med_id where name like '{tb.Text}%' and dosageForm = '{df}' and p.stock_qty > 0");
+            DataTable dt = db.Read($"SELECT p.id,m.name,m.rack_no,ROUND((p.sale_price / p.units_in_box), 2) as PricePerUnit,p.batch_no,p.date from Medicines m JOIN Med_Purchase p ON m.id = p.med_id where name like '{tb.Text}%' and dosageForm = '{df}' and p.stock_qty > 0");
             sellmedicine.ItemsSource = dt.DefaultView;
             MessageBox.Show(tb.Text);
             sellmedicine.MouseDoubleClick += Collectsamplegrid_MouseDoubleClick;
