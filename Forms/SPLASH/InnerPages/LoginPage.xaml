@@ -24,7 +24,7 @@
 
         <!-- Username Label and TextBox -->
 
-        <TextBox x:Name="username" Grid.Row="1" Style="{DynamicResource textboxstyle}" Tag="Username" Cursor="IBeam" FontWeight="SemiBold" Height="30" FontSize="12" HorizontalAlignment="Center" Width="255" Margin="5" />
+        <TextBox x:Name="email" Grid.Row="1" Style="{DynamicResource textboxstyle}" Tag="Email" Cursor="IBeam" FontWeight="SemiBold" Height="30" FontSize="12" HorizontalAlignment="Center" Width="255" Margin="5" />
 
 
         <!-- Password Label and PasswordBox -->
@@ -34,7 +34,7 @@
         </StackPanel>
 
         <!-- Login Button -->
-        <Button Grid.Row="3" Style="{StaticResource button}" Cursor="Hand" Height="30" Margin="20" HorizontalAlignment="Center">
+        <Button Grid.Row="3" Style="{StaticResource button}" Cursor="Hand" Height="30" Margin="20" HorizontalAlignment="Center" Click="Button_Click">
             <StackPanel Orientation="Horizontal" >
                 <Icon:PackIconMaterial Kind="Login"/>
                 <TextBlock Text=" Login"  FontSize="16" FontWeight="SemiBold"/>

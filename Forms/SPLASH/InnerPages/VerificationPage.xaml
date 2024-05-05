@@ -1,0 +1,28 @@
+﻿<Page x:Class="Final_Project.Forms.SPLASH.InnerPages.VerificationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Final_Project.Forms.SPLASH.InnerPages" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      mc:Ignorable="d" 
+      Background="White"
+      d:DesignHeight="250" d:DesignWidth="300"
+      Title="VerificationPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Input Verify Code" FontSize="14" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="5"/>
+        <TextBlock Grid.Row="1" x:Name="confirmemail" Text="" FontSize="14" HorizontalAlignment="Center" Margin="5"/>
+
+        <TextBox x:Name="code" Grid.Row="2" Style="{DynamicResource textboxstyle}" Tag="Enter Code" Cursor="IBeam" FontWeight="SemiBold" Height="30" FontSize="12" HorizontalAlignment="Center" Width="200" Margin="5" />
+        <TextBlock Grid.Row="3" Text="Haven't received the verification code?" FontSize="14" HorizontalAlignment="Center" Margin="20"/>
+        <TextBlock Grid.Row="5" Text="Resend" Foreground="SeaGreen" Cursor="Hand" FontSize="14" HorizontalAlignment="Center" Margin="40"/>
+    </Grid>
+</Page>

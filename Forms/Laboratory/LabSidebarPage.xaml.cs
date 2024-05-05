@@ -40,14 +40,7 @@ namespace Final_Project.Forms.Laboratory
 
         private void OpenLabInvoicePage(object sender, RoutedEventArgs e)
         {
-            if (MainFrame.NavigationService != null)
-            {
-                if (MainFrame.NavigationService.CanGoBack)
-                {
-                    MainFrame.NavigationService.RemoveBackEntry();
-                }
-            }
-            MainFrame.Content = new Lab_Invoices_Page();
+          
         }
 
         private void OpenLabDepartmentPage(object sender, RoutedEventArgs e)
@@ -87,18 +80,7 @@ namespace Final_Project.Forms.Laboratory
         }
         private void DashBoardPageButton(object sender, RoutedEventArgs e)
         {
-            if (MainFrame.NavigationService != null)
-            {
-                // Remove the previous page from the navigation history
-                if (MainFrame.NavigationService.CanGoBack)
-                {
-                    MainFrame.NavigationService.RemoveBackEntry();
-                }
-
-                // Load the new page
-
-            }
-            MainFrame.Content = new OpdDashboard();
+          
         }
     }
 }

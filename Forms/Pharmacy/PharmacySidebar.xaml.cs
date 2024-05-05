@@ -1,4 +1,5 @@
-﻿using Final_Project.Forms.Pharmacy.InnerPages;
+﻿using Final_Project.Forms.Admin;
+using Final_Project.Forms.Pharmacy.InnerPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -162,6 +163,22 @@ namespace Final_Project.Forms.Pharmacy
 
             }
             MainFrame.Content = new AddMedicinePage();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new UsersListPage();
         }
     }
 }

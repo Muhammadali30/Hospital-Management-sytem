@@ -31,16 +31,16 @@ namespace Final_Project.Forms
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (username.Text=="Ali"&&password.Text=="123")
-            {
-                MainWindow mainwindow=new MainWindow();
-                mainwindow.Show();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Invalid UserName or Password");
-            }
+            //if (username.Text=="Ali"&&password.Text=="123")
+            //{
+            //    MainWindow mainwindow=new MainWindow();
+            //    mainwindow.Show();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid UserName or Password");
+            //}
         }
     }
 }

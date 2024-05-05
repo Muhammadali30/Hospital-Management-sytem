@@ -37,8 +37,6 @@ namespace Final_Project.Forms.SPLASH
                     MainFrame.NavigationService.RemoveBackEntry();
                 }
 
-                // Load the new page
-
             }
             MainFrame.Content = new LoadingPage();
             //MessageBox.Show("We Are Working on it!");
@@ -52,10 +50,9 @@ namespace Final_Project.Forms.SPLASH
                     MainFrame.NavigationService.RemoveBackEntry();
                 }
 
-                // Load the new page
 
             }
-            MainFrame.Content = new LoginPage();
+            MainFrame.Content = new LoginPage(this);
         }
 
         private void CloseApplicationButton(object sender, RoutedEventArgs e)

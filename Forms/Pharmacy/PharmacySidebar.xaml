@@ -29,6 +29,8 @@
                 <TextBlock Text="Order"/>
             </StackPanel>
         </Button>
+        <Button Style="{StaticResource editbutton}" Content="Users" Margin="5" FontSize="16" FontWeight="SemiBold" Click="Button_Click_1"/>
+
 
     </StackPanel>
 </Page>

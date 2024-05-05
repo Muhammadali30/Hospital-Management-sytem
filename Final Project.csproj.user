@@ -18,6 +18,12 @@
     <Compile Update="Forms\addpatients.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Admin\AddUsersPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Forms\Admin\UsersListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\AlertForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <Compile Update="Forms\SPLASH\InnerPages\LoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\SPLASH\InnerPages\VerificationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\SPLASH\SplashForm.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -225,6 +234,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\addpatients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Admin\AddUsersPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Admin\UsersListPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\AlertForm.xaml">
@@ -423,6 +438,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\SPLASH\InnerPages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\SPLASH\InnerPages\VerificationPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\SPLASH\SplashForm.xaml">

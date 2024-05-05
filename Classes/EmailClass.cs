@@ -11,7 +11,7 @@ namespace Final_Project.Classes
 {
     static class EmailClass
     {
-        public static void Send_Email()
+        public static void Send_Email(string receiver, string subject, string body)
         {
             try
             {
