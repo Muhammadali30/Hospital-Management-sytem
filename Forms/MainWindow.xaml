@@ -115,7 +115,7 @@
 
                                     <StackPanel x:Name="laboratorybuttons" Visibility="Collapsed">
                                         <Button   Style="{StaticResource editbutton}" Content="DashBoard" FontSize="16" FontWeight="SemiBold" Margin="10" Click="DashBoardPageButton" />
-                                        <Button   Style="{StaticResource editbutton}" Content="Lab Invoice"  FontSize="16" Margin="10 5" FontWeight="semibold" Click="OpenLabDashBoard" />
+                                        <Button   Style="{StaticResource editbutton}" Content="Lab Invoice"  FontSize="16" Margin="10 5" FontWeight="semibold" Click="OpenLabInvoice" />
                                         <Button   Style="{StaticResource editbutton}" Content="Lab Reports"  FontSize="16" Margin="10 5" FontWeight="semibold" Click="OpenLabReportPage"/>
                                         <Button   Style="{StaticResource editbutton}" Content="Lab Templates"  FontSize="16" Margin="10 5" FontWeight="semibold" Click="OpenLabTemplatesPage" />
                                         <Button   Style="{StaticResource editbutton}" Content="Lab Department"  FontSize="16" Margin="10 5" FontWeight="semibold" Click="OpenLabDepartmentPage"  />

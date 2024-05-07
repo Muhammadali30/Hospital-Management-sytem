@@ -1,6 +1,7 @@
 ﻿using Final_Project.Classes;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,15 +23,38 @@ namespace Final_Project.Forms.Admin
     public partial class AddUsersPage : Page
     {
         private int userid;
+        private Database db = new Database();
+
         public AddUsersPage(int? id = null)
         {
             InitializeComponent();
             userid = id ?? 0;
+            DataTable dt = db.Read($"Select * from Users where id = '{userid}'");
+            if (dt.Rows.Count > 0)
+            {
+                name.Text = dt.Rows[0]["name"].ToString();
+                email.Text = dt.Rows[0]["email"].ToString();
+                password.Text = dt.Rows[0]["password"].ToString();
+                age.Text = dt.Rows[0]["age"].ToString();
+
+                // Set the selected status
+                string statusValue = dt.Rows.Count > 0 ? dt.Rows[0]["status"].ToString() : "";
+                ComboBoxItem selectedStatus = status.Items.Cast<ComboBoxItem>()
+                                                         .FirstOrDefault(item => item.Content.ToString() == statusValue);
+                status.SelectedItem = selectedStatus;
+
+                // Set the selected role
+                string roleValue = dt.Rows.Count > 0 ? dt.Rows[0]["role"].ToString() : "";
+                ComboBoxItem selectedRole = role.Items.Cast<ComboBoxItem>()
+                                                       .FirstOrDefault(item => item.Content.ToString() == roleValue);
+                role.SelectedItem = selectedRole;
+
+            }
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Database db = new Database();
             ComboBoxItem userrole = (ComboBoxItem)role.SelectedItem;
             ComboBoxItem userstatus = (ComboBoxItem)status.SelectedItem;
             

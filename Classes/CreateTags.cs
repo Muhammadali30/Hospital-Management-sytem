@@ -66,17 +66,11 @@ namespace Final_Project.Classes
                 button.Content = text;
             }
             button.Style = buttonstyle;
+            button.Margin = new Thickness(12.5);
             button.Width = width.HasValue ? width.Value : double.NaN;
-            //button.IsEnabled = visibility.HasValue ? visibility.Value : true;
-
-            
-            // Get the SolidColorBrush corresponding to the color name
             System.Windows.Media.Brush brush = (System.Windows.Media.Brush)new BrushConverter().ConvertFromString(colorname);
-
             button.Background = brush;
             button.ToolTip = tooltip;
-            //if (visibility == false) { button.BorderBrush = new SolidColorBrush(Colors.Gray); }
-            button.Margin = new Thickness(10);
             button.HorizontalAlignment = HorizontalAlignment.Left;
             return button;
         }

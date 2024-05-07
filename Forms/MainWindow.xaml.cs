@@ -31,41 +31,44 @@ namespace Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(string role,string n, string mail)
+        public MainWindow()
         {
+            //string role,string n, string mail
             InitializeComponent();
-            name.Text = username.Text = n;
-            email.Text = mail;
-            if (role == "Pharmacy")
-            {
-                pharmacybuttons.Visibility = Visibility.Visible;
-                PHARMACY();
-            }
-            else if (role == "Receptionist")
-            {
-                opdbuttons.Visibility = Visibility.Visible;
-                OPD();
-            }
-            else if (role == "Labortory")
-            {
-                laboratorybuttons.Visibility = Visibility.Visible;
-                LAB();
-            }
-            else if (role == "Admin")
-            {
-                adminbuttons.Visibility = Visibility.Visible;
-                sidebar.Children.Remove(pharmacybuttons);
-                sidebar.Children.Remove(laboratorybuttons);
-                sidebar.Children.Remove(opdbuttons);
+            laboratorybuttons.Visibility = Visibility.Visible;
+            LAB();
+            //name.Text = username.Text = n;
+            //email.Text = mail;
+            //if (role == "Pharmacy")
+            //{
+            //    pharmacybuttons.Visibility = Visibility.Visible;
+            //    PHARMACY();
+            //}
+            //else if (role == "Receptionist")
+            //{
+            //    opdbuttons.Visibility = Visibility.Visible;
+            //    OPD();
+            //}
+            //else if (role == "Labortory")
+            //{
+            //    laboratorybuttons.Visibility = Visibility.Visible;
+            //    LAB();
+            //}
+            //else if (role == "Admin")
+            //{
+            //    adminbuttons.Visibility = Visibility.Visible;
+            //    sidebar.Children.Remove(pharmacybuttons);
+            //    sidebar.Children.Remove(laboratorybuttons);
+            //    sidebar.Children.Remove(opdbuttons);
 
-                laboratorybuttons.Visibility = Visibility.Visible;
-                opdbuttons.Visibility = Visibility.Visible;
-                pharmacybuttons.Visibility = Visibility.Visible;
+            //    laboratorybuttons.Visibility = Visibility.Visible;
+            //    opdbuttons.Visibility = Visibility.Visible;
+            //    pharmacybuttons.Visibility = Visibility.Visible;
 
-                pharmacyexpander.Content = pharmacybuttons;
-                labexpander.Content = laboratorybuttons;
-                opdexpander.Content = opdbuttons;
-            }
+            //    pharmacyexpander.Content = pharmacybuttons;
+            //    labexpander.Content = laboratorybuttons;
+            //    opdexpander.Content = opdbuttons;
+            //}
         }
         private void OPD()
         {

@@ -59,7 +59,7 @@ namespace Final_Project.Forms.Admin
                 int userid = (int)row["id"];
                 AlertForm AF = new AlertForm(new AddUsersPage(userid));
                 AF.ShowDialog();
-                MessageBoxResult result = MessageBox.Show("Are you sure you want to edit this form?", "Confirmation", MessageBoxButton.YesNo);
+                //MessageBoxResult result = MessageBox.Show("Are you sure you want to edit this form?", "Confirmation", MessageBoxButton.YesNo);
             }));
 
             FrameworkElementFactory deleteButtonFactory = new FrameworkElementFactory(typeof(Button));

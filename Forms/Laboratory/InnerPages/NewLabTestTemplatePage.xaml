@@ -40,7 +40,7 @@
 
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" FontWeight="SemiBold" Style="{StaticResource editbutton}" Content="Back" Margin="25 20 5 5" HorizontalAlignment="Left" Click="Button_Click"/>
+                <Button Grid.Row="0" FontWeight="SemiBold" Style="{StaticResource button}" Content="Back" Margin="25 20 5 5" HorizontalAlignment="Left" Click="Button_Click"/>
                 <WrapPanel Orientation="Horizontal" Grid.Row="1">
                     <StackPanel Margin="10" Orientation="Vertical" >
                         <TextBlock Text="Test Name" Margin="5" FontWeight="Bold" />
@@ -58,7 +58,6 @@
                                       Width="200" IsEditable="True"
                                       IsTextSearchEnabled="True"
                                       StaysOpenOnEdit="True"
-                                      SelectedIndex="0"
                                       Margin="2" SelectionChanged="combodepartment_SelectionChanged"
                                       
                                      />
@@ -112,20 +111,20 @@
                         <TextBlock Text="Normal Range (Female)" Margin="5" FontWeight="Bold" />
 
                     </StackPanel>
-                    <StackPanel x:Name="fieldsubheading"  Width="110">
+                    <StackPanel x:Name="fieldsubheading"  Width="120">
                         <TextBlock Text="SubHeading" Margin="5" FontWeight="Bold" />
                     </StackPanel>
-                    <StackPanel x:Name="delete"  Width="100">
+                    <StackPanel x:Name="delete" Width="100">
                         <TextBlock Text="Delete" Margin="5" FontWeight="Bold" />
                     </StackPanel>
                 </WrapPanel>
-                <Button Style="{StaticResource editbutton}" Grid.Row="5" Content="Add Field" FontWeight="SemiBold" Width="100" Click="AddNewFieldButton" Margin="10 30" HorizontalAlignment="Left"/>
+                <Button Style="{StaticResource button}" Grid.Row="5" Content="Add Field" FontWeight="SemiBold" Width="100" Click="AddNewFieldButton" Margin="10 30" HorizontalAlignment="Left"/>
                 <StackPanel Margin="10" Grid.Row="6" Orientation="Vertical" Grid.Column="0">
                     <TextBlock Text="Interpretation / Comments" Margin="5" FontWeight="Bold" />
                     <TextBox x:Name="comments" Style="{DynamicResource textboxstyle}" Tag="Type Something" MinWidth="200" Width="auto" Height="auto"/>
                 </StackPanel>
 
-                <Button Grid.Row="7" Style="{StaticResource editbutton}" Content="Submit" Margin="30" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click_1"/>
+                <Button Grid.Row="7" Style="{StaticResource button}" Content="Submit" Margin="30" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click_1"/>
            
 
             </Grid>

@@ -23,7 +23,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
     {
         private int deparment_id;
 
-        public NewLabTestTemplatePage()
+        public NewLabTestTemplatePage(int? id = null)
         {
             InitializeComponent();
             Set_Departments_Combox();
@@ -36,79 +36,19 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             DataTable dt = database.Read("select * from Lab_Departments");
             combodepartment.ItemsSource = dt.DefaultView;
             combodepartment.DisplayMemberPath = "department_name";
-            
+            combodepartment.SelectedIndex = 0;
+
         }
         private void AddNewFieldButton(object sender, RoutedEventArgs e)
         {
-       
-            Style textBoxStyle = (Style)Application.Current.FindResource("textboxstyle");
-
-            // For fieldname
-            TextBox textBoxFieldName = new TextBox
-            {
-                Width = 120,
-                Margin = new Thickness(5),
-                Tag = "Field Name",
-                Style = textBoxStyle
-            };
-            fieldname.Children.Add(textBoxFieldName);
-
-            // For fieldunit
-            TextBox textBoxUnit = new TextBox
-            {
-                Width = 90,
-                Margin = new Thickness(5),
-                Tag = "Unit",
-                Style = textBoxStyle
-            };
-            fieldunit.Children.Add(textBoxUnit);
-
-            // For fieldnormalrangemale
-            TextBox textBoxNormalRangeMale = new TextBox
-            {
-                Width = 140,
-                Margin = new Thickness(5),
-                Tag = "Range",
-                Style = textBoxStyle
-            };
-            fieldnormalrangemale.Children.Add(textBoxNormalRangeMale);
-
-            // For fieldnormalrangefemale
-            TextBox textBoxNormalRangeFemale = new TextBox
-            {
-                Width = 140,
-                Margin = new Thickness(5),
-                Tag = "Range",
-                Style = textBoxStyle
-            };
-            fieldnormalrangefemale.Children.Add(textBoxNormalRangeFemale);
-
-            // For fieldsubheading
-            TextBox textBoxSubHeading = new TextBox
-            {
-                Width = 100,
-                Margin = new Thickness(5),
-                Tag = "SubHeading",
-                Style = textBoxStyle
-            };
-            fieldsubheading.Children.Add(textBoxSubHeading);
-
-            Button newButton = new Button
-            {
-                Content = "Delete",
-                Width = 90,
-                Height = 30,
-                Margin = new Thickness(5),
-                Background = Brushes.Red,
-                FontWeight = FontWeights.Bold,
-           
-            };
-            Style editbutton = (Style)Application.Current.FindResource("editbutton");
-            newButton.Style = editbutton;
-            //newButton.Click += (sender, e) => OnButtonClick("Hello from dynamic button!", count);
-            newButton.Click += new RoutedEventHandler(OnButtonClick);
-
-            delete.Children.Add(newButton);
+            fieldname.Children.Add(CreateTags.create_textbox(null, 100, true, "Field Name"));
+            fieldunit.Children.Add(CreateTags.create_textbox(null, 80, true, "Unit"));
+            fieldnormalrangemale.Children.Add(CreateTags.create_textbox(null, 120, true, "Range (M)"));
+            fieldnormalrangefemale.Children.Add(CreateTags.create_textbox(null, 120, true, "Range (F)"));
+            fieldsubheading.Children.Add(CreateTags.create_textbox(null, 100, true, "SubHeading"));
+            Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete", "Red");
+            newbutton.Click += new RoutedEventHandler(OnButtonClick);
+            delete.Children.Add(newbutton);
         }
         private void OnButtonClick(object sender, EventArgs e)
         {
