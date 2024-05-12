@@ -21,65 +21,29 @@
 
         <ScrollViewer Grid.Row="1" >
             <StackPanel HorizontalAlignment="Center" Width="500"  x:Name="LabInvoicePdf">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-
                 <!-- Company Information -->
-                <StackPanel Grid.Row="0" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <TextBlock Text="Company Name" FontWeight="Bold" FontSize="18"/>
-                    <TextBlock Text="123 Street Address" FontSize="14"/>
-                    <TextBlock Text="City, State, Zip" FontSize="14"/>
-                    <TextBlock Text="Phone: 123-456-7890" FontSize="14"/>
-                    <TextBlock Text="Email: company@example.com" FontSize="14"/>
-                </StackPanel>
-
-                <StackPanel Grid.Row="1" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <StackPanel Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <TextBlock Text="Invoice #" FontWeight="Bold" FontSize="16"/>
                     <TextBlock Text="Date: January 1, 2022" FontSize="14"/>
-                    <TextBlock Text="Due Date: January 31, 2022" FontSize="14"/>
-                </StackPanel>
-
-                <!-- Customer Information -->
-                <StackPanel Grid.Row="2" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <TextBlock Text="Customer Information" FontWeight="Bold" FontSize="16"/>
                     <TextBlock Text="Customer Name" FontSize="14"/>
-                    <TextBlock Text="123 Customer Address" FontSize="14"/>
-                    <TextBlock Text="City, State, Zip" FontSize="14"/>
                     <TextBlock Text="Phone: 987-654-3210" FontSize="14"/>
                     <TextBlock Text="Email: customer@example.com" FontSize="14"/>
                 </StackPanel>
 
                 <!-- Items Table -->
-                <DataGrid Grid.Row="3" x:Name="itemsDataGrid" Margin="20" AutoGenerateColumns="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Item" Binding="{Binding ItemName}"/>
-                        <DataGridTextColumn Header="Description" Binding="{Binding Description}"/>
-                        <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
-                        <DataGridTextColumn Header="Unit Price" Binding="{Binding UnitPrice}"/>
-                        <DataGridTextColumn Header="Total" Binding="{Binding Total}"/>
-                    </DataGrid.Columns>
-                </DataGrid>
-
+                <DataGrid x:Name="itemsDataGrid" Margin="20" AutoGenerateColumns="False"/>
                 <!-- Total -->
-                <StackPanel Grid.Row="4" Margin="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <StackPanel Margin="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                     <TextBlock Text="Subtotal: $100.00" FontSize="16"/>
                     <TextBlock Text="Tax: $10.00" FontSize="16"/>
                     <TextBlock Text="Total: $110.00" FontSize="18" FontWeight="Bold"/>
                 </StackPanel>
 
                 <!-- Footer -->
-                <StackPanel Grid.Row="5" Margin="20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Bottom">
                     <TextBlock Text="Thank you for your business!" FontSize="14"/>
                     <TextBlock Text="Payment is due upon receipt." FontSize="14"/>
                 </StackPanel>
-            </Grid>
         </StackPanel>
             </ScrollViewer>
         <!--<Grid>

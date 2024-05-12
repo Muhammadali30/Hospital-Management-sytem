@@ -75,5 +75,14 @@ namespace Final_Project.Classes
             return button;
         }
 
+        public static DatePicker create_datepicker(double? width = null)
+        {
+            Style datepickerStyle = (Style)Application.Current.FindResource("datepickerstyle");
+            DatePicker datePicker = new DatePicker();
+            datePicker.Width = width ?? double.NaN;
+            datePicker.Margin = new Thickness(5);
+            //datePicker.Style = datepickerStyle;
+            return datePicker;
+        }
     }
 }

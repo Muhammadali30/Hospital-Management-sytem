@@ -1,4 +1,6 @@
 ﻿using Final_Project.Classes;
+using Final_Project.Forms.HMS.InnerPages;
+using Final_Project.Forms.Pharmacy.InnerPages;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -26,9 +28,21 @@ namespace Final_Project.Forms.Laboratory.InnerPages
     public partial class LabInvoicePage : Page
     {
         private DataTable template_name = null;
+        public BigInteger patient_id = -1;
         public LabInvoicePage()
         {
             InitializeComponent();
+            
+            Database db = new Database();
+            DataTable patient_name = db.Read("SELECT id, CONCAT(name,' - ',phone) as name from Patients");
+            DataRow newRow = patient_name.NewRow();
+            newRow["name"] = "Select Patient";
+            newRow["id"] = -1;
+            patient_name.Rows.InsertAt(newRow, 0);
+            patientscombo.SelectionChanged += patientscombo_SelectionChanged;
+            patientscombo.ItemsSource = patient_name.DefaultView;
+            patientscombo.DisplayMemberPath = "name";
+            patientscombo.SelectedIndex = 0;
         }
 
         private void AddNewFieldButton(object sender, RoutedEventArgs e)
@@ -107,17 +121,10 @@ namespace Final_Project.Forms.Laboratory.InnerPages
                 Tag = "0",
                 Style = textBoxStyle
             };
+            quantityfield.TextChanged += QuantityField_TextChanged;
             quantity.Children.Add(quantityfield);
 
-            // For fieldsubheading
-            TextBox datefield = new TextBox
-            {
-                Width = 140,
-                Margin = new Thickness(5),
-                Tag = "Date",
-                Style = textBoxStyle
-            };
-            date.Children.Add(datefield);
+            date.Children.Add(CreateTags.create_datepicker(140));
 
             Button newButton = new Button
             {
@@ -135,6 +142,37 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             newButton.Click += new RoutedEventHandler(OnButtonClick);
 
             delete.Children.Add(newButton);
+        }
+
+        private void QuantityField_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox obj = ((TextBox)sender);
+            int index = quantity.Children.IndexOf(obj);
+            TextBox total = Total.Children[index] as TextBox;
+            TextBox itemprice = price.Children[index] as TextBox;
+            if (int.TryParse(obj.Text,out int quantityvalue))
+            {
+            total.Text = (float.Parse(itemprice.Text) * float.Parse(obj.Text)).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Please enter value in correct format e.g 1,2,3");
+            }
+        }
+
+        private void patientscombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataRowView selectedRow = patientscombo.SelectedItem as DataRowView;
+            patient_id = selectedRow != null ? Convert.ToInt32(selectedRow["id"]) : 0;
+            if (patient_id != -1)
+            {
+                newpatientbtn.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                newpatientbtn.Visibility = Visibility.Visible;
+            }
+            MessageBox.Show(patient_id.ToString());
         }
 
         private void comboBoxtemplate_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -198,18 +236,11 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 
         private void TogglePatientButton(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
-            if (registerpatients.Visibility==Visibility.Collapsed)
+            AlertForm AF = new AlertForm(new AddPatientPage(this));
+            AF.ShowDialog();
+            if (patient_id != -1)
             {
-                btn.Content = "Un-Registered";
-                registerpatients.Visibility = Visibility.Visible;
-                unregisterpatients.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                btn.Content = "Registered";
-                registerpatients.Visibility = Visibility.Collapsed;
-                unregisterpatients.Visibility = Visibility.Visible;
+            MessageBox.Show("New Patient is created now you don't need to select");
             }
         }
 
@@ -221,51 +252,54 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 
         private void discounttextbox_KeyUp(object sender, KeyEventArgs e)
         {
-            if (combodiscount?.Text == "Value")
+            int discount = 0;
+            if (int.TryParse(discounttextbox.Text, out discount))
             {
-               
-                    int discount = 0;
-                    if (int.TryParse(discounttextbox.Text, out discount))
-                    {
-                        grandtotaltextblock.Text = (Convert.ToInt16(totaltextblock.Text) - discount).ToString();
-                    }
-                    else
-                    {
-                        // Handle invalid discounttextbox.Text
-                        grandtotaltextblock.Text = "Invalid discount";
-                    }
+                if (combodiscount?.Text == "Value")
+                {
+                grandtotaltextblock.Text = (Convert.ToInt16(totaltextblock.Text) - discount).ToString();
+                }
+                else
+                {
+                    grandtotaltextblock.Text = ((Convert.ToInt16(totaltextblock.Text) * discount) / 100).ToString();
+                }
             }
-
-
-
+            else
+            {
+                // Handle invalid discounttextbox.Text
+                grandtotaltextblock.Text = "Invalid discount";
+            }
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (patient_id == -1)
+            {
+                MessageBox.Show("Please select a patient or add a new one","Alert!");
+                return;
+            }
             Database db = new Database();
-            BigInteger patient_id = db.GetInsertedId($@"INSERT INTO Patients (name,age,email,phone) OUTPUT INSERTED.id 
-VALUES ('{unregistername.Text}',{Convert.ToInt32(unregisterage.Text)},'{unregisteremail.Text}','{unregisterphone.Text}')");
-            MessageBox.Show(patient_id.ToString());
+            //BigInteger patient_id = db.GetInsertedId($@"INSERT INTO Patients (name,age,email,phone) OUTPUT INSERTED.id 
+            //VALUES ('{unregistername.Text}',{Convert.ToInt32(unregisterage.Text)},'{unregisteremail.Text}','{unregisterphone.Text}')");
+            //MessageBox.Show(patient_id.ToString());
 
             BigInteger invoice_id = db.GetInsertedId($@"INSERT INTO Lab_Invoice (datetime,discount,total,discount_type,priority,note,payment_method,unregistered_patient_id,status) OUTPUT INSERTED.id 
-VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discounttextbox.Text)},0,'{combodiscount.Text}','{combopriority.Text}','{notetextbox.Text}','{combopayment.Text}',{patient_id},'pending')");
+            VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discounttextbox.Text)},0,'{combodiscount.Text}','{combopriority.Text}','{notetextbox.Text}','{combopayment.Text}',{patient_id},'pending')");
             MessageBox.Show(invoice_id.ToString());
 
-
-
-
             db.Add(invoice_nested_attributes(true, invoice_id));
-            if (NavigationService != null)
-            {
-                // Remove the current page from the navigation history
-                if (NavigationService.CanGoBack)
-                {
-                    NavigationService.RemoveBackEntry();
-                }
+            //if (NavigationService != null)
+            //{
+            //    // Remove the current page from the navigation history
+            //    if (NavigationService.CanGoBack)
+            //    {
+            //        NavigationService.RemoveBackEntry();
+            //    }
 
-                // Load the new page within the same frame
-                NavigationService.Navigate(new Lab_invoice_show_page(long.Parse(invoice_id.ToString())));
-            }
+            //    // Load the new page within the same frame
+            //    NavigationService.Navigate(new Lab_invoice_show_page(long.Parse(invoice_id.ToString())));
+            //}
 
         }
 
@@ -291,7 +325,7 @@ VALUES ('{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}',{Convert.ToInt32(discou
 
                 if (p != null && !string.IsNullOrEmpty(p.Text) && flag==false)
                 {
-                    total_price += Convert.ToInt32(p.Text);
+                    total_price += Convert.ToInt32(to.Text);
                     totaltextblock.Text = total_price.ToString();
                 }
                 else

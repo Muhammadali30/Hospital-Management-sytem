@@ -33,7 +33,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         private void LoadTemplates()
         {
             Database database = new Database();
-            DataTable dt = database.Read("SELECT t.name as Name, t.price as Price, t.sample_quantity as Sample_Qty, t.code as Code, d.department_name as Department FROM Lab_Templates AS t LEFT JOIN Lab_Departments AS d ON t.department_id = d.id");
+            DataTable dt = database.Read("SELECT t.id as id, t.name as Name, t.price as Price, t.sample_quantity as Sample_Qty, t.code as Code, d.department_name as Department FROM Lab_Templates AS t LEFT JOIN Lab_Departments AS d ON t.department_id = d.id");
 
             //Load Style from App.xaml
             ResourceDictionary resourceDict = Application.Current.Resources;
@@ -55,19 +55,16 @@ namespace Final_Project.Forms.Laboratory.InnerPages
             editButtonFactory.AddHandler(Button.ClickEvent, new RoutedEventHandler((sender, e) =>
             {
                 DataRowView row = (DataRowView)((Button)sender).DataContext;
+                MessageBox.Show(row.ToString());
                 int templateid = (int)row["id"];
                 if (NavigationService != null)
                 {
-                    // Remove the current page from the navigation history
                     if (NavigationService.CanGoBack)
                     {
                         NavigationService.RemoveBackEntry();
                     }
-
-                    // Load the new page within the same frame
                     NavigationService.Navigate(new NewLabTestTemplatePage(templateid));
                 }
-                //MessageBoxResult result = MessageBox.Show("Are you sure you want to edit this form?", "Confirmation", MessageBoxButton.YesNo);
             }));
 
             FrameworkElementFactory deleteButtonFactory = new FrameworkElementFactory(typeof(Button));

@@ -1,8 +1,10 @@
 ﻿using Aspose.Pdf.Operators;
 using Final_Project.Classes;
+using Final_Project.Forms.Laboratory.InnerPages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,9 +24,14 @@ namespace Final_Project.Forms.HMS.InnerPages
     /// </summary>
     public partial class AddPatientPage : Page
     {
-        public AddPatientPage()
+        LabInvoicePage newpage;
+        public AddPatientPage(LabInvoicePage? invoicepage = null)
         {
             InitializeComponent();
+            if (invoicepage != null)
+            {
+                newpage = invoicepage;
+            }
         }
 
         private void BackToPatientListPage(object sender, RoutedEventArgs e)
@@ -56,7 +63,7 @@ namespace Final_Project.Forms.HMS.InnerPages
             //string joiningFormatted = joiningDate.ToString("yyyy-MM-dd");
 
             // Construct the SQL query with the formatted date strings
-            db.Add($"INSERT INTO Patients (name,status, phone, address) VALUES ('{name.Text}', '{status.SelectedValue.ToString()}', '{phone.Text}', '{address.Text}')");
+            newpage.patient_id = db.GetInsertedId($"INSERT INTO Patients (name,status, phone, address) OUTPUT INSERTED.id  VALUES ('{name.Text}', '{status.SelectedValue.ToString()}', '{phone.Text}', '{address.Text}')");
         }
     }
 }

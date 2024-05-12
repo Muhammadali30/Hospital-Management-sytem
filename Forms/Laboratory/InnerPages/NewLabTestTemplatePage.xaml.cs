@@ -21,24 +21,75 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 {
     public partial class NewLabTestTemplatePage : Page
     {
-        private int deparment_id;
+        private int department_id;
+        private int updateid = 0;
 
         public NewLabTestTemplatePage(int? id = null)
         {
             InitializeComponent();
+            if (id != null)
+            {
+                updateid = id.Value;
+                submitbtn.Content = "Update";
+                loadtemplatedata(id);
+            }
+            else
+            {
+                Set_Departments_Combox();
+            }
+        }
+
+        private void loadtemplatedata(int? id)
+        {
+            Database db = new Database();
+            DataTable dt = db.Read($"SELECT * from Lab_Templates where id = '{id}'");
+            if (dt.Rows.Count > 0)
+            {
+                testname.Text = dt.Rows[0]["name"].ToString();
+                price.Text = dt.Rows[0]["price"].ToString();
+                samplequantity.Text = dt.Rows[0]["sample_quantity"].ToString();
+                code.Text = dt.Rows[0]["code"].ToString();
+                comments.Text = dt.Rows[0]["comments"].ToString();
+            }
             Set_Departments_Combox();
+            DataTable fields = db.Read($"select * from Lab_Templates_Fields where template_id = '{id}'");
+            foreach (DataRow row in fields.Rows)
+            {
+                fieldname.Children.Add(CreateTags.create_textbox(row["name"].ToString(), 100, true, "Field Name"));
+                fieldunit.Children.Add(CreateTags.create_textbox(row["unit"].ToString(), 80, true, "Unit"));
+                fieldnormalrangemale.Children.Add(CreateTags.create_textbox(row["mrange"].ToString(), 120, true, "Range (M)"));
+                fieldnormalrangefemale.Children.Add(CreateTags.create_textbox(row["frange"].ToString(), 120, true, "Range (F)"));
+                fieldsubheading.Children.Add(CreateTags.create_textbox(row["subheading"].ToString(), 100, true, "SubHeading"));
+                Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete", "Red");
+                newbutton.Click += new RoutedEventHandler(OnButtonClick);
+                delete.Children.Add(newbutton);
+            }
         }
 
 
-        private void Set_Departments_Combox()
+        private void Set_Departments_Combox(int? id = null)
         {
             Database database = new Database();
             DataTable dt = database.Read("select * from Lab_Departments");
+
             combodepartment.ItemsSource = dt.DefaultView;
             combodepartment.DisplayMemberPath = "department_name";
-            combodepartment.SelectedIndex = 0;
 
+            //if (id != null)
+            //{
+            //    DataRow[] rows = dt.Select($"id = '{id}'");
+            //    if (rows.Length > 0)
+            //    {
+            //        combodepartment.SelectedItem = rows[0];
+            //        combodepartment.UpdateLayout(); // Refresh UI
+            //    }
+            //}
+            //else
+            //{
+            //    combodepartment.SelectedIndex = 0;
+            //}
         }
+
         private void AddNewFieldButton(object sender, RoutedEventArgs e)
         {
             fieldname.Children.Add(CreateTags.create_textbox(null, 100, true, "Field Name"));
@@ -79,7 +130,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         private void combodepartment_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataRowView selectedRow = combodepartment.SelectedItem as DataRowView;
-            deparment_id = selectedRow != null ? Convert.ToInt32(selectedRow["id"]) : 0;
+            department_id = selectedRow != null ? Convert.ToInt32(selectedRow["id"]) : 0;
         }
         //Add Nested Fields 
         private string add_nested_fields(BigInteger id)
@@ -102,23 +153,38 @@ namespace Final_Project.Forms.Laboratory.InnerPages
         }
             private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Submit_Record(updateid);
+        }
+
+        private void Submit_Record(int? update_id = null)
+        {
             int priceValue, sampleQuantityValue, codeValue;
             Database db = new Database();
             bool priceParsed = int.TryParse(price.Text, out priceValue);
             bool sampleQuantityParsed = int.TryParse(samplequantity.Text, out sampleQuantityValue);
             bool codeParsed = int.TryParse(code.Text, out codeValue);
-
+            MessageBox.Show(update_id.ToString());
             // Check if parsing was successful for all values
             if (priceParsed && sampleQuantityParsed && codeParsed)
             {
+                if (submitbtn.Content == "Update")
+                {
+                    db.Add($"Delete from Lab_Templates_Fields where template_id = '{update_id}'");
+                    db.Add($"UPDATE Lab_Templates SET name = '{testname.Text}', price = {priceValue}, sample_quantity = {sampleQuantityValue}, code = {codeValue}, comments = '{comments.Text}',department_id = '{department_id}' WHERE id = '{update_id}'");
+                    db.Add(add_nested_fields(updateid));
+                    MessageBox.Show("Record Updated Successfully");
+                    return;
+                }
+
+
                 // Use the parsed integer values in the SQL query
                 BigInteger id = db.GetInsertedId($@"
                     INSERT INTO Lab_Templates (name, price, sample_quantity, code, comments,department_id) 
                     OUTPUT INSERTED.id
-                    VALUES ('{testname.Text}', {priceValue}, {sampleQuantityValue}, {codeValue}, '{comments.Text}','{deparment_id}');
+                    VALUES ('{testname.Text}', {priceValue}, {sampleQuantityValue}, {codeValue}, '{comments.Text}','{department_id}');
                 ");
                 db.Add(add_nested_fields(id));
-                
+
             }
             else
             {
@@ -126,5 +192,6 @@ namespace Final_Project.Forms.Laboratory.InnerPages
                 MessageBox.Show("Invalid input for price, sample quantity, or code.");
             }
         }
+
     }
 }

@@ -124,7 +124,7 @@
                     <TextBox x:Name="comments" Style="{DynamicResource textboxstyle}" Tag="Type Something" MinWidth="200" Width="auto" Height="auto"/>
                 </StackPanel>
 
-                <Button Grid.Row="7" Style="{StaticResource button}" Content="Submit" Margin="30" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click_1"/>
+                <Button x:Name="submitbtn" Grid.Row="7" Style="{StaticResource button}" Content="Submit" Margin="30" Width="100" FontWeight="SemiBold" HorizontalAlignment="Right" Click="Button_Click_1"/>
            
 
             </Grid>

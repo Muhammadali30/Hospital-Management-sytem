@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Final_Project.Forms.Laboratory.InnerPages.Labreports
 {
@@ -102,7 +103,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages.Labreports
             }
 
             db.Add($"INSERT INTO Lab_Test_Remarks(invoice_id,remarks,status)VALUES('{invoice_id}','{remarksbox.Text}','{status}')");
-            db.Update($"UPDATE Lab_Invoice SET status = 'Complete' WHERE id = {invoice_id}");
+            db.Update("UPDATE Lab_Invoice SET status = " + (status == "Accept" ? "'Complete' " : "'Pending Test' ") + $" WHERE id = {invoice_id}");
         }
     }
 }

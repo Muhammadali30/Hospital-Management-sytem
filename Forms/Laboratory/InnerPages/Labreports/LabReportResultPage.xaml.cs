@@ -119,7 +119,6 @@ namespace Final_Project.Forms.Laboratory.InnerPages.Labreports
             MessageBox.Show(data);
             db.Add(data);
             db.Update($"UPDATE Lab_Invoice SET status = 'Test Validation' WHERE id = {invoice_id}");
-
         }
     }
 }
