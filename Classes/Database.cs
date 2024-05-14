@@ -12,9 +12,10 @@ namespace Final_Project.Classes
 {
     public class Database
     {
-        SqlConnection con; 
+        SqlConnection con;
         SqlCommand cmd;
-        public Database() {
+        public Database()
+        {
             con = new SqlConnection("Data Source=DESKTOP-D7PJBST;Initial Catalog=FYP_DB;Integrated Security=True");
         }
         public DataTable Read(string query)
@@ -54,11 +55,11 @@ namespace Final_Project.Classes
         }
         public DataTable READ(string query, params SqlParameter[] parameters)
         {
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                adapter.SelectCommand = cmd;
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                return table;
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.SelectCommand = cmd;
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            return table;
         }
         public void Update(string query)
         {
@@ -68,6 +69,13 @@ namespace Final_Project.Classes
             con.Close();
         }
 
-
+        public double value(string query)
+        {
+            cmd = new SqlCommand(query, con);
+            con.Open();
+            int value = (int)cmd.ExecuteScalar();
+            con.Close();
+            return value;
+        } 
     }
 }

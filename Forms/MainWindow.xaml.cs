@@ -35,8 +35,10 @@ namespace Final_Project
         {
             //string role,string n, string mail
             InitializeComponent();
-            laboratorybuttons.Visibility = Visibility.Visible;
-            LAB();
+            //laboratorybuttons.Visibility = Visibility.Visible;
+            //LAB();
+            pharmacybuttons.Visibility = Visibility.Visible;
+            PHARMACY();
             //name.Text = username.Text = n;
             //email.Text = mail;
             //if (role == "Pharmacy")
@@ -99,7 +101,7 @@ namespace Final_Project
                 // Load the new page
 
             }
-            MainFrame.Content = new OpdDashboard();
+            MainFrame.Content = new LabDashboard();
         }
 
         private void PHARMACY()
@@ -115,7 +117,7 @@ namespace Final_Project
                 // Load the new page
 
             }
-            MainFrame.Content = new OpdDashboard();
+            MainFrame.Content = new PharmacyDashboard();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -472,6 +474,21 @@ namespace Final_Project
             MainFrame.Content = new DoctorPage();
         }
 
+        private void OpenPharmacyDashboardbtn(object sender, RoutedEventArgs e)
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new PharmacyDashboard();
+        }
     }
     }
 

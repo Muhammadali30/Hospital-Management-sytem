@@ -236,7 +236,7 @@ namespace Final_Project.Forms.Laboratory.InnerPages
 
         private void TogglePatientButton(object sender, RoutedEventArgs e)
         {
-            AlertForm AF = new AlertForm(new AddPatientPage(this));
+            AlertForm AF = new AlertForm(new AddPatientPage(this,null));
             AF.ShowDialog();
             if (patient_id != -1)
             {

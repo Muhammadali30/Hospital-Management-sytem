@@ -32,7 +32,6 @@
              <ComboBoxItem Content="Best Selling"/>
         </ComboBox>
         </WrapPanel>
-        <DataGrid x:Name="medicinegrid"  Grid.Row="4" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
-        </DataGrid>
+        <DataGrid x:Name="medicinegrid"  Grid.Row="4" IsReadOnly="True" Style="{DynamicResource datagrid}" Margin="10"/>
     </Grid>
 </Page>
