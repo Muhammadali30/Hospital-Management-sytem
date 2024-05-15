@@ -17,7 +17,7 @@
         <TextBlock Text="Test Validation (0)" FontWeight="Heavy" FontSize="14" Margin="10"/>
         <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Hidden">
             <StackPanel>
-                <WrapPanel Orientation="Horizontal">
+                <!--<WrapPanel Orientation="Horizontal">
                     <StackPanel Margin="10" Orientation="Vertical" >
                         <TextBlock Text="Search Validation Test" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Search Pending Test" Width="200"/>
@@ -55,7 +55,7 @@
                         <TextBlock Text="Select Lab" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Search Lab" Width="200"/>
                     </StackPanel>
-                </WrapPanel>
+                </WrapPanel>-->
                 <DataGrid x:Name="TestValidationGrid"  Grid.Row="2" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
                 </DataGrid>
             </StackPanel>

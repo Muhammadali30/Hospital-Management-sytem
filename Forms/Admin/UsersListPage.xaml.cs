@@ -39,20 +39,14 @@ namespace Final_Project.Forms.Admin
             Style ButtonStyle = resourceDict["button"] as Style;
 
             //Make Custom Column for actions
-            DataGridTemplateColumn expanderColumn = new DataGridTemplateColumn();
-            expanderColumn.Header = "Actions";
-            expanderColumn.Width = new DataGridLength(100, DataGridLengthUnitType.Pixel);
+            DataGridTemplateColumn editButtonColumn = new DataGridTemplateColumn();
 
-            FrameworkElementFactory expanderFactory = new FrameworkElementFactory(typeof(Expander));
-            expanderFactory.SetValue(Expander.HeaderProperty, "Actions");
-            FrameworkElementFactory stackPanelFactory = new FrameworkElementFactory(typeof(StackPanel));
-
-            // Add buttons to the stack panel inside the expander
+            // Define the cell template
             FrameworkElementFactory editButtonFactory = new FrameworkElementFactory(typeof(Button));
             editButtonFactory.SetValue(Button.ContentProperty, "Edit");
-            editButtonFactory.SetValue(Button.BackgroundProperty, Brushes.Green);
-
+            editButtonFactory.SetValue(Button.BackgroundProperty, Brushes.Red);
             editButtonFactory.SetValue(Button.StyleProperty, ButtonStyle);
+            
             editButtonFactory.AddHandler(Button.ClickEvent, new RoutedEventHandler((sender, e) =>
             {
                 DataRowView row = (DataRowView)((Button)sender).DataContext;
@@ -62,26 +56,14 @@ namespace Final_Project.Forms.Admin
                 //MessageBoxResult result = MessageBox.Show("Are you sure you want to edit this form?", "Confirmation", MessageBoxButton.YesNo);
             }));
 
-            FrameworkElementFactory deleteButtonFactory = new FrameworkElementFactory(typeof(Button));
-            deleteButtonFactory.SetValue(Button.ContentProperty, "Show");
-            deleteButtonFactory.SetValue(Button.StyleProperty, ButtonStyle);
-            deleteButtonFactory.AddHandler(Button.ClickEvent, new RoutedEventHandler((sender, e) =>
-            {
-                DataRowView row = (DataRowView)((Button)sender).DataContext;
-                int medicineID = (int)row["id"];
-            }));
+            DataTemplate editButtonTemplate = new DataTemplate();
+            editButtonTemplate.VisualTree = editButtonFactory;
 
-            stackPanelFactory.AppendChild(editButtonFactory);
-            stackPanelFactory.AppendChild(deleteButtonFactory);
-            expanderFactory.AppendChild(stackPanelFactory);
+            // Set the CellTemplate of the column to the defined template
+            editButtonColumn.CellTemplate = editButtonTemplate;
 
-            DataTemplate expanderTemplate = new DataTemplate();
-            expanderTemplate.VisualTree = expanderFactory;
-
-            expanderColumn.CellTemplate = expanderTemplate;
-
-            // Add the expander column to the DataGrid
-            usersgrid.Columns.Add(expanderColumn);
+            // Add the column to the DataGrid
+            usersgrid.Columns.Add(editButtonColumn);
 
             // Set the ItemsSource of the DataGrid
             usersgrid.ItemsSource = dt.DefaultView;

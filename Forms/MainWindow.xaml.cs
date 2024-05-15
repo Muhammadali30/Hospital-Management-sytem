@@ -9,6 +9,9 @@ using Final_Project.Forms.OPD;
 using Final_Project.Forms.OPD.InnerPages;
 using Final_Project.Forms.Pharmacy;
 using Final_Project.Forms.Pharmacy.InnerPages;
+using Final_Project.Forms.SPLASH;
+using Final_Project.Forms.SPLASH.InnerPages;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,47 +34,80 @@ namespace Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(string role, string n, string mail)
         {
-            //string role,string n, string mail
+            
             InitializeComponent();
             //laboratorybuttons.Visibility = Visibility.Visible;
             //LAB();
-            pharmacybuttons.Visibility = Visibility.Visible;
-            PHARMACY();
-            //name.Text = username.Text = n;
-            //email.Text = mail;
-            //if (role == "Pharmacy")
-            //{
-            //    pharmacybuttons.Visibility = Visibility.Visible;
-            //    PHARMACY();
-            //}
-            //else if (role == "Receptionist")
-            //{
-            //    opdbuttons.Visibility = Visibility.Visible;
-            //    OPD();
-            //}
-            //else if (role == "Labortory")
-            //{
-            //    laboratorybuttons.Visibility = Visibility.Visible;
-            //    LAB();
-            //}
-            //else if (role == "Admin")
-            //{
-            //    adminbuttons.Visibility = Visibility.Visible;
-            //    sidebar.Children.Remove(pharmacybuttons);
-            //    sidebar.Children.Remove(laboratorybuttons);
-            //    sidebar.Children.Remove(opdbuttons);
+            //pharmacybuttons.Visibility = Visibility.Visible;
+            //PHARMACY();
 
-            //    laboratorybuttons.Visibility = Visibility.Visible;
-            //    opdbuttons.Visibility = Visibility.Visible;
-            //    pharmacybuttons.Visibility = Visibility.Visible;
+            //adminbuttons.Visibility = Visibility.Visible;
+            //sidebar.Children.Remove(pharmacybuttons);
+            //sidebar.Children.Remove(laboratorybuttons);
+            //sidebar.Children.Remove(opdbuttons);
 
-            //    pharmacyexpander.Content = pharmacybuttons;
-            //    labexpander.Content = laboratorybuttons;
-            //    opdexpander.Content = opdbuttons;
-            //}
+            //laboratorybuttons.Visibility = Visibility.Visible;
+            //opdbuttons.Visibility = Visibility.Visible;
+            //pharmacybuttons.Visibility = Visibility.Visible;
+
+            //pharmacyexpander.Content = pharmacybuttons;
+            //labexpander.Content = laboratorybuttons;
+            //opdexpander.Content = opdbuttons;
+
+            name.Text = username.Text = n;
+            email.Text = mail;
+            if (role == "Pharmacy")
+            {
+                pharmacybuttons.Visibility = Visibility.Visible;
+                PHARMACY();
+            }
+            else if (role == "Receptionist")
+            {
+                opdbuttons.Visibility = Visibility.Visible;
+                OPD();
+            }
+            else if (role == "Labortory")
+            {
+                laboratorybuttons.Visibility = Visibility.Visible;
+                LAB();
+            }
+            else if (role == "Admin")
+            {
+                adminbuttons.Visibility = Visibility.Visible;
+                sidebar.Children.Remove(pharmacybuttons);
+                sidebar.Children.Remove(laboratorybuttons);
+                sidebar.Children.Remove(opdbuttons);
+
+                laboratorybuttons.Visibility = Visibility.Visible;
+                opdbuttons.Visibility = Visibility.Visible;
+                pharmacybuttons.Visibility = Visibility.Visible;
+
+                pharmacyexpander.Content = pharmacybuttons;
+                labexpander.Content = laboratorybuttons;
+                opdexpander.Content = opdbuttons;
+                Admin();
+
+            }
         }
+
+        private void Admin()
+        {
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new AdminDashboard();
+        }
+
         private void OPD()
         {
             if (MainFrame.NavigationService != null)
@@ -326,22 +362,6 @@ namespace Final_Project
             MainFrame.Content = new MedicineListPage();
         }
 
-        private void OpenMedDetailPage(object sender, RoutedEventArgs e)
-        {
-            Button_Click(sender, e);
-            if (MainFrame.NavigationService != null)
-            {
-                // Remove the previous page from the navigation history
-                if (MainFrame.NavigationService.CanGoBack)
-                {
-                    MainFrame.NavigationService.RemoveBackEntry();
-                }
-
-                // Load the new page
-
-            }
-            MainFrame.Content = new MedDetailPage();
-        }
 
         private void OpenMedReturnPage(object sender, RoutedEventArgs e)
         {
@@ -476,6 +496,7 @@ namespace Final_Project
 
         private void OpenPharmacyDashboardbtn(object sender, RoutedEventArgs e)
         {
+            Button_Click(sender, e);
             if (MainFrame.NavigationService != null)
             {
                 // Remove the previous page from the navigation history
@@ -488,6 +509,64 @@ namespace Final_Project
 
             }
             MainFrame.Content = new PharmacyDashboard();
+        }
+
+        private void OPenPurchaseMedPage(object sender, RoutedEventArgs e)
+        {
+            Button_Click(sender, e);
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new PurchaseMedicinePage();
+        }
+
+        private void OpenAdminDashbtn(object sender, RoutedEventArgs e)
+        {
+            Button_Click(sender, e);
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new AdminDashboard();
+        }
+
+        private void OpenOpdDashboard(object sender, RoutedEventArgs e)
+        {
+            Button_Click(sender, e);
+            if (MainFrame.NavigationService != null)
+            {
+                // Remove the previous page from the navigation history
+                if (MainFrame.NavigationService.CanGoBack)
+                {
+                    MainFrame.NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page
+
+            }
+            MainFrame.Content = new OpdDashboard();
+        }
+
+        private void Logoutbtn(object sender, RoutedEventArgs e)
+        {
+            SplashForm s = new SplashForm();
+            s.Show();
+            this.Close();
         }
     }
     }

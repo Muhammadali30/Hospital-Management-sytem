@@ -29,7 +29,7 @@
                 <ComboBoxItem Content="Best Selling"/>
             </ComboBox>
         </WrapPanel>-->
-        <DataGrid x:Name="usersgrid"  Grid.Row="4" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+        <DataGrid x:Name="usersgrid"  Grid.Row="4" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="10">
         </DataGrid>
     </Grid>
 </Page>

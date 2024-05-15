@@ -53,7 +53,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/pharmacy/innerpages/meddetailpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/pharmacy/innerpages/meddetailpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Forms\Pharmacy\InnerPages\MedDetailPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -5,7 +5,6 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Final_Project.Forms.Pharmacy.InnerPages" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
-      Background="White"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="OrderInvoicePage">
 
@@ -19,18 +18,24 @@
             <Icon:PackIconMaterial Kind="PrinterOutline" Height="30" Width="30" />
         </Button>
         <StackPanel HorizontalAlignment="Center" Grid.Row="1" x:Name="LabInvoicePdf" Width="300">
-            <TextBlock Text="Invoice" Margin="0" FontSize="45" FontWeight="Bold"/>
-            <StackPanel Grid.Row="0" Margin="0"  HorizontalAlignment="Left">
-                <TextBlock x:Name="invoiceno" Text="Invoice No" FontWeight="SemiBold" FontSize="16"/>
-                <TextBlock x:Name="date" Text="Date" FontWeight="SemiBold" FontSize="16"/>
+            <TextBlock Text="Invoice" FontSize="45" FontWeight="Bold" Foreground="#1E90FF" Margin="0 0 0 20"/>
+            <StackPanel Grid.Row="0" Margin="0" HorizontalAlignment="Left">
+                <TextBlock x:Name="invoiceno" Text="Invoice No" FontWeight="SemiBold" FontSize="16" Foreground="#333333" Margin="0 0 0 5"/>
+                <TextBlock x:Name="date" Text="Date" FontWeight="SemiBold" FontSize="16" Foreground="#333333" Margin="0 0 0 5"/>
             </StackPanel>
-            <StackPanel>
-                <DataGrid x:Name="invoiceitems"  Grid.Row="3" IsReadOnly="True"  Background="White" Style="{DynamicResource datagrid}" Margin="0" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False"/>
+            <DataGrid x:Name="invoiceitems" Grid.Row="3" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="0 20 0 10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False">
+                <DataGrid.Columns>
+                    <!-- Define DataGrid columns here -->
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Margin="0 20 0 10">
+                <TextBlock x:Name="subtotal" Text="SubTotal:" FontWeight="SemiBold" FontSize="16" Foreground="#333333"/>
+                <TextBlock x:Name="discount" Text="Discount:" FontWeight="SemiBold" FontSize="16" Foreground="#333333"/>
+                <TextBlock x:Name="total" Text="Total:" FontWeight="SemiBold" FontSize="16" Foreground="#333333"/>
             </StackPanel>
-            <StackPanel>
-                <TextBlock x:Name="subtotal" Text="SubTotal:" FontWeight="SemiBold" FontSize="16"/>
-                <TextBlock x:Name="discount" Text="Discount:" FontWeight="SemiBold" FontSize="16"/>
-                <TextBlock x:Name="total" Text="Total:" FontWeight="SemiBold" FontSize="16"/>
+            <StackPanel Margin="0 20 0 10" HorizontalAlignment="Center">
+                <TextBlock Text="Thank you for your business!" FontSize="14" Foreground="#666666"/>
+                <TextBlock Text="Payment is due upon receipt." FontSize="14" Foreground="#666666"/>
             </StackPanel>
         </StackPanel>
         <!--<Grid>

@@ -1,6 +1,8 @@
 ﻿using Final_Project.Classes;
+using Humanizer;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,9 +28,42 @@ namespace Final_Project.Forms.Pharmacy
             InitializeComponent();
             Database database = new Database();
             medicinecount.Text = database.value("SELECT COUNT(*) from Medicines").ToString();
+            expiredcount.Text = database.value($"SELECT COUNT(*) from Med_Purchase where expiry < '{DateTime.Today.ToString("yyyy-MM-dd")}'").ToString();
+            //MessageBox.Show(database.value($"SELECT COUNT(*) from Med_Purchase where expiry < '{DateTime.Today}'").ToString());
             orders.Values = new LiveCharts.ChartValues<Double> { database.value("SELECT COUNT(*) from Medicine_Orders") };
             returns.Values = new LiveCharts.ChartValues<Double> { database.value("SELECT COUNT(*) from Medicine_Orders where return_qty > 0") };
+            LoadMedicines(DateTime.Now);
+        }
 
+        private void LoadMedicines(DateTime Date)
+        {
+            string from_date = Date.AddDays(1).ToString("yyyy-MM-dd HH:mm:ss");
+            string to_date = Date.AddDays(-30).ToString("yyyy-MM-dd HH:mm:ss");
+            Database database = new Database();
+            DataTable dt = database.Read($@"
+    SELECT M.name Name, MO.item_qty SaleQty, O.date DateTime
+    FROM Medicine_Orders AS MO
+    LEFT JOIN [Order] AS O ON MO.order_id = O.id
+    LEFT JOIN Med_Purchase AS MP ON MO.med_id = MP.id
+    LEFT JOIN Medicines AS M ON MP.med_id = M.id
+    WHERE O.date BETWEEN '{to_date}' AND '{from_date}'");
+
+            medicinegrid.ItemsSource = dt.DefaultView;
+
+            // Set column width for other columns
+            medicinegrid.AutoGeneratingColumn += (sender, e) =>
+            {
+                e.Column.Width = new DataGridLength(1, DataGridLengthUnitType.Star);
+            };
+        }
+
+        private void salesdate_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (salesdate.SelectedDate.HasValue)
+            {
+                DateTime selectedDate = salesdate.SelectedDate.Value;
+                LoadMedicines(selectedDate);
+            }
 
         }
     }

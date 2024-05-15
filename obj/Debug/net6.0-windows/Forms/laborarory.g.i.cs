@@ -111,7 +111,7 @@ namespace Final_Project.Forms {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/laborarory.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/laborarory.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Forms\laborarory.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

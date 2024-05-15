@@ -20,23 +20,21 @@
         </Button>
 
         <ScrollViewer Grid.Row="1" >
-            <StackPanel HorizontalAlignment="Center" Width="500"  x:Name="LabInvoicePdf">
+            <StackPanel HorizontalAlignment="Center" Width="700"  x:Name="LabInvoicePdf">
                 <!-- Company Information -->
                 <StackPanel Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <TextBlock Text="Invoice #" FontWeight="Bold" FontSize="16"/>
+                    <TextBlock x:Name="invoice" Text="Invoice #" FontWeight="Bold" FontSize="16"/>
                     <TextBlock Text="Date: January 1, 2022" FontSize="14"/>
-                    <TextBlock Text="Customer Name" FontSize="14"/>
-                    <TextBlock Text="Phone: 987-654-3210" FontSize="14"/>
-                    <TextBlock Text="Email: customer@example.com" FontSize="14"/>
+                    <TextBlock x:Name="customer" Text="Customer Name" FontSize="14"/>
                 </StackPanel>
 
                 <!-- Items Table -->
-                <DataGrid x:Name="itemsDataGrid" Margin="20" AutoGenerateColumns="False"/>
+                <StackPanel x:Name="TestvalidationFieldsPanel" Grid.Row="2" Orientation="Vertical"></StackPanel>
                 <!-- Total -->
                 <StackPanel Margin="20" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                    <TextBlock Text="Subtotal: $100.00" FontSize="16"/>
-                    <TextBlock Text="Tax: $10.00" FontSize="16"/>
-                    <TextBlock Text="Total: $110.00" FontSize="18" FontWeight="Bold"/>
+                    <!--<TextBlock Text="Subtotal: $100.00" FontSize="16"/>
+                    <TextBlock Text="Tax: $10.00" FontSize="16"/>-->
+                    <TextBlock Text="Total: 110.00" FontSize="18" FontWeight="Bold"/>
                 </StackPanel>
 
                 <!-- Footer -->

@@ -24,7 +24,7 @@ namespace Final_Project.Forms.SPLASH.InnerPages
     public partial class LoginPage : Page
     {
         SplashForm sf;
-        public LoginPage(SplashForm f)
+        public LoginPage(SplashForm? f = null)
         {
             InitializeComponent();
             sf = f;
@@ -51,8 +51,8 @@ namespace Final_Project.Forms.SPLASH.InnerPages
                 }
                 else
                 {
-                    MainWindow mw = new MainWindow();
-                    //dt.Rows[0]["role"].ToString(), dt.Rows[0]["name"].ToString(), dt.Rows[0]["email"].ToString()
+                    MainWindow mw = new MainWindow(dt.Rows[0]["role"].ToString(), dt.Rows[0]["name"].ToString(), dt.Rows[0]["email"].ToString());
+                    
                     mw.Show();
                     sf.Close();   
                 }

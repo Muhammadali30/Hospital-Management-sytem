@@ -53,6 +53,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            sellmedicine.ItemsSource = null;
             TextBox tb = (TextBox)sender;
             Database db = new Database();
             ComboBoxItem dosageform = (ComboBoxItem)meddosageform.SelectedItem;
@@ -137,12 +138,16 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
         private void TextBox_KeyUp(object sender, KeyEventArgs e)
         {
-            //if (int.TryParse(discounttextbox.Text,out int discount)) {
-            //    discounttextbox.Text = "";
-            //    return; 
-            //}
-            //if (totalpricetextblock.Text == "0" && discount == 0) { return; }
-            //afterdiscount.Text = (float.Parse(totalpricetextblock.Text) - discount).ToString();
+            int discount = 0;
+            if (int.TryParse(discounttextbox.Text, out discount))
+            {
+                afterdiscount.Text = (Convert.ToInt16(totalpricetextblock.Text) - discount).ToString();
+            }
+            else
+            {
+                // Handle invalid discounttextbox.Text
+                afterdiscount.Text = "Invalid discount";
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

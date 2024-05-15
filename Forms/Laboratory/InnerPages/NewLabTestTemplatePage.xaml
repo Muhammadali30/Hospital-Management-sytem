@@ -63,22 +63,22 @@
                                      />
                         </Border>
                     </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
+                    <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                         <TextBlock Text="Template Type" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Lab" Width="200"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Sample Type" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Sample" Width="200"/>
-                    </StackPanel>
-                    <StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
+                    </StackPanel>-->
+                    <!--<StackPanel Margin="10" Orientation="Vertical" Grid.Column="2" Grid.Row="1">
                         <TextBlock Text="Report Completion Period" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="dropdown" Width="200"/>
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="0" Grid.Row="1">
                         <TextBlock Text="Select Lab" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Lab" Width="200"/>
-                    </StackPanel>
+                    </StackPanel>-->
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Sample Quantity" Margin="5" FontWeight="Bold" />
                         <TextBox x:Name="samplequantity" Style="{DynamicResource textboxstyle}" Tag="Sample" Width="200"/>

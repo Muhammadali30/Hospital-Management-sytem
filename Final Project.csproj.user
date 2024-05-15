@@ -21,6 +21,9 @@
     <Compile Update="Forms\Admin\AddUsersPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Admin\AdminDashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Admin\UsersListPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -201,6 +204,9 @@
     <Compile Update="Forms\Pharmacy\InnerPages\OrderInvoicePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Forms\Pharmacy\InnerPages\PurchaseMedicinePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Forms\Pharmacy\InnerPages\PurchasePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -243,6 +249,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Admin\AddUsersPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Admin\AdminDashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Admin\UsersListPage.xaml">
@@ -426,6 +435,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\OrderInvoicePage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Forms\Pharmacy\InnerPages\PurchaseMedicinePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Forms\Pharmacy\InnerPages\PurchasePage.xaml">

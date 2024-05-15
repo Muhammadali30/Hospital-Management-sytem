@@ -85,8 +85,8 @@ namespace Final_Project.Forms.Laboratory.InnerPages.Labreports {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/laboratory/innerpages/labreports/labreportresultpa" +
-                    "ge.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/laboratory/innerpages/labreports/labrepor" +
+                    "tresultpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\Forms\Laboratory\InnerPages\Labreports\LabReportResultPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
