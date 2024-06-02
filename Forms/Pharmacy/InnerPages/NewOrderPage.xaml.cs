@@ -24,6 +24,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
     /// </summary>
     public partial class NewOrderPage : Page
     {
+        BigInteger order_id = 0;
         public NewOrderPage()
         {
             InitializeComponent();
@@ -156,7 +157,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
             string currentDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-            BigInteger order_id = db.GetInsertedId($@"INSERT INTO [Order] ([date], discount, total) OUTPUT INSERTED.id 
+            order_id = db.GetInsertedId($@"INSERT INTO [Order] ([date], discount, total) OUTPUT INSERTED.id 
             VALUES ('{currentDate}', {float.Parse(discounttextbox.Text.ToString())}, '{float.Parse(totalpricetextblock.Text.ToString())}')");
 
             string data = "INSERT INTO Medicine_Orders(med_id,item_qty,order_id) VALUES";
@@ -168,7 +169,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
                 //TextBlock price = (TextBlock)child1.Children[1];
                 TextBox item_qty = (TextBox)child2.Children[1];
-
+                db.Add($"Update Med_Purchase set stock_qty = stock_qty - '{Convert.ToInt32(item_qty.Text)}' where id = '{Convert.ToInt32(cartpanelchild.Tag)}'");
                 if (cartpanel.Children.Count == i + 1)
                 {
                     data += $"({Convert.ToInt32(cartpanelchild.Tag.ToString())},{Convert.ToInt32(item_qty.Text)},{order_id})";
@@ -179,6 +180,17 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 }
                 db.Add(data);
                 MessageBox.Show("Record Successfully Created");
+                if (NavigationService != null)
+                {
+                    // Remove the current page from the navigation history
+                    if (NavigationService.CanGoBack)
+                    {
+                        NavigationService.RemoveBackEntry();
+                    }
+
+                    // Load the new page within the same frame
+                    NavigationService.Navigate(new OrderInvoicePage(order_id));
+                }
             }
         }
     }

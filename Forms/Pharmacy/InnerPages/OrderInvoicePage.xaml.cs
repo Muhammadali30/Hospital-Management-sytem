@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,8 +23,8 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
     /// </summary>
     public partial class OrderInvoicePage : Page
     {
-        private int order_id;
-        public OrderInvoicePage(int id)
+        private BigInteger order_id;
+        public OrderInvoicePage(BigInteger id)
         {
             InitializeComponent();
             order_id = id;

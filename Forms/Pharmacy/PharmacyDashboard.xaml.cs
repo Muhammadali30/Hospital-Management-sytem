@@ -28,8 +28,8 @@ namespace Final_Project.Forms.Pharmacy
             InitializeComponent();
             Database database = new Database();
             medicinecount.Text = database.value("SELECT COUNT(*) from Medicines").ToString();
+            stockempty.Text = database.value($"SELECT COUNT(*) FROM(SELECT m.id, COALESCE(SUM(mp.stock_qty), 0) AS TotalQuantity FROM Medicines m LEFT JOIN Med_Purchase mp ON m.id = mp.med_id GROUP BY m.id HAVING COALESCE(SUM(mp.stock_qty), 0) < 0) AS subquery; ").ToString();
             expiredcount.Text = database.value($"SELECT COUNT(*) from Med_Purchase where expiry < '{DateTime.Today.ToString("yyyy-MM-dd")}'").ToString();
-            //MessageBox.Show(database.value($"SELECT COUNT(*) from Med_Purchase where expiry < '{DateTime.Today}'").ToString());
             orders.Values = new LiveCharts.ChartValues<Double> { database.value("SELECT COUNT(*) from Medicine_Orders") };
             returns.Values = new LiveCharts.ChartValues<Double> { database.value("SELECT COUNT(*) from Medicine_Orders where return_qty > 0") };
             LoadMedicines(DateTime.Now);

@@ -82,7 +82,7 @@ namespace Final_Project.Forms.SPLASH {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/splash/splashform.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/splash/splashform.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Forms\SPLASH\SplashForm.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

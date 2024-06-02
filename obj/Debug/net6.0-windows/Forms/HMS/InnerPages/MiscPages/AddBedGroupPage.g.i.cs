@@ -53,8 +53,7 @@ namespace Final_Project.Forms.HMS.InnerPages.MiscPages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/hms/innerpages/miscpages/addbedgrouppage." +
-                    "xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/hms/innerpages/miscpages/addbedgrouppage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\Forms\HMS\InnerPages\MiscPages\AddBedGroupPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

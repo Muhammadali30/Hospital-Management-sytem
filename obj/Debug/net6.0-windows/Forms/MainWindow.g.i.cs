@@ -191,7 +191,7 @@ namespace Final_Project {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Forms\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

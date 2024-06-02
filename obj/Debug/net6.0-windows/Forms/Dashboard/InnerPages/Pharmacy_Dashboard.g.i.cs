@@ -72,8 +72,7 @@ namespace Final_Project.Forms.Dashboard.InnerPages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Final Project;V1.0.0.0;component/forms/dashboard/innerpages/pharmacy_dashboard.x" +
-                    "aml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Final Project;component/forms/dashboard/innerpages/pharmacy_dashboard.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\Forms\Dashboard\InnerPages\Pharmacy_Dashboard.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

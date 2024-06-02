@@ -100,5 +100,10 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             AlertForm AF = new AlertForm(new PurchasePage());
             AF.ShowDialog();
         }
+
+        private void OpenAddStockPage(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

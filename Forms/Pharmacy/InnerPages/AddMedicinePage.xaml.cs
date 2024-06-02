@@ -38,7 +38,7 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
         private void load()
         {
-            DataTable template_name = db.Read("SELECT id,name from Medicines");
+            DataTable template_name = db.Read("SELECT id, CONCAT(name, ' - ' ,active_ingredients) name from Medicines");
             DataRow newRow = template_name.NewRow();
             newRow["name"] = "Select Medicine";
             newRow["id"] = -1; // Set an arbitrary value for the ID
@@ -159,6 +159,35 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             medcategorycombo.ItemsSource = template_name.DefaultView;
             medcategorycombo.DisplayMemberPath = "name";
             medcategorycombo.SelectedIndex = 0;
+        }
+
+        private void medcategorycombo_PreviewDrop(object sender, DragEventArgs e)
+        {
+            MessageBox.Show("asd");
+        }
+
+        private void medcategorycombo_DropDownOpened(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox != null)
+            {
+                // Set the drop-down width to be larger
+                comboBox.Width = 300; // Or any desired width
+                comboBox.FontSize = 30;
+                comboBox.FontWeight = FontWeights.SemiBold;
+            }
+        }
+
+        private void medcategorycombo_DropDownClosed(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            if (comboBox != null)
+            {
+                // Set the drop-down width to be larger
+                comboBox.Width = 230; // Or any desired width
+                comboBox.FontSize = 14;
+                comboBox.FontWeight = FontWeights.Normal;
+            }
         }
     }
 }

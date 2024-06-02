@@ -30,6 +30,9 @@
                                      StaysOpenOnEdit="True"
                                      Margin="2"
                                      x:Name="medcategorycombo"
+                                     MaxDropDownHeight="300"
+                                     DropDownOpened="medcategorycombo_DropDownOpened"
+                                          DropDownClosed="medcategorycombo_DropDownClosed"
                                  />
                             </Border>
                         </StackPanel>
