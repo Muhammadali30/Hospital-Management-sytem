@@ -529,7 +529,5 @@ C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\F
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacyDashboard.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Laboratory\LabDashboard.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\PharmacyDashboard.baml
-C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\PurchaseMedicinePage.g.cs
-C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Pharmacy\InnerPages\PurchaseMedicinePage.baml
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Admin\AdminDashboard.g.cs
 C:\Users\Ali\source\repos\Final Project\Final Project\obj\Debug\net6.0-windows\Forms\Admin\AdminDashboard.baml

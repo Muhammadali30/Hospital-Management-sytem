@@ -20,7 +20,7 @@
 
             <Grid Grid.Row="2" Margin="10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width=".7*"/>
+                    <ColumnDefinition Width=".4*"/>
                     <ColumnDefinition Width=".3*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -52,7 +52,7 @@
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="200" KeyDown="TextBox_KeyDown"/>
                     </StackPanel>
                 </WrapPanel>
-        <DataGrid x:Name="sellmedicine" Grid.Row="1" Grid.Column="0" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" CanUserAddRows="False" AlternatingRowBackground="#d3faaa" AlternationCount="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False"/>
+        <DataGrid x:Name="sellmedicine" Grid.Row="1" Grid.Column="0" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" Width="400" HorizontalAlignment="Left"/>
         <ScrollViewer  Height="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">
             <StackPanel x:Name="cartpanel" Orientation="Vertical">
                 

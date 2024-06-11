@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Final_Project.Classes;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -20,207 +23,81 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
     /// </summary>
     public partial class AddStockPage : Page
     {
+        private DataTable suppliers_record = null, medicine_record = null;
         public AddStockPage()
         {
             InitializeComponent();
+            Loadsupplier();
+        }
+
+
+        private void Loadsupplier()
+        {
+            if (suppliers_record == null)
+            {
+                Database db = new Database();
+                suppliers_record = db.Read($"SELECT id,name from Suppliers");
+                DataRow newRow = suppliers_record.NewRow();
+                newRow["name"] = "Select Supplier";
+                newRow["id"] = -1;
+                suppliers_record.Rows.InsertAt(newRow, 0);
+                Supplier_Combo.ItemsSource = suppliers_record.DefaultView;
+                Supplier_Combo.DisplayMemberPath = "name";
+                Supplier_Combo.SelectedIndex = 0;
+                medicine_record = db.Read($"SELECT id,name from Medicines");
+                newRow = medicine_record.NewRow();
+                newRow["name"] = "Select Medicine";
+                newRow["id"] = -1;
+                medicine_record.Rows.InsertAt(newRow, 0);
+                Medicine_Combo.ItemsSource = medicine_record.DefaultView;
+                Medicine_Combo.DisplayMemberPath = "name";
+                Medicine_Combo.SelectedIndex = 0;
+
+            }
         }
 
         private void ItemButton(object sender, RoutedEventArgs e)
         {
-                Style textBoxStyle = (Style)Application.Current.FindResource("textboxstyle");
+            Border b = CreateTags.create_border(155);
+            ComboBox c = CreateTags.create_combobox(150);
+            c.ItemsSource = suppliers_record.DefaultView;
+            c.DisplayMemberPath = "name";
+            c.SelectedIndex = 0;
+            b.Child = c;
+            Supplier.Children.Add(b);
+            b = CreateTags.create_border(155);
+            c = CreateTags.create_combobox(150);
+            c.ItemsSource = medicine_record.DefaultView;
+            c.DisplayMemberPath = "name";
+            c.SelectedIndex = 0;
+            b.Child = c;
+            Medicine.Children.Add(b);
 
-                // For fieldname
-                TextBox textitemname = new TextBox
-                {
-                    Width = 120,
-                    Margin = new Thickness(5),
-                    Tag = "Item Name",
-                    Style = textBoxStyle
-                };
-                itemname.Children.Add(textitemname);
+            Voucher_No.Children.Add(CreateTags.create_textbox("", 120,null,"Voucher No"));
+            Units_In_Box.Children.Add(CreateTags.create_textbox("", 80, null, "0"));
+            Expiry.Children.Add(CreateTags.create_textbox("", 180, null, "Expiry"));
+            Cost_Price.Children.Add(CreateTags.create_textbox("", 80, null, "Cost_Price"));
+            Sale_Price.Children.Add(CreateTags.create_textbox("", 80, null, "Sale_Price"));
+            Unit_Price.Children.Add(CreateTags.create_textbox("", 70, null, "0"));
+            Button newButton = CreateTags.create_button("Delete", null, 30, "Delete item", "Red");
+            //newButton.Click += (sender, e) => OnButtonClick("Hello from dynamic button!", count);
+            newButton.Click += new RoutedEventHandler(OnButtonClick);
+            delete.Children.Add(newButton);
+        }
 
-            TextBox textunit = new TextBox
-            {
-                Width = 120,
-                Margin = new Thickness(5),
-                Tag = "E.G,Strips,Boxes",
-                Style = textBoxStyle
-            };
-            unit.Children.Add(textunit);
-
-            TextBox textconversionunit = new TextBox
-            {
-                Width = 140,
-                Margin = new Thickness(5),
-                Tag = "Conversion Unit",
-                Style = textBoxStyle
-            };
-            conversionunit.Children.Add(textconversionunit);
-
-            // For fieldunit
-            TextBox textavailqty = new TextBox
-                {
-                    Width = 130,
-                    Margin = new Thickness(5),
-                    Tag = "Generic Name",
-                    Style = textBoxStyle
-                };
-                availqty.Children.Add(textavailqty);
-
-                // For fieldnormalrangemale
-                TextBox textqty = new TextBox
-                {
-                    Width = 70,
-                    Margin = new Thickness(5),
-                    Tag = "Rack#",
-                    Style = textBoxStyle
-                };
-                qty.Children.Add(textqty);
-
-            TextBox textunitcost = new TextBox
-            {
-                Width = 80,
-                Margin = new Thickness(5),
-                Tag = "0",
-                Style = textBoxStyle
-            };
-            unitcost.Children.Add(textunitcost);
-
-            // For fieldnormalrangefemale
-            TextBox textdesprice = new TextBox
-                {
-                    Width = 120,
-                    Margin = new Thickness(5),
-                    Tag = "Barcode",
-                    Style = textBoxStyle
-                };
-                disprice.Children.Add(textdesprice);
-
-                // For fieldsubheading
-                TextBox texttotalcost = new TextBox
-                {
-                    Width = 100,
-                    Margin = new Thickness(5),
-                    Tag = "Manufacturer",
-                    Style = textBoxStyle
-                };
-                totalcost.Children.Add(texttotalcost);
-
-            TextBox textretail = new TextBox
-            {
-                Width = 70,
-                Margin = new Thickness(5),
-                Tag = "0",
-                Style = textBoxStyle
-            };
-            retailprice.Children.Add(textretail);
-
-            TextBox textnetretail = new TextBox
-            {
-                Width = 70,
-                Margin = new Thickness(5),
-                Tag = "0",
-                Style = textBoxStyle
-            };
-            netretailprice.Children.Add(textnetretail);
-
-            TextBox textprofirmargin = new TextBox
-                {
-                    Width = 140,
-                    Margin = new Thickness(5),
-                    Tag = "Supplier",
-                    Style = textBoxStyle
-                };
-                profitmargin.Children.Add(textprofirmargin);
-
-                TextBox textexpiry = new TextBox
-                {
-                    Width = 140,
-                    Margin = new Thickness(5),
-                    Tag = "Category",
-                    Style = textBoxStyle
-                };
-                expiry.Children.Add(textexpiry);
-
-               
-
-                TextBox textdiscount = new TextBox
-                {
-                    Width = 60,
-                    Margin = new Thickness(5),
-                    Tag = "0",
-                    Style = textBoxStyle
-                };
-                discount.Children.Add(textdiscount);
-
-                TextBox textlumpsup = new TextBox
-                {
-                    Width = 140,
-                    Margin = new Thickness(5),
-                    Tag = "Level",
-                    Style = textBoxStyle
-                };
-                lumpsum.Children.Add(textlumpsup);
-
-               
-
-                TextBox textsalestax = new TextBox
-                {
-                    Width = 70,
-                    Margin = new Thickness(5),
-                    Tag = "Stock",
-                    Style = textBoxStyle
-                };
-                salestax.Children.Add(textsalestax);
-
-                
-
-                TextBox textnetvalue = new TextBox
-                {
-                    Width = 20,
-                    Margin = new Thickness(5),
-                    Tag = "",
-                    Style = textBoxStyle
-                };
-                netvalue.Children.Add(textnetvalue);
-
-                Button newButton = new Button
-                {
-                    Content = "Delete",
-                    Width = 90,
-                    Height = 30,
-                    Margin = new Thickness(5),
-                    Background = Brushes.Red,
-                    FontWeight = FontWeights.Bold,
-
-                };
-                Style editbutton = (Style)Application.Current.FindResource("editbutton");
-                newButton.Style = editbutton;
-                //newButton.Click += (sender, e) => OnButtonClick("Hello from dynamic button!", count);
-                newButton.Click += new RoutedEventHandler(OnButtonClick);
-
-                delete.Children.Add(newButton);
-            }
             private void OnButtonClick(object sender, EventArgs e)
             {
                 Button button = (Button)sender;
                 int del = delete.Children.IndexOf(button);
-                itemname.Children.RemoveAt(del);
+                Supplier.Children.RemoveAt(del);
+                Medicine.Children.RemoveAt(del);
+                Voucher_No.Children.RemoveAt(del);
                 delete.Children.RemoveAt(del);
-                unit.Children.RemoveAt(del);
-                conversionunit.Children.RemoveAt(del);
-                availqty.Children.RemoveAt(del);
-                qty.Children.RemoveAt(del);
-                unitcost.Children.RemoveAt(del);
-                disprice.Children.RemoveAt(del);
-                totalcost.Children.RemoveAt(del);
-                retailprice.Children.RemoveAt(del);
-                netretailprice.Children.RemoveAt(del);
-                profitmargin.Children.RemoveAt(del);
-                discount.Children.RemoveAt(del);
-                lumpsum.Children.RemoveAt(del);
-                salestax.Children.RemoveAt(del);
-                netvalue.Children.RemoveAt(del);
+                Units_In_Box.Children.RemoveAt(del);
+                Expiry.Children.RemoveAt(del);
+                Cost_Price.Children.RemoveAt(del);
+                Sale_Price.Children.RemoveAt(del);
+                Unit_Price.Children.RemoveAt(del);
             }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -231,6 +108,49 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Supplier_Combo_DropDownOpened(object sender, EventArgs e)
+        {
+            CreateTags.tag_focus(sender, e);
+        }
+
+        private void Supplier_Combo_DropDownClosed(object sender, EventArgs e)
+        {
+            CreateTags.tag_focus(sender, e);
+        }
+
+        private void Medicine_Combo_DropDownClosed(object sender, EventArgs e)
+        {
+            CreateTags.tag_focus(sender, e);
+        }
+
+        private void Supplier_Combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            select_once(sender, e, Supplier);
+        }
+
+        private void Medicine_Combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            select_once(sender, e, Medicine);
+        }
+
+        private void select_once(object sender, SelectionChangedEventArgs e, StackPanel model)
+        {
+            if (sender is ComboBox comboBox)
+            {
+                int selectedIndex = comboBox.SelectedIndex;
+
+                foreach (var cb in model.Children.OfType<Border>().Select(b => b.Child).OfType<ComboBox>())
+                {
+                    cb.SelectedIndex = selectedIndex;
+                }
+            }
+        }
+
+        private void Medicine_Combo_DropDownOpened(object sender, EventArgs e)
+        {
+            CreateTags.tag_focus(sender, e);
         }
     }
 }

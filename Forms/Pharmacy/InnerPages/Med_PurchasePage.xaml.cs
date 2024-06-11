@@ -24,5 +24,26 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService != null)
+            {
+                // Remove the current page from the navigation history
+                if (NavigationService.CanGoBack)
+                {
+                    NavigationService.RemoveBackEntry();
+                }
+
+                // Load the new page within the same frame
+                NavigationService.Navigate(new AddStockPage());
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AlertForm AF = new AlertForm(new PurchasePage());
+            AF.ShowDialog();
+        }
     }
 }

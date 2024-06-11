@@ -34,7 +34,8 @@ namespace Final_Project
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(string role, string n, string mail)
+        //string role, string n, string mail
+        public MainWindow()
         {
             
             InitializeComponent();
@@ -55,41 +56,41 @@ namespace Final_Project
             //pharmacyexpander.Content = pharmacybuttons;
             //labexpander.Content = laboratorybuttons;
             //opdexpander.Content = opdbuttons;
+            pharmacybuttons.Visibility = Visibility.Visible;
+            PHARMACY();
+            //name.Text = username.Text = n;
+            //email.Text = mail;
+            //if (role == "Pharmacy")
+            //{
+            //    pharmacybuttons.Visibility = Visibility.Visible;
+            //    PHARMACY();
+            //}
+            //else if (role == "Receptionist")
+            //{
+            //    opdbuttons.Visibility = Visibility.Visible;
+            //    OPD();
+            //}
+            //else if (role == "Labortory")
+            //{
+            //    laboratorybuttons.Visibility = Visibility.Visible;
+            //    LAB();
+            //}
+            //else if (role == "Admin")
+            //{
+            //    adminbuttons.Visibility = Visibility.Visible;
+            //    sidebar.Children.Remove(pharmacybuttons);
+            //    sidebar.Children.Remove(laboratorybuttons);
+            //    sidebar.Children.Remove(opdbuttons);
 
-            name.Text = username.Text = n;
-            email.Text = mail;
-            if (role == "Pharmacy")
-            {
-                pharmacybuttons.Visibility = Visibility.Visible;
-                PHARMACY();
-            }
-            else if (role == "Receptionist")
-            {
-                opdbuttons.Visibility = Visibility.Visible;
-                OPD();
-            }
-            else if (role == "Labortory")
-            {
-                laboratorybuttons.Visibility = Visibility.Visible;
-                LAB();
-            }
-            else if (role == "Admin")
-            {
-                adminbuttons.Visibility = Visibility.Visible;
-                sidebar.Children.Remove(pharmacybuttons);
-                sidebar.Children.Remove(laboratorybuttons);
-                sidebar.Children.Remove(opdbuttons);
+            //    laboratorybuttons.Visibility = Visibility.Visible;
+            //    opdbuttons.Visibility = Visibility.Visible;
+            //    pharmacybuttons.Visibility = Visibility.Visible;
 
-                laboratorybuttons.Visibility = Visibility.Visible;
-                opdbuttons.Visibility = Visibility.Visible;
-                pharmacybuttons.Visibility = Visibility.Visible;
-
-                pharmacyexpander.Content = pharmacybuttons;
-                labexpander.Content = laboratorybuttons;
-                opdexpander.Content = opdbuttons;
-                Admin();
-
-            }
+            //    pharmacyexpander.Content = pharmacybuttons;
+            //    labexpander.Content = laboratorybuttons;
+            //    opdexpander.Content = opdbuttons;
+            //    Admin();
+            //}
         }
 
         private void Admin()
@@ -525,7 +526,7 @@ namespace Final_Project
                 // Load the new page
 
             }
-            MainFrame.Content = new PurchaseMedicinePage();
+            MainFrame.Content = new Med_PurchasePage();
         }
 
         private void OpenAdminDashbtn(object sender, RoutedEventArgs e)
