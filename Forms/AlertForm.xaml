@@ -19,18 +19,21 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-                <Border Grid.Row="0" Background="#1E929B">
-                    <Border.Effect>
-                        <DropShadowEffect Color="Gray" BlurRadius="0" Direction="280" ShadowDepth="5" Opacity="0.6"/>
-                    </Border.Effect>
-            <StackPanel Grid.Row="0" HorizontalAlignment="Right" Orientation="Vertical">
-                <Button Style="{DynamicResource notifybutton}" Margin="5"  Click="CloseButton" >
-                    <Icon:PackIconMaterial Kind="close" />
-                </Button>
-                    <TextBlock x:Name="AlertHeading" Text="Alert Form" Margin="5" FontSize="18" FontWeight="SemiBold"/>
-            </StackPanel>
-                </Border>
-
+            <Border Grid.Row="0" Background="#1E929B">
+                <Border.Effect>
+                    <DropShadowEffect Color="Gray" BlurRadius="20" Direction="280" ShadowDepth="5" Opacity="0.6"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Button Style="{DynamicResource notifybutton}" Margin="5" Grid.Row="0" HorizontalAlignment="Right"  Click="CloseButton" >
+                        <Icon:PackIconMaterial Kind="close" />
+                    </Button>
+                    <TextBlock x:Name="AlertHeading" Grid.Row="1" HorizontalAlignment="Center" Foreground="White" Text="Alert Form" Margin="5" FontSize="18" FontWeight="SemiBold"/>
+                </Grid>
+            </Border>
             <Frame x:Name="AlertFrame" Grid.Row="2" Margin="0" NavigationUIVisibility="Hidden"/>
         </Grid>
     </Border>
