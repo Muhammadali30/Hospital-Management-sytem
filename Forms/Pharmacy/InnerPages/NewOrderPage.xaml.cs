@@ -54,49 +54,62 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
 
         private void TextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            sellmedicine.ItemsSource = null;
+            SuggestionsListBox.ItemsSource = null;
             TextBox tb = (TextBox)sender;
             Database db = new Database();
             ComboBoxItem dosageform = (ComboBoxItem)meddosageform.SelectedItem;
             string df = dosageform.Content.ToString();
-            DataTable dt = db.Read($"SELECT p.id,m.name,m.rack_no,ROUND((p.sale_price / p.units_in_box), 2) as PricePerUnit,p.batch_no,p.date from Medicines m JOIN Med_Purchase p ON m.id = p.med_id where name like '{tb.Text}%' and dosageForm = '{df}' and p.stock_qty > 0");
-            sellmedicine.ItemsSource = dt.DefaultView;
+            DataTable dt = db.Read($"SELECT p.id,m.name,m.rack_no,ROUND((p.sale_price / p.units_in_box), 2) as PricePerUnit,p.batch_no as batch,p.date from Medicines m JOIN Med_Purchase p ON m.id = p.med_id where name like '{tb.Text}%' and dosageForm = '{df}' and p.stock_qty > 0");
+            SuggestionsListBox.ItemsSource = dt.DefaultView;
+            SuggestionsListBox.Visibility = dt.Rows.Count > 0 ? Visibility.Visible : Visibility.Collapsed;
             MessageBox.Show(tb.Text);
-            sellmedicine.MouseDoubleClick += Collectsamplegrid_MouseDoubleClick;
+            //SuggestionsListBox.MouseDoubleClick += Collectsamplegrid_MouseDoubleClick;
         }
-    private void Collectsamplegrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-    {
-        DataRowView selectedRow = (DataRowView)sellmedicine.SelectedItem;
-        if (selectedRow != null)
+        private void Collectsamplegrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            int id = Convert.ToInt32(selectedRow["id"]);
-            MessageBoxResult mbr = MessageBox.Show($"The ID of the selected row is: {id}", "Confirmation!", MessageBoxButton.YesNo);
-                //DataRowView alt_medicine = (DataRowView)medicinecombobox.SelectedItem;
-                //MessageBox.Show(selectedRow["name"].ToString());
-                StackPanel spid = CreateTags.create_stackpanel(null, "vertical");
-                spid.Tag = selectedRow["id"];
-                StackPanel namepanel = CreateTags.create_stackpanel(null, "horizontal");
-                namepanel.Children.Add(CreateTags.create_textblock("Name"));
-                namepanel.Children.Add(CreateTags.create_textblock(selectedRow["name"].ToString()));
-                spid.Children.Add(namepanel);
-                StackPanel pricepanel = CreateTags.create_stackpanel(null, "horizontal");
-                pricepanel.Children.Add(CreateTags.create_textblock("PricePerPiece(Rs)"));
-                pricepanel.Children.Add(CreateTags.create_textblock(selectedRow["PricePerUnit"].ToString()));
-                spid.Children.Add(pricepanel);
-                StackPanel heada = CreateTags.create_stackpanel(null, "horizontal");
-                Button decrement = CreateTags.create_button("WindowMinimize", null, 30, "Remove","Gray");
-                decrement.Click += (sender, e) => cartitemcount(sender,e,false);
-                Button increment = CreateTags.create_button("Plus", null, 30, "Add","Gray");
-                increment.Click += (sender, e) => cartitemcount(sender, e, true);
-                heada.Children.Add(decrement);
-                heada.Children.Add(CreateTags.create_textbox("0", 50, false, "0"));
-                heada.Children.Add(increment);
-                Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete","Red");
-                newbutton.Click += new RoutedEventHandler(DeleteFromCart);
-                spid.Children.Add(heada);
-                spid.Children.Add(newbutton);
-                cartpanel.Children.Add(spid);
-                //totalpricetextblock.Text = (float.Parse(totalpricetextblock.Text) + float.Parse(selectedRow["PricePerUnit"].ToString())).ToString();
+            if (SuggestionsListBox.SelectedItem is DataRowView selectedRow)
+            {
+                int id = Convert.ToInt32(selectedRow["id"]);
+                MessageBoxResult mbr = MessageBox.Show($"The ID of the selected row is: {id}", "Confirmation!", MessageBoxButton.YesNo);
+
+                if (mbr == MessageBoxResult.Yes)
+                {
+                    StackPanel spid = CreateTags.create_stackpanel(null, "vertical");
+                    spid.Tag = selectedRow["id"];
+
+                    // Name Panel
+                    StackPanel namepanel = CreateTags.create_stackpanel(null, "horizontal");
+                    namepanel.Children.Add(CreateTags.create_textblock("Name"));
+                    namepanel.Children.Add(CreateTags.create_textblock(selectedRow["name"].ToString()));
+                    spid.Children.Add(namepanel);
+
+                    // Price Panel
+                    StackPanel pricepanel = CreateTags.create_stackpanel(null, "horizontal");
+                    pricepanel.Children.Add(CreateTags.create_textblock("PricePerPiece(Rs)"));
+                    pricepanel.Children.Add(CreateTags.create_textblock(selectedRow["PricePerUnit"].ToString()));
+                    spid.Children.Add(pricepanel);
+
+                    // Quantity Control Panel
+                    StackPanel heada = CreateTags.create_stackpanel(null, "horizontal");
+                    Button decrement = CreateTags.create_button("WindowMinimize", null, 30, "Remove", "Gray");
+                    decrement.Click += (sender, e) => cartitemcount(sender, e, false);
+                    Button increment = CreateTags.create_button("Plus", null, 30, "Add", "Gray");
+                    increment.Click += (sender, e) => cartitemcount(sender, e, true);
+                    heada.Children.Add(decrement);
+                    heada.Children.Add(CreateTags.create_textbox("0", 50, false, "0"));
+                    heada.Children.Add(increment);
+                    spid.Children.Add(heada);
+
+                    // Delete Button
+                    Button newbutton = CreateTags.create_button("Delete", null, 30, "Delete", "Red");
+                    newbutton.Click += new RoutedEventHandler(DeleteFromCart);
+                    spid.Children.Add(newbutton);
+
+                    cartpanel.Children.Add(spid);
+
+                    // Update total price (uncomment and adapt if you have a total price TextBlock)
+                    // totalpricetextblock.Text = (float.Parse(totalpricetextblock.Text) + float.Parse(selectedRow["PricePerUnit"].ToString())).ToString();
+                }
             }
         }
         private void DeleteFromCart(object sender, RoutedEventArgs e)

@@ -50,7 +50,22 @@
                     <StackPanel Margin="10" Orientation="Vertical" >
                         <TextBlock Text="Medicine Name" Margin="5" FontWeight="Bold" />
                         <TextBox Style="{DynamicResource textboxstyle}" Tag="Medicine name" Width="200" KeyDown="TextBox_KeyDown"/>
-                    </StackPanel>
+                <ListBox Name="SuggestionsListBox" Width="300" Height="120" Margin="10" 
+                 VerticalAlignment="Top" Visibility="Collapsed" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding id}" Margin="5"/>
+                                <TextBlock Text="{Binding name}" Margin="5"/>
+                                <TextBlock Text="{Binding batch}" Margin="5"/>
+                                <TextBlock Text="{Binding Date}" Margin="5"/>
+                                <TextBlock Text="{Binding rack_no}" Margin="5"/>
+                                <TextBlock Text="{Binding PricePerUnit}" Margin="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
                 </WrapPanel>
         <DataGrid x:Name="sellmedicine" Grid.Row="1" Grid.Column="0" IsReadOnly="True" Background="White" Style="{DynamicResource datagrid}" Margin="10" Width="400" HorizontalAlignment="Left"/>
         <ScrollViewer  Height="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2">

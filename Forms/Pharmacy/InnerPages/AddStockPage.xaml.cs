@@ -148,6 +148,11 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
             }
         }
 
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void Medicine_Combo_DropDownOpened(object sender, EventArgs e)
         {
             CreateTags.tag_focus(sender, e);
