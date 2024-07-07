@@ -26,6 +26,7 @@ namespace Final_Project.Forms.Pharmacy
         public PharmacyDashboard()
         {
             InitializeComponent();
+            salesdate.DisplayDateEnd = DateTime.Now;
             Database database = new Database();
             medicinecount.Text = database.value("SELECT COUNT(*) from Medicines").ToString();
             stockempty.Text = database.value($"SELECT COUNT(*) FROM(SELECT m.id, COALESCE(SUM(mp.stock_qty), 0) AS TotalQuantity FROM Medicines m LEFT JOIN Med_Purchase mp ON m.id = mp.med_id GROUP BY m.id HAVING COALESCE(SUM(mp.stock_qty), 0) < 0) AS subquery; ").ToString();
