@@ -189,5 +189,15 @@ namespace Final_Project.Forms.Pharmacy.InnerPages
                 comboBox.FontWeight = FontWeights.Normal;
             }
         }
+
+        private void medunitvalue_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !CreateTags.IsTextAllowed(e.Text);
+        }
+
+        private void medunitvalue_Pasting(object sender, DataObjectPastingEventArgs e)
+        {
+            CreateTags.IsTextAllowedPasting(e);
+        }
     }
 }

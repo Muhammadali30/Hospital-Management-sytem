@@ -104,7 +104,7 @@
                     </StackPanel>
                     <StackPanel Margin="10" Orientation="Vertical" Grid.Column="1" Grid.Row="1">
                         <TextBlock Text="Unit Value" Margin="5" FontWeight="Bold" />
-                        <TextBox x:Name="medunitvalue" Style="{DynamicResource textboxstyle}" Tag="e.g 600" Width="300"/>
+                        <TextBox x:Name="medunitvalue" Style="{DynamicResource textboxstyle}" Tag="e.g 600" Width="300" PreviewTextInput="medunitvalue_PreviewTextInput" DataObject.Pasting="medunitvalue_Pasting"/>
                     </StackPanel>
                         <!--<StackPanel Margin="10" Grid.Column="2" Grid.Row="1">
                             <TextBlock Text="Re-ordering Level" Margin="5" FontWeight="Bold" />
